@@ -6,7 +6,7 @@
     <title>Web Engineering WS21/22</title>
     <style>
         .fragen {
-            padding-left: 20px;
+            padding-left: 10px;
         }
     </style>
 </head>
@@ -21,29 +21,64 @@
         <b>Aufgabe 1.1.</b> Fachliche Argumentation über Erfolgsprinzipien des WWW
         <div class="fragen">
             Mit welchen fachlichen Argumenten wurde das WWW-Proposal von TBL abgelehnt?
+            <ul>
+                <li>TBL hat die Wagheit des Konzepts nicht verstanden (er verwechselt es mit der Evolvierbarkeit)</li>
+                <li>Die Hypertext-Community hatte den Eindruck, dass sie schon mehr erreicht hatten als TBL (insbesondere wegen 'broken Links')</li>
+            </ul>
         </div>
         <div class="fragen">
             Was sind die fachlichen Argumente, warum das WWW dennoch ein Erfolg wurde?
+            <ul>
+                <li>Die Unterteilung in die verschiedenen orthogonalen Technologien:</li>
+                <ul>
+                    <li>HTTP</li>
+                    <li>HTML</li>
+                    <li>eindeutige Identifikation (URI)</li>
+                </ul>
+            </ul>
         </div>
         <div class="fragen">
-            Was wäre der Preis für die garantierte Verhinderung von “broken links”?
+            Was wäre der Preis für die garantierte Verhinderung von “broken links“?
+            <ul>
+                <li>zentrale Geschlossenheit</li>
+                <li>Kontrolle</li>
+            </ul>
         </div>
     <p>
         <b>Aufgabe 1.2.</b> HTTP
         <div class="fragen">
             Sie bekommen im Browser den HTTP Status Code 200. Was bedeutet das?
+            <ul>
+                <li>"alles in Ordnung"</li>
+                <li>Anfrage erfolgreich verlaufen</li>
+            </ul>
         </div>
         <div class="fragen">
             Sie bekommen im Browser den HTTP Status Code 301. Was hat das zu bedeuten?
+            <ul>
+                <li>Seite existiert an der angegebenen Stelle nicht mehr</li>
+                <li>User wird zur "richtigen" Seite weitergeleitet</li>
+            </ul>
         </div>
         <div class="fragen">
             Sie bekommen im Browser den HTTP Status Code 400. Was hat das zu bedeuten? Was können Sie dagegen tun?
+            <ul>
+                <li>Anfrage kann nicht verarbeitet werden (client-seitiger Fehler)</li>
+                <li>User sollte URL überprüfen, gegebenenfalls anpassen und erneut versuchen</li>
+            </ul>
         </div>
         <div class="fragen">
             Sie bekommen im Browser den HTTP Status Code 403. Was hat das zu bedeuten? Was können Sie dagegen tun?
+            <ul>
+                <li>Server hat die Anfrage zwar verstanden, lässt den Client aber nicht zugreifen</li>
+                <li>Client sollte seine Berechtigungen für diese Seite überprüfen</li>
+            </ul>
         </div>
         <div class="fragen">
             In einer Webanwendung benötigen Sie eine OPTIONS-Anfrage, die die Optionen des Servers vor dem eigentlichen Zugriff erfragen soll. Aus Performanzgründen soll die Abfrage jedoch cacheable sein. Wie könnten Sie dafür eine Lösung angehen?
+            <ul>
+                <li>über eine zusätzliche GET Anfrage oder auch nur eine HEAD Anfrage und die gewünschten Informationen dort unterbringen</li>
+            </ul>
         </div>
     <p>
         <a href="woche01/a01.03.html"><b>Aufgabe 1.3.</b></a>
