@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Aufgabe 2.1.</title>
+    <style>
+        body, html {
+            margin: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .column {
+            margin: 5px;
+            --column: 5;
+            --width: 1;
+            flex-basis: calc(var(--width) / var(--column) * 100% - 10px);
+        }
+
+        .red {
+            background-color: #ff2500;
+            --width: 5;
+            height: calc(1 / 3 * 100vh - 50px);
+        }
+
+        .green {
+            background-color: #2cee27;
+            --width: 1;
+            height: calc(2 / 3 * 100vh - 50px);
+        }
+
+        .blue {
+            background-color: #0533ff;
+            --width: 3;
+            height: calc(2 / 3 * 100vh - 50px);
+        }
+
+        .purple {
+            background-color: #ea3efe;
+            --width: 1;
+            height: calc(2 / 3 * 100vh - 50px);
+        }
+
+        @media all and (max-width: 1200px) {
+            body, html {
+                margin: 5px;
+            }
+
+            .column {
+                margin: 1px;
+                --column: 3;
+                flex-basis: calc(var(--width) / var(--column) * 100% - 2px);
+            }
+
+            .red {
+                --width: 3;
+            }
+
+            .blue {
+                --width: 2;
+            }
+
+            .purple {
+                --width: 3;
+            }
+        }
+
+        @media all and (max-width: 600px) {
+            body, html {
+                margin: 0;
+                --height: calc(1 / 6 * 100vh);
+            }
+
+            .column {
+                margin: 0;
+                --column: 1;
+                flex-basis: calc(var(--width) / var(--column) * 100%);
+            }
+
+            .red {
+                --width: 1;
+                height: var(--height);
+            }
+
+            .green {
+                --width: 1;
+                height: var(--height);
+            }
+
+            .blue {
+                --width: 1;
+                height: calc(var(--height) * 10);
+            }
+
+            .purple {
+                --width: 1;
+                height: var(--height);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="red column"></div>
+    <div class="green column"></div>
+    <div class="blue column"></div>
+    <div class="purple column"></div>
+</div>
+</body>
+</html>
