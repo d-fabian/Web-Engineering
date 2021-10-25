@@ -1,7 +1,7 @@
 // 3.1.1
 function identity_function(x) {
     return function () {
-        return x
+        return x;
     }
 }
 
@@ -52,8 +52,8 @@ Number.prototype.div = methodize(div);
 
 // 3.1.7
 function demethodize(func) {
-    return function (y, z) {
-        return func.apply(y, [z]);
+    return function (x, y) {
+        return func.apply(x, [y]);
     }
 }
 
@@ -112,7 +112,7 @@ function revocable(func) {
             if(func !== undefined){
                 return func(y);
             }
-            throw new Error('Function not set ore revoked!');
+            throw new Error('Function not set or revoked!');
         },
         revoke: function () {
             func = undefined;
