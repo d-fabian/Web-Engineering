@@ -1,0 +1,62 @@
+:root {
+    --tabLengh: 20px;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+.mainContent {
+    display: flex;
+    flex-direction: column;
+}
+h1 {
+    margin: 15px;
+}
+.exercise {
+    margin: 10px;
+    padding: 5px;
+}
+code {
+    background-color: lightgray;
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 4px;
+    margin: 4px;
+}
+.methode {
+    border: 0;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 5px;
+    background: #272932;
+    color: white;
+}
+.function {
+    color: #E9D985;
+    font-weight: bold;
+}
+.keyword {
+    color: #FF7B9C;
+    font-weight: bold;
+}
+.string {
+    color: #B2BD7E;
+}
+.error {
+    color: #2660A4;
+}
+.firstStep {
+
+}
+.secondStep {
+    padding-left: var(--tabLengh);
+}
+.thirdStep {
+    padding-left: calc(2 * var(--tabLengh));
+}
+.fourthStep {
+    padding-left: calc(3 * var(--tabLengh));
+}
+.fifthStep {
+    padding-left: calc(4 * var(--tabLengh));
+}
