@@ -36,11 +36,11 @@ function removeItem(item) {
 }
 
 function addDeleteEventListeners() {
-    const allBtns = document.getElementsByClassName('deleteBtn')
+    const allBtn = document.getElementsByClassName('deleteBtn')
     const allItems = document.getElementsByTagName('li')
     let deleteBtn
     let i = 0
-    for (deleteBtn of allBtns) {
+    for (deleteBtn of allBtn) {
         const itemName = allItems[i++].textContent.slice(0, -6)
         deleteBtn.onclick = function () {
             removeItem(itemName)
