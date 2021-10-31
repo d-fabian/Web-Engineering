@@ -1,4 +1,4 @@
-let test;
+let timer;
 let currentPerson;
 
 function addPerson() {
@@ -32,7 +32,7 @@ function addPerson() {
 }
 
 function startStopTime(person) {
-    if(test == null) {
+    if(timer == null) {
         const personName = person.slice(0, -9)
         const allPersons = document.getElementsByTagName('li')
         let onePerson
@@ -42,7 +42,7 @@ function startStopTime(person) {
                 btn[0].textContent = 'Stopp!'
                 currentPerson = personName
 
-                test = setInterval(function () {myTimer(onePerson, personName)}, 1000)
+                timer = setInterval(function () {myTimer(onePerson, personName)}, 1000)
             }
         }
     } else {
@@ -52,8 +52,8 @@ function startStopTime(person) {
             const btn = onePerson.getElementsByClassName('startStopBtn')
             btn[0].textContent = 'Start!'
         }
-        clearInterval(test)
-        test = null
+        clearInterval(timer)
+        timer = null
 
         if (currentPerson !== person.slice(0, -9)) {
             startStopTime(person)
