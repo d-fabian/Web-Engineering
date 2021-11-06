@@ -46,12 +46,10 @@
             .then(response => response.text())
             .then(text => text.split('\r\n'))
             .then(textArray => textA = textArray),
-        // .then(text => document.getElementById('textField').textContent = text),
         fetch('B.txt')
             .then(response => response.text())
             .then(text => text.split('\r\n'))
             .then(textArray => textB = textArray),
-        // .then(text => document.getElementById('textField').textContent = text),
     ])
         .then(() => {
             for (let index = 0; index < Math.max(textA.length, textB.length); index++) {
