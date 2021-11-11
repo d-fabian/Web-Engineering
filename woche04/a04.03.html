@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Aufgabe 4.3</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            margin: 20px 10px;
+        }
+
+        h1 {
+            font-weight: bold;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        td,
+        th {
+            border: 1px solid black;
+            padding: 10px;
+            width: 200px;
+            text-align: right;
+        }
+
+        .supportedOperations {
+            margin: 20px;
+            font-size: 20px;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <h1>Tabellenkalkulation mit contentEditable</h1>
+    <table>
+        <tr>
+            <th></th>
+            <th scope="col">2</th>
+        </tr>
+        <tr>
+            <th scope="row">A</th>
+            <td contenteditable id="fieldOne"></td>
+        </tr>
+        <tr>
+            <th scope="row">B</th>
+            <td contenteditable id="fieldTwo"></td>
+        </tr>
+        <tr>
+            <th scope="row">Ergebnis</th>
+            <td contenteditable id="resultField"></td>
+        </tr>
+    </table>
+    <div class="supportedOperations">
+        <div><b>Unterstützte Operationen:</b></div>
+        <ul>
+            <li><b>Summe</b> =SUM(A2,B2)</li>
+        </ul>
+    </div>
+</div>
+</body>
+
+<script src="a04.03.js"></script>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Aufgabe 5.2</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+
+        code {
+            background: lightgray;
+            border-radius: 5px;
+            padding: 2px;
+        }
+
+        #green {
+            color: green;
+        }
+
+        #blue {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container" id="textField">
+    <div>
+        Der geladene Text aus der Datei <code>A.txt</code> wird <span id="green">grün</span> und der aus
+        <code>B.txt</code> <span id="blue">blau</span> angezeigt.
+    </div>
+    <br>
+</div>
+</body>
+
+<script>
+    let textA, textB
+    let textField = document.getElementById('textField')
+
+    async function getTextA() {
+        const response = await fetch('A.txt')
+        const text = await response.text()
+        textA = text.split('\r\n')
+        await showText()
+    }
+
+    async function getTextB() {
+        const response = await fetch('B.txt')
+        const text = await response.text()
+        textB = text.split('\r\n')
+        await showText()
+    }
+
+    async function showText() {
+        for (let index = 0; index < Math.max(textA.length, textB.length); index++) {
+            const lineA = textA[index] || ''
+            const lineB = textB[index] || ''
+            const newLineA = document.createElement('span')
+            newLineA.textContent = lineA + ' '
+            newLineA.style.color = 'green'
+            const newLineB = document.createElement('span')
+            newLineB.textContent = lineB
+            newLineB.style.color = 'blue'
+            const wholeLine = document.createElement('div')
+            wholeLine.append(newLineA, newLineB)
+            textField.appendChild(wholeLine)
+        }
+    }
+
+    getTextA()
+    getTextB()
+</script>
+</html>
