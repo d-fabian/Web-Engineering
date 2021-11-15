@@ -16,6 +16,12 @@
             margin: 20px;
         }
 
+        .header {
+            display: flex;
+            flex-direction: row;
+            gap: 50px;
+        }
+
         code {
             background: lightgray;
             border-radius: 5px;
@@ -34,9 +40,12 @@
 
 <body>
 <div class="container" id="textField">
-    <div>
-        Der geladene Text aus der Datei <code>A.txt</code> wird <span id="green">grün</span> und der aus
-        <code>B.txt</code> <span id="blue">blau</span> angezeigt.
+    <div class="header">
+        <button id="startBtn">Start</button>
+        <div>
+            Der geladene Text aus der Datei <code>A.txt</code> wird <span id="green">grün</span> und der aus
+            <code>B.txt</code> <span id="blue">blau</span> angezeigt.
+        </div>
     </div>
     <br>
 </div>
@@ -45,25 +54,30 @@
 <script>
     let textA, textB
     let textField = document.getElementById('textField')
+    const startBtn = document.getElementById('startBtn')
+
+    startBtn.addEventListener('click', async () => {
+        await getTextA()
+        await getTextB()
+        await showText()
+    })
 
     async function getTextA() {
         const response = await fetch('A.txt')
         const text = await response.text()
         textA = text.split('\r\n')
-        await showText()
     }
 
     async function getTextB() {
         const response = await fetch('B.txt')
         const text = await response.text()
         textB = text.split('\r\n')
-        await showText()
     }
 
     async function showText() {
-        for (let index = 0; index < Math.max(textA.length, textB.length); index++) {
-            const lineA = textA[index] || ''
-            const lineB = textB[index] || ''
+        for (let index = 0; index < Math.max((textA ? textA.length : 0), (textB ? textB.length : 0)); index++) {
+            const lineA = textA ? textA[index] : ''
+            const lineB = textB ? textB[index] : ''
             const newLineA = document.createElement('span')
             newLineA.textContent = lineA + ' '
             newLineA.style.color = 'green'
@@ -75,8 +89,5 @@
             textField.appendChild(wholeLine)
         }
     }
-
-    getTextA()
-    getTextB()
 </script>
 </html>
