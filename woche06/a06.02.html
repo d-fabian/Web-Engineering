@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Aufgabe 6.2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin: 20px;
+        }
+
+        svg {
+            width: 100%;
+            height: calc(100vh - 40px);
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <h1>SVG Bezier-Animation</h1>
+    <h4>Punkte lassen sich per Drag&Drop bewegen</h4>
+    <svg id="svgArea">
+        <path d="M400 200 Q900 300 ,800 1000" fill="none" id="bezLine" stroke="black"></path>
+        <circle cx="400" cy="200" fill="red" id="circle1" r="20"></circle>
+        <circle cx="800" cy="1000" fill="blue" id="circle2" r="20"></circle>
+        <circle cx="900" cy="300" fill="black" id="circle3" r="20"></circle>
+    </svg>
+</div>
+</body>
+
+<script>
+    let isMouseDown = false
+    let svgPoint
+    const svgArea = document.getElementById('svgArea')
+    const circle1 = document.getElementById('circle1')
+    const circle2 = document.getElementById('circle2')
+    const circle3 = document.getElementById('circle3')
+    const bezLine = document.getElementById('bezLine')
+
+    circle1.addEventListener('mousedown', () => isMouseDown = true)
+    circle1.addEventListener('mouseup', () => isMouseDown = false)
+    circle1.addEventListener('mouseout', () => isMouseDown = false)
+    circle1.addEventListener('mousemove', () => {
+        move(circle1)
+    })
+
+    circle2.addEventListener('mousedown', () => isMouseDown = true)
+    circle2.addEventListener('mouseup', () => isMouseDown = false)
+    circle2.addEventListener('mouseout', () => isMouseDown = false)
+    circle2.addEventListener('mousemove', () => {
+        move(circle2)
+    })
+
+    circle3.addEventListener('mousedown', () => isMouseDown = true)
+    circle3.addEventListener('mouseup', () => isMouseDown = false)
+    circle3.addEventListener('mouseout', () => isMouseDown = false)
+    circle3.addEventListener('mousemove', () => {
+        move(circle3)
+    })
+
+    function move(circle) {
+        if (isMouseDown) {
+            svgPoint = getCoordinatesForSVG(event.x, event.y, svgArea)
+            circle.setAttribute('cx', svgPoint.x)
+            circle.setAttribute('cy', svgPoint.y)
+
+            const lineStats = bezLine.getAttribute('d').split(' ')
+            if (circle.id.includes('1')) {
+                const newLineStats = 'M' + svgPoint.x + ' ' + svgPoint.y + ' ' + lineStats[2] + ' ' + lineStats[3] + ' ' + lineStats[4] + ' ' + lineStats[5]
+                bezLine.setAttribute('d', newLineStats)
+            } else if (circle.id.includes('2')) {
+                const newLineStats = lineStats[0] + ' ' + lineStats[1] + ' ' + lineStats[2] + ' ' + lineStats[3] + ' ' + svgPoint.x + ' ' + svgPoint.y
+                bezLine.setAttribute('d', newLineStats)
+            } else if (circle.id.includes('3')) {
+                const newLineStats = lineStats[0] + ' ' + lineStats[1] + ' Q' + svgPoint.x + ' ' + svgPoint.y + ' ' + lineStats[4] + ' ' + lineStats[5]
+                bezLine.setAttribute('d', newLineStats)
+            }
+        }
+    }
+
+    function getCoordinatesForSVG(domX, domY, element) {
+        let svgPoint = element.createSVGPoint();
+        svgPoint.x = domX
+        svgPoint.y = domY
+        return svgPoint.matrixTransform(element.getScreenCTM().inverse())
+    }
+</script>
+</html>
