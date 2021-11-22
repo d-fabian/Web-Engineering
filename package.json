@@ -1,0 +1,23 @@
+{
+  "name": "web-engineering",
+  "version": "1.0.0",
+  "description": "Repository für den Masterkurs Web Engineering an der HBRS",
+  "main": "a07.03.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/d-fabian/Web-Engineering.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/d-fabian/Web-Engineering/issues"
+  },
+  "homepage": "https://github.com/d-fabian/Web-Engineering#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "file-saver": "^2.0.5"
+  }
+}
