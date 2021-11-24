@@ -10,8 +10,17 @@
 </head>
 
 <body>
+<!--<i class="fa-solid fa-xmark active" id="menuButton"></i>-->
+<div class="active" id="menuButton">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+<div id="topBar">
+    <div id="topBarExerciseName"></div>
+</div>
 <div class="sidebar active">
-    <i class="fa-solid fa-bars" id="menuButton"></i>
+    <!--    <i class="fa-solid fa-bars" id="menuButton"></i>-->
 
     <div class="searchArea">
         <a href="#">
@@ -31,7 +40,8 @@
             </label>
             <div class="accordion-content">
                 <li>
-                    <a href="#!" onclick="openPage('woche01/a01.01.html')">
+                    <a href="#!"
+                       onclick="openPage('woche01/a01.01.html', 'Fachliche Argumentation über Erfolgsprinzipien des WWW')">
                         <i class="fa-solid fa-a"></i>
                         <i class="fa-solid fa-1"></i>
                         <span class="sidebarLinkNames">Aufgabe 1: Fachliche Argumentation über Erfolgsprinzipien des WWW</span>
@@ -39,7 +49,7 @@
                     <!--                    <span class="sidebarTooltips">Aufgabe 1</span>-->
                 </li>
                 <li>
-                    <a href="#!" onclick="openPage('woche01/a01.02.html')">
+                    <a href="#!" onclick="openPage('woche01/a01.02.html', 'HTTP')">
                         <i class="fa-solid fa-a"></i>
                         <i class="fa-solid fa-2"></i>
                         <span class="sidebarLinkNames">Aufgabe 2: HTTP</span>
@@ -49,7 +59,8 @@
 
 
                 <li>
-                    <a href="#!" onclick="openPage('woche01/a01.03.html')">
+                    <a href="#!"
+                       onclick="openPage('woche01/a01.03.html', 'Wireframe with HTML and CSS (Tribute Page)')">
                         <i class="fa-solid fa-a"></i>
                         <i class="fa-solid fa-3"></i>
                         <span class="sidebarLinkNames">Aufgabe 3: Wireframe with HTML and CSS (Tribute Page)</span>
@@ -57,7 +68,7 @@
                     <!--                    <span class="sidebarTooltips">Aufgabe 3</span>-->
                 </li>
                 <li>
-                    <a href="#!" onclick="openPage('woche01/a01.04.html')">
+                    <a href="#!" onclick="openPage('woche01/a01.04.html', '')">
                         <i class="fa-solid fa-a"></i>
                         <i class="fa-solid fa-4"></i>
                         <span class="sidebarLinkNames">Aufgabe 4</span>
@@ -65,7 +76,7 @@
                     <!--                    <span class="sidebarTooltips">Aufgabe 4</span>-->
                 </li>
                 <li>
-                    <a href="#!" onclick="openPage('woche01/a01.05.html')">
+                    <a href="#!" onclick="openPage('woche01/a01.05.html', '')">
                         <i class="fa-solid fa-a"></i>
                         <i class="fa-solid fa-5"></i>
                         <span class="sidebarLinkNames">Aufgabe 5</span>
@@ -83,7 +94,7 @@
             </label>
             <div class="accordion-content">
                 <li>
-                    <a href="#!" onclick="openPage('woche02/a02.01.html')">
+                    <a href="#!" onclick="openPage('woche02/a02.01.html', '')">
                         <i class="fa-solid fa-a"></i>
                         <i class="fa-solid fa-1"></i>
                         <span class="sidebarLinkNames">Aufgabe 1</span>
@@ -91,7 +102,7 @@
                     <!--                    <span class="sidebarTooltips">Aufgabe 1</span>-->
                 </li>
                 <li>
-                    <a href="#!" onclick="openPage('woche02/a02.02.html')">
+                    <a href="#!" onclick="openPage('woche02/a02.02.html', '')">
                         <i class="fa-solid fa-a"></i>
                         <i class="fa-solid fa-2"></i>
                         <span class="sidebarLinkNames">Aufgabe 2</span>
@@ -99,7 +110,7 @@
                     <!--                    <span class="sidebarTooltips">Aufgabe 2</span>-->
                 </li>
                 <li>
-                    <a href="#!" onclick="openPage('woche02/a02.03flex.html')">
+                    <a href="#!" onclick="openPage('woche02/a02.03flex.html', '')">
                         <i class="fa-solid fa-a"></i>
                         <i class="fa-solid fa-3"></i>
                         <span class="sidebarLinkNames">Aufgabe 3</span>
@@ -107,7 +118,7 @@
                     <!--                    <span class="sidebarTooltips">Aufgabe 3</span>-->
                 </li>
                 <li>
-                    <a href="#!" onclick="openPage('woche02/a02.03grid.html')">
+                    <a href="#!" onclick="openPage('woche02/a02.03grid.html', '')">
                         <i class="fa-solid fa-a"></i>
                         <i class="fa-solid fa-3"></i>
                         <span class="sidebarLinkNames">Aufgabe 3</span>
@@ -115,7 +126,7 @@
                     <!--                    <span class="sidebarTooltips">Aufgabe 3</span>-->
                 </li>
                 <li>
-                    <a href="#!" onclick="openPage('woche02/a02.04.html')">
+                    <a href="#!" onclick="openPage('woche02/a02.04.html', '')">
                         <i class="fa-solid fa-a"></i>
                         <i class="fa-solid fa-4"></i>
                         <span class="sidebarLinkNames">Aufgabe 4</span>
@@ -133,7 +144,7 @@
             </label>
             <div class="accordion-content">
                 <li>
-                    <a href="#!" onclick="openPage('woche03/a03.01.html')">
+                    <a href="#!" onclick="openPage('woche03/a03.01.html', 'Funktionen in JavaScript')">
                         <i class="fa-solid fa-a"></i>
                         <i class="fa-solid fa-1"></i>
                         <span class="sidebarLinkNames">Aufgabe 1: Funktionen in JavaScript</span>
@@ -141,7 +152,8 @@
                     <!--                    <span class="sidebarTooltips">Aufgabe 1</span>-->
                 </li>
                 <li>
-                    <a href="#!" onclick="openPage('woche03/a03.02.html')">
+                    <a href="#!"
+                       onclick="openPage('woche03/a03.02.html', 'Advanced Functional JavaScript Programming')">
                         <i class="fa-solid fa-a"></i>
                         <i class="fa-solid fa-2"></i>
                         <span class="sidebarLinkNames">Aufgabe 2: Advanced Functional JavaScript Programming</span>
@@ -159,7 +171,7 @@
             </label>
             <div class="accordion-content">
                 <li>
-                    <a href="#!" onclick="openPage('woche04/a04.01.html')">
+                    <a href="#!" onclick="openPage('woche04/a04.01.html', 'Einkaufsliste')">
                         <i class="fa-solid fa-a"></i>
                         <i class="fa-solid fa-1"></i>
                         <span class="sidebarLinkNames">Aufgabe 1: Einkaufsliste</span>
@@ -167,7 +179,7 @@
                     <!--                    <span class="sidebarTooltips">Aufgabe 1</span>-->
                 </li>
                 <li>
-                    <a href="#!" onclick="openPage('woche04/a04.02.html')">
+                    <a href="#!" onclick="openPage('woche04/a04.02.html', 'Rednerliste mit Zeitmessung')">
                         <i class="fa-solid fa-a"></i>
                         <i class="fa-solid fa-2"></i>
                         <span class="sidebarLinkNames">Aufgabe 2: Rednerliste mit Zeitmessung</span>
@@ -175,7 +187,8 @@
                     <!--                    <span class="sidebarTooltips">Aufgabe 2</span>-->
                 </li>
                 <li>
-                    <a href="#!" onclick="openPage('woche04/a04.03.html')">
+                    <a href="#!"
+                       onclick="openPage('woche04/a04.03.html', 'Tabellenkalkulation mit den Bordmitteln des Webs')">
                         <i class="fa-solid fa-a"></i>
                         <i class="fa-solid fa-3"></i>
                         <span class="sidebarLinkNames">Aufgabe 3: Tabellenkalkulation mit den Bordmitteln des Webs</span>
@@ -183,7 +196,7 @@
                     <!--                    <span class="sidebarTooltips">Aufgabe 3</span>-->
                 </li>
                 <li>
-                    <a href="#!" onclick="openPage('woche04/a04.04.html')">
+                    <a href="#!" onclick="openPage('woche04/a04.04.html', 'HTML-Editor')">
                         <i class="fa-solid fa-a"></i>
                         <i class="fa-solid fa-4"></i>
                         <span class="sidebarLinkNames">Aufgabe 4: HTML-Editor</span>
@@ -201,7 +214,7 @@
             </label>
             <div class="accordion-content">
                 <li>
-                    <a href="#!" onclick="openPage('woche05/a05.01.html')">
+                    <a href="#!" onclick="openPage('woche05/a05.01.html', 'Promises')">
                         <i class="fa-solid fa-a"></i>
                         <i class="fa-solid fa-1"></i>
                         <span class="sidebarLinkNames">Aufgabe 1: Promises</span>
@@ -209,7 +222,7 @@
                     <!--                    <span class="sidebarTooltips">Aufgabe 1</span>-->
                 </li>
                 <li>
-                    <a href="#!" onclick="openPage('woche05/a05.02.html')">
+                    <a href="#!" onclick="openPage('woche05/a05.02.html', 'async / await')">
                         <i class="fa-solid fa-a"></i>
                         <i class="fa-solid fa-2"></i>
                         <span class="sidebarLinkNames">Aufgabe 2: async / await</span>
@@ -217,7 +230,7 @@
                     <!--                    <span class="sidebarTooltips">Aufgabe 2</span>-->
                 </li>
                 <li>
-                    <a href="#!" onclick="openPage('woche05/a05.03.html')">
+                    <a href="#!" onclick="openPage('woche05/a05.03.html', 'Web Worker')">
                         <i class="fa-solid fa-a"></i>
                         <i class="fa-solid fa-3"></i>
                         <span class="sidebarLinkNames">Aufgabe 3: Web Worker</span>
@@ -225,7 +238,7 @@
                     <!--                    <span class="sidebarTooltips">Aufgabe 3</span>-->
                 </li>
                 <li>
-                    <a href="#!" onclick="openPage('woche05/a05.04.html')">
+                    <a href="#!" onclick="openPage('woche05/a05.04.html', 'WWW-Navigator')">
                         <i class="fa-solid fa-a"></i>
                         <i class="fa-solid fa-4"></i>
                         <span class="sidebarLinkNames">Aufgabe 4: WWW-Navigator</span>
@@ -243,7 +256,7 @@
             </label>
             <div class="accordion-content">
                 <li>
-                    <a href="#!" onclick="openPage('woche06/a06.01.html')">
+                    <a href="#!" onclick="openPage('woche06/a06.01.html', 'Statistik-Balkendiagramm in SVG')">
                         <i class="fa-solid fa-a"></i>
                         <i class="fa-solid fa-1"></i>
                         <span class="sidebarLinkNames">Aufgabe 1: Statistik-Balkendiagramm in SVG</span>
@@ -251,7 +264,7 @@
                     <!--                    <span class="sidebarTooltips">Aufgabe 1</span>-->
                 </li>
                 <li>
-                    <a href="#!" onclick="openPage('woche06/a06.02.html')">
+                    <a href="#!" onclick="openPage('woche06/a06.02.html', 'SVG Bezier-Animation')">
                         <i class="fa-solid fa-a"></i>
                         <i class="fa-solid fa-2"></i>
                         <span class="sidebarLinkNames">Aufgabe 2: SVG Bezier-Animation</span>
@@ -259,10 +272,45 @@
                     <!--                    <span class="sidebarTooltips">Aufgabe 2</span>-->
                 </li>
                 <li>
-                    <a href="#!" onclick="openPage('woche06/a06.03.html')">
+                    <a href="#!" onclick="openPage('woche06/a06.03.html', 'Kalligrafie-Editor in SVG')">
                         <i class="fa-solid fa-a"></i>
                         <i class="fa-solid fa-3"></i>
-                        <span class="sidebarLinkNames">Aufgabe 3: Kalligraphie-Editor in SVG</span>
+                        <span class="sidebarLinkNames">Aufgabe 3: Kalligrafie-Editor in SVG</span>
+                    </a>
+                    <!--                    <span class="sidebarTooltips">Aufgabe 3</span>-->
+                </li>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <input class="accordionHead" id="check7" name="radio-a" type="radio">
+            <label class="accordion-label" for="check7">
+                <i class="fa-solid fa-w"></i>
+                <i class="fa-solid fa-7"></i>
+                <span class="sidebarLinkNames head">Woche 7: Node & npm & Deno</span>
+            </label>
+            <div class="accordion-content">
+                <li>
+                    <a href="#!" onclick="openPage('woche07/currentlyNotAvailable.html', 'File Generatoren')">
+                        <i class="fa-solid fa-a"></i>
+                        <i class="fa-solid fa-1"></i>
+                        <span class="sidebarLinkNames">Aufgabe 1: File Generatoren</span>
+                    </a>
+                    <!--                    <span class="sidebarTooltips">Aufgabe 1</span>-->
+                </li>
+                <li>
+                    <a href="#!" onclick="openPage('woche07/currentlyNotAvailable.html', 'Performance Merge')">
+                        <i class="fa-solid fa-a"></i>
+                        <i class="fa-solid fa-2"></i>
+                        <span class="sidebarLinkNames">Aufgabe 2: Performance Merge</span>
+                    </a>
+                    <!--                    <span class="sidebarTooltips">Aufgabe 2</span>-->
+                </li>
+                <li>
+                    <a href="#!" onclick="openPage('woche07/currentlyNotAvailable.html', 'Express.js Server')">
+                        <i class="fa-solid fa-a"></i>
+                        <i class="fa-solid fa-3"></i>
+                        <span class="sidebarLinkNames">Aufgabe 3: Express.js Server</span>
                     </a>
                     <!--                    <span class="sidebarTooltips">Aufgabe 3</span>-->
                 </li>
@@ -275,18 +323,24 @@
 </div>
 
 <script>
-    let menuButton = document.querySelector("#menuButton");
+    let menuButton = document.querySelector("#menuButton")
+    let topBar = document.querySelector("#topBar")
+    let topBarText = document.querySelector("#topBarExerciseName")
     let sidebar = document.querySelector(".sidebar");
     let searchButton = document.querySelector(".fa-magnifying-glass");
 
-    menuButton.onclick = function () {
-        //sidebar.classList.toggle("active")
-    }
+    menuButton.addEventListener('click', () => {
+        menuButton.classList.toggle('active')
+        topBar.classList.toggle('active')
+        sidebar.classList.toggle("active")
+    })
+
     searchButton.onclick = function () {
         //sidebar.classList.toggle("active")
     }
 
-    function openPage(newPage) {
+    function openPage(newPage, title) {
+        topBarText.innerHTML = title
         document.getElementById('mainContentFrame').src = newPage;
     }
 </script>
