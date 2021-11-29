@@ -1,4 +1,4 @@
-import {css, html, LitElement} from 'https://mkaul.github.io/lit/lib/lit.js';
+import {css, html, LitElement} from "lit";
 
 let timer, currentPerson
 
