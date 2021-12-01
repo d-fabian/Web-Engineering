@@ -20,14 +20,15 @@
   "homepage": "https://github.com/d-fabian/Web-Engineering#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "file-saver": "^2.0.5"
+    "file-saver": "^2.0.5",
+    "lit": "^2.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
-    "@storybook/addon-actions": "^6.3.12",
-    "@storybook/addon-essentials": "^6.3.12",
-    "@storybook/addon-links": "^6.3.12",
-    "@storybook/html": "^6.3.12",
+    "@storybook/addon-actions": "^6.4.0",
+    "@storybook/addon-essentials": "^6.4.0",
+    "@storybook/addon-links": "^6.4.0",
+    "@storybook/html": "^6.4.0",
     "babel-loader": "^8.2.3",
     "chromatic": "^6.0.6"
   }
