@@ -19,12 +19,20 @@ export class MenuKomponente extends LitElement {
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
+    }
+    .vertical #headerNavBar, .vertical #headerSubNavBar {
+        flex-direction: column;
+    }
+    .vertical.container {
+        flex-direction: row;
+        justify-content: space-around;
     }`
 
     constructor() {
         super();
 
         (async () => {
+            this.vertical = !!this.attributes.vertical
             this.headerNavBar = document.createElement('div')
             this.headerNavBar.id = 'headerNavBar'
 
@@ -53,12 +61,13 @@ export class MenuKomponente extends LitElement {
         return {
             headerNavBar: {type: String},
             headerSubNavBar: {type: String},
+            vertical: {type: Boolean},
         }
     }
 
     render() {
         return html`
-            <div class="container" id="container">
+            <div class="container ${this.vertical ? 'vertical' : ''}" id="container">
                 ${this.headerNavBar}
                 ${this.headerSubNavBar}
             </div>`
