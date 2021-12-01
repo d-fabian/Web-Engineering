@@ -295,8 +295,7 @@ input:checked ~ .accordion-content {
 }
 .mainContent {
     position: absolute;
-    /*height: 100%;*/
-    height: 100vh;
+    height: calc(100vh - 61px);
     width: 100%;
     top: 61px;
     left: 0px;
@@ -306,6 +305,7 @@ input:checked ~ .accordion-content {
     top: 0;
     left: 240px;
     width: calc(100% - 240px);
+    height: 100vh;
 }
 .mainContent .text {
     font-size: 25px;
