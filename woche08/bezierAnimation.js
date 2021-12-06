@@ -13,7 +13,7 @@ export class BezierAnimation extends LitElement {
     }
     svg {
         width: 100%;
-        height: calc(100vh - 40px);
+        height: calc(100vh - 40px - 37px - 22px);
     }`
 
     constructor() {

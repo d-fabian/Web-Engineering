@@ -80,7 +80,7 @@ export class KalligraphieEditor extends LitElement {
     render() {
         return html`
             <div class="container">
-                <h1>SVG-Kalligraphie</h1>
+                <h1>SVG-Kalligrafie</h1>
                 <div class="buttons">
                     ${this.resetBtn}
                     ${this.replayBtn}

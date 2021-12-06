@@ -100,6 +100,8 @@ export class Tabellenkalkulation extends LitElement {
         const numberOne = parseInt(fieldOne.textContent)
         const numberTwo = parseInt(fieldTwo.textContent)
 
+        fieldResultTemp = this.textContent
+
         if (!(numberOne) || !(numberTwo)) {
             fieldResultTemp = this.textContent
             this.textContent = 'Error'
