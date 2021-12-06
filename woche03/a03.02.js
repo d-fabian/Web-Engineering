@@ -83,15 +83,3 @@ function store(x) {
 // 3.2.14
 // 3.2.15
 // 3.2.16
-
-
-let hypa = [Math.sqrt, [add, [mul, 3, 3], [mul, 4, 4]]];
-var fib = fibonaccif(0, 1);
-fib();
-fib();
-fib();
-fib();
-fib();
-fib();
-fib();
-fib();
