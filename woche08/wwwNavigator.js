@@ -1,43 +1,65 @@
 import {css, html, LitElement} from 'https://mkaul.github.io/lit/lib/lit.js';
+import './menuKomponente.js'
 
 let contentAsJSON
 
-export class MenuKomponente extends LitElement {
+export class WwwNavigator extends LitElement {
     static styles = css`
     * {
         padding: 0;
         margin: 0;
+        color: white;
+    }
+    .header {
+        margin: 20px;
+        text-align: center;
+        font-size: 25pt;
     }
     .container {
+        height: calc(100vh - 40px);
         margin: 20px;
         display: flex;
         flex-direction: column;
         gap: 20px;
+        background: #00698b;
+        border-radius: 8px;
     }
     #headerNavBar, #headerSubNavBar {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
+        font-size: 25px;
     }
-    .vertical #headerNavBar, .vertical #headerSubNavBar {
-        flex-direction: column;
+    #content {
+        margin: 20px;
+        flex-grow: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 25px;
     }
-    .vertical.container {
-        flex-direction: row;
-        justify-content: space-around;
+    #references {
+        margin: 20px;
+        text-align: center;
+        font-size: 25px;
     }`
 
     constructor() {
         super();
 
         (async () => {
-            this.vertical = !!this.attributes.vertical
             this.headerNavBar = document.createElement('div')
             this.headerNavBar.id = 'headerNavBar'
 
             this.headerSubNavBar = document.createElement('div')
             this.headerSubNavBar.id = 'headerSubNavBar'
+
+            this.content = document.createElement('div')
+            this.content.id = 'content'
+
+            this.references = document.createElement('a')
+            this.references.id = 'references'
 
             const content = await fetch('wwwNavigatorContent.json')
             contentAsJSON = await content.json()
@@ -61,15 +83,21 @@ export class MenuKomponente extends LitElement {
         return {
             headerNavBar: {type: String},
             headerSubNavBar: {type: String},
-            vertical: {type: Boolean},
+            content: {type: String},
+            references: {type: String},
         }
     }
 
     render() {
         return html`
-            <div class="container ${this.vertical ? 'vertical' : ''}" id="container">
+            <div class="container" id="container">
+                <div class="header">
+                    <h1>WWW-Navigator</h1>
+                </div>
                 ${this.headerNavBar}
                 ${this.headerSubNavBar}
+                ${this.content}
+                ${this.references}
             </div>`
     }
 
@@ -84,9 +112,17 @@ export class MenuKomponente extends LitElement {
             btn.style.fontStyle = '15pt'
             btn.style.borderRadius = '8px'
             btn.style.padding = '5px 20px'
+            btn.addEventListener('click', () => this._showText(topic, subTopic))
             this.headerSubNavBar.appendChild(btn)
         })
     }
+
+    _showText(topic, subTopic) {
+        const content = contentAsJSON[topic][subTopic]
+        this.content.textContent = content.content
+        this.references.innerHTML = `<a href="${content.references}" target="_blank">${content.references}</a>`
+    }
+
 }
 
-customElements.define('menu-komponente', MenuKomponente)
+customElements.define('www-navigator', WwwNavigator)

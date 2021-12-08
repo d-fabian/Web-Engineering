@@ -1,4 +1,4 @@
-import '../woche08/rednerliste.js'
+import './rednerliste'
 
 export default {
     title: 'Komponenten/Rednerliste',

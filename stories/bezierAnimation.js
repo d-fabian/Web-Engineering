@@ -1,4 +1,4 @@
-import {css, LitElement, svg} from 'https://mkaul.github.io/lit/lib/lit.js';
+import {css, LitElement, svg} from 'lit'
 
 let isMouseDown = false
 
