@@ -24,7 +24,9 @@
     "@fortawesome/vue-fontawesome": "^2.0.6",
     "express": "^4.17.1",
     "file-saver": "^2.0.5",
-    "lit": "^2.0.2"
+    "lit": "^2.0.2",
+    "core-js": "^3.6.5",
+    "vue": "^2.6.11"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
@@ -33,6 +35,13 @@
     "@storybook/addon-links": "^6.4.9",
     "@storybook/vue": "^6.4.9",
     "babel-loader": "^8.2.3",
-    "chromatic": "^6.0.6"
+    "chromatic": "^6.0.6",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "vue-template-compiler": "^2.6.11"
   }
 }
