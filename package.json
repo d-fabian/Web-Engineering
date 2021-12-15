@@ -19,16 +19,19 @@
   },
   "homepage": "https://github.com/d-fabian/Web-Engineering#readme",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/vue-fontawesome": "^2.0.6",
     "express": "^4.17.1",
     "file-saver": "^2.0.5",
     "lit": "^2.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
-    "@storybook/addon-actions": "^6.4.8",
-    "@storybook/addon-essentials": "^6.4.8",
-    "@storybook/addon-links": "^6.4.8",
-    "@storybook/html": "^6.4.8",
+    "@storybook/addon-actions": "^6.4.9",
+    "@storybook/addon-essentials": "^6.4.9",
+    "@storybook/addon-links": "^6.4.9",
+    "@storybook/vue": "^6.4.9",
     "babel-loader": "^8.2.3",
     "chromatic": "^6.0.6"
   }
