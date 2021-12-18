@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #wrapper {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #containerJS, #containerWA {
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #resultDivJS, #resultDivWA {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <div id="containerJS">
+        <h1>Primzahlen mit JavaScript</h1>
+        <div>Anzahl der Durchläufe zum Berechnen von Primzahlen (jeweils von 2 bis 100.000)</div>
+        <input type="number" placeholder="Zahl eingeben" id="numberFieldJS">
+        <input type="button" value="Berechnen" id="computeButtonJS" disabled>
+        <div id="resultDivJS"></div>
+    </div>
+    <div id="containerWA">
+        <h1>Primzahlen mit WebAssembly</h1>
+        <div>Anzahl der Durchläufe zum Berechnen von Primzahlen (jeweils von 2 bis 100.000)</div>
+        <input type="number" placeholder="Zahl eingeben" id="numberFieldWA">
+        <input type="button" value="Berechnen" id="computeButtonWA" disabled>
+        <div id="resultDivWA"></div>
+    </div>
+</div>
+</body>
+
+<script type="module">
+    // JavaScript Part
+    import {isPrimeNumber} from './prim.js'
+
+    const numberFieldJS = document.getElementById('numberFieldJS')
+    const computeButtonJS = document.getElementById('computeButtonJS')
+    const resultDivJS = document.getElementById('resultDivJS')
+    numberFieldJS.addEventListener('input', () => hasNumber('JS'))
+    computeButtonJS.addEventListener('click', computeJS)
+
+    function computeJS() {
+        const n = numberFieldJS.value
+        const times = []
+        // do the performance test n times
+        for (let i = 1; i <= n; i++) {
+            const startTime = performance.now()
+            for (let j = 2; j <= 100000; j++) {
+                isPrimeNumber(j)
+            }
+            const endTime = performance.now()
+            times.push((endTime - startTime))
+        }
+
+        resultDivJS.innerHTML = ''
+        const gesTime = document.createElement('div')
+        const minTime = document.createElement('div')
+        const maxTime = document.createElement('div')
+        const avgTime = document.createElement('div')
+        gesTime.innerText = `Gesamte Zeit für ${n} Durchläufe: ${times.reduce((a, b) => a + b, 0).toFixed(2)}ms`
+        minTime.innerText = `Minimum: ${Math.min(...times).toFixed(2)}ms`
+        maxTime.innerText = `Maximum: ${Math.max(...times).toFixed(2)}ms`
+        avgTime.innerText = `Durchschnitt: ${(times.reduce((a, b) => a + b, 0) / times.length).toFixed(2)}ms`
+        resultDivJS.append(gesTime, minTime, maxTime, avgTime)
+    }
+
+    // WebAssembly Part
+    const numberFieldWA = document.getElementById('numberFieldWA')
+    const computeButtonWA = document.getElementById('computeButtonWA')
+    const resultDivWA = document.getElementById('resultDivWA')
+    numberFieldWA.addEventListener('input', () => hasNumber('WA'))
+    computeButtonWA.addEventListener('click', computeWA)
+
+    async function computeWA() {
+        const response = await fetch('prim.wasm')
+        const buffer = await response.arrayBuffer()
+        const wasm = await WebAssembly.instantiate(buffer)
+        const isPrime = wasm.instance.exports.isPrime
+
+        const n = numberFieldWA.value
+        const times = []
+        // do the performance test n times
+        for (let i = 1; i <= n; i++) {
+            const startTime = performance.now()
+            for (let j = 2; j <= 100000; j++) {
+                isPrime(j)
+            }
+            const endTime = performance.now()
+            times.push((endTime - startTime))
+        }
+
+        resultDivWA.innerHTML = ''
+        const gesTime = document.createElement('div')
+        const minTime = document.createElement('div')
+        const maxTime = document.createElement('div')
+        const avgTime = document.createElement('div')
+        gesTime.innerText = `Gesamte Zeit für ${n} Durchläufe: ${times.reduce((a, b) => a + b, 0).toFixed(2)}ms`
+        minTime.innerText = `Minimum: ${Math.min(...times).toFixed(2)}ms`
+        maxTime.innerText = `Maximum: ${Math.max(...times).toFixed(2)}ms`
+        avgTime.innerText = `Durchschnitt: ${(times.reduce((a, b) => a + b, 0) / times.length).toFixed(2)}ms`
+        resultDivWA.append(gesTime, minTime, maxTime, avgTime)
+    }
+
+    // Methods
+    function hasNumber(type) {
+        if (type === 'JS') {
+            if (numberFieldJS.value) {
+                computeButtonJS.disabled = false
+            } else {
+                computeButtonJS.disabled = true
+            }
+        } else {
+            if (numberFieldWA.value) {
+                computeButtonWA.disabled = false
+            } else {
+                computeButtonWA.disabled = true
+            }
+        }
+    }
+</script>
+</html>
