@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Bald verfügbar"/>
+    <HelloWorld msg="Bald wieder verfügbar!"/>
   </div>
 </template>
 
