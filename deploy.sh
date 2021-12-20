@@ -2,8 +2,15 @@
 
 npm run build
 
-git add dist -f
+cd dist
+
+git init
+
+git add -A
 
 git commit -m 'new Deployment'
 
-git subtree push --prefix dist origin gh-pages
+git push -f https://github.com/d-fabian/Web-Engineering.git master:gh-pages
+
+cd -
+
