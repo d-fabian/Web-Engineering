@@ -4,7 +4,10 @@
 name: 'Chromatic'
 
 # Event for the workflow
-on: push
+on:
+  push:
+    branches:
+      - main
 
 
 jobs:
@@ -13,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     # Job steps
     steps:
-        # 👇 Version 2 of the action
+      # 👇 Version 2 of the action
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
