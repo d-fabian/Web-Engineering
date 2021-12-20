@@ -5,6 +5,7 @@
 </template>
 <script>
 export default {
+  // eslint-disable-next-line
   name: 'About',
   title: 'Web Engineering WS21/22 - About'
 }

@@ -10,6 +10,7 @@
 import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
+  // eslint-disable-next-line
   name: 'Home',
   title: 'Web Engineering WS21/22 - Home',
   components: {
