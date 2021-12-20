@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-npm run build
+vue-cli-service build
 
 git add dist -f
 
