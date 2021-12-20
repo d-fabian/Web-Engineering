@@ -1,32 +1,29 @@
 {
   "name": "web-engineering",
   "version": "1.0.0",
+  "private": true,
   "description": "Repository für den Masterkurs Web Engineering an der HBRS",
-  "main": "a07.03.js",
+  "author": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "deploy": "sh deploy.sh"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/d-fabian/Web-Engineering.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/d-fabian/Web-Engineering/issues"
-  },
-  "homepage": "https://github.com/d-fabian/Web-Engineering#readme",
+  "main": "src/main.js",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/vue-fontawesome": "^2.0.6",
+    "core-js": "^3.6.5",
     "express": "^4.17.1",
     "file-saver": "^2.0.5",
     "lit": "^2.0.2",
-    "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vue-router": "^3.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
@@ -34,14 +31,45 @@
     "@storybook/addon-essentials": "^6.4.9",
     "@storybook/addon-links": "^6.4.9",
     "@storybook/vue": "^6.4.9",
-    "babel-loader": "^8.2.3",
-    "chromatic": "^6.0.6",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.3",
+    "chromatic": "^6.0.6",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
     "vue-template-compiler": "^2.6.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "_id": "web-engineering@1.0.0",
+  "bugs": {
+    "url": "https://github.com/d-fabian/Web-Engineering/issues"
+  },
+  "homepage": "https://github.com/d-fabian/Web-Engineering#readme",
+  "license": "ISC",
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/d-fabian/Web-Engineering.git"
   }
 }
