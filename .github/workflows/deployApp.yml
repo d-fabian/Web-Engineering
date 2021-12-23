@@ -35,15 +35,16 @@ jobs:
         cd dist
         git config --global init.defaultBranch main
         git init
+        git branch -m gh-pages
         git add -A
         git commit -m 'new Deployment'
-        git status
-        git push -f https://github.com/d-fabian/Web-Engineering.git master:gh-pages
         
-    #- name: Push changes
-      #uses: ad-m/github-push-action@master
-      #with:
-        #github_token: ${{ secrets.GITHUB_TOKEN }}
-        #branch: gh-pages
-        #force: true
+        
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: gh-pages
+        force: true
+        directory: dist
     
