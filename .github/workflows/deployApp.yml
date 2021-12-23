@@ -36,7 +36,10 @@ jobs:
         git init
         git add -A
         git commit -m 'new Deployment'
+        git config --global init.defaultBranch main
+        git branch -m gh-pages
         git status
+        echo git status
         
     #- name: Push changes
       #uses: ad-m/github-push-action@master
