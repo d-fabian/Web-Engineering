@@ -19,7 +19,8 @@ jobs:
    #   run: npm install @vue/cli
       
     - name: Set git name and email
-      run: echo "$USER_NAME"
+      run: | 
+        echo "$USER_NAME"
       
    # - name: Execute shell script
   #    run: sh ./deploy.sh
