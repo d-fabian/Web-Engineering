@@ -66,6 +66,7 @@
   top: 0;
   left: calc(350px + 28px);
   width: calc(100vw - (350px + 28px));
+  height: 100vh;
 }
 
 </style>
