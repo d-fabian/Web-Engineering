@@ -23,6 +23,7 @@ jobs:
       run: |
         git config --global user.name ${{ secrets.USER_NAME }}
         git config --global user.email ${{ secrets.USER_EMAIL }}
+        git remote add origin https://d-fabian:${{ secrets.USER_PW }}@github.com/d-fabian/Web-Engineering.git
       
     - name: Execute shell script
       run: sh ./deploy.sh
