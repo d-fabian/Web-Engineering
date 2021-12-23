@@ -10,8 +10,7 @@
     "build-storybook": "build-storybook",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "deploy": "sh deploy.sh"
+    "lint": "vue-cli-service lint"
   },
   "main": "src/main.js",
   "dependencies": {
