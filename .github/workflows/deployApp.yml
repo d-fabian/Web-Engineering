@@ -1,0 +1,20 @@
+# This workflow will do a new deploy of the vue app to gh pages
+
+name: Deploy Vue App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      
+    - name: Execute shell script
+      run: sh ./deploy.sh
+    
