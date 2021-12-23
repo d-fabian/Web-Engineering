@@ -19,7 +19,7 @@ jobs:
       run: npm install @vue/cli
       
     - name: Set git name and email
-      run: |
+      run:
         echo '$USER_NAME $USER_EMAIL'
         echo $USER_NAME
         echo $USER_EMAIL
