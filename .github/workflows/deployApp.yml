@@ -15,15 +15,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: Install vue-cli
-      run: npm install @vue/cli
+    #- name: Install vue-cli
+   #   run: npm install @vue/cli
       
     - name: Set git name and email
-      run:
-        echo '$USER_NAME $USER_EMAIL'
-        echo $USER_NAME
-        echo $USER_EMAIL
+      run: echo ${{ secrets.USER_NAME }}
       
-    - name: Execute shell script
-      run: sh ./deploy.sh
+   # - name: Execute shell script
+  #    run: sh ./deploy.sh
     
