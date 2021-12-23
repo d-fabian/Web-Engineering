@@ -30,8 +30,17 @@ jobs:
     - name: Build for production
       run: npm run build
       
-    - name: Push changes
+    - name: Commit changes
       run: |
         cd dist
-        ls -a
+        git init
+        git add -A
+        git commit -m 'new Deployment'
+        
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: gh-pages
+        force: true
     
