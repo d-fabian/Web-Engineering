@@ -12,6 +12,7 @@ git add -A
 
 git commit -m 'new Deployment'
 
-git push -f https://github.com/d-fabian/Web-Engineering.git master:gh-pages
+git push git@github.com:d-fabian/Web-Engineering.git
+#git push -f https://github.com/d-fabian/Web-Engineering.git master:gh-pages
 
 cd -
