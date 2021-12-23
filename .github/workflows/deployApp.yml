@@ -33,13 +33,15 @@ jobs:
     - name: Commit changes 
       run: |
         cd dist
+        git init
         git add -A
         git commit -m 'new Deployment'
+        git status
         
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: gh-pages
-        force: true
+    #- name: Push changes
+      #uses: ad-m/github-push-action@master
+      #with:
+        #github_token: ${{ secrets.GITHUB_TOKEN }}
+        #branch: gh-pages
+        #force: true
     
