@@ -1,15 +1,50 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link>
-      |
-      <router-link to="/about">About</router-link>
+    <topbar/>
+    <menu-button/>
+    <navbar
+        :weeks="['Woche 1: Einführung', 'Woche 2: Responsives Web', 'Woche 3: JavaScript', 'Woche 4: DOM',
+        'Woche 5: Asynchron', 'Woche 6: SVG', 'Woche 7: Node & npm & Deno', 'Woche 8: Modular Web',
+        'Woche 9: Progressive Web Apps', 'Woche 10: Vue', 'Woche 11: WebAssembly', 'Woche 12: Security'] "
+        :week-contents="[
+            ['Bald verfügbar'],
+            ['Bald verfügbar'],
+            ['Bald verfügbar'],
+            ['Bald verfügbar'],
+            ['Bald verfügbar'],
+            ['Bald verfügbar'],
+            ['Bald verfügbar'],
+            ['Bald verfügbar'],
+            ['Bald verfügbar'],
+            ['Bald verfügbar'],
+            ['Bald verfügbar'],
+            ['Bald verfügbar']]"
+        :week-route-links="[
+            ['/'],
+            ['/'],
+            ['/'],
+            ['/'],
+            ['/'],
+            ['/'],
+            ['/'],
+            ['/'],
+            ['/'],
+            ['/'],
+            ['/'],
+            ['/']]"
+    ></navbar>
+    <div id="routerViewDiv">
+      <router-view/>
     </div>
-    <router-view/>
   </div>
 </template>
 
 <style>
+* {
+  padding: 0;
+  margin: 0;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -18,16 +53,29 @@
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
+#routerViewDiv {
+  position: absolute;
+  left: 0;
+  top: 61px;
+  width: 100%;
+  height: calc(100vh - 61px);
+  transition: all .5s linear;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+#navbar-wrapper.active ~ #routerViewDiv {
+  top: 0;
+  left: calc(350px + 28px);
+  width: calc(100vw - (350px + 28px));
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
+
+<script>
+import Navbar from "@/components/Navbar";
+import Topbar from "@/components/Topbar";
+import MenuButton from "@/components/MenuButton";
+
+export default {
+  components: {MenuButton, Topbar, Navbar}
+}
+</script>
