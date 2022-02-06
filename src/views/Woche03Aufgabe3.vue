@@ -1,7 +1,7 @@
 <template>
-  <exercise-solution>
+  <exercise-solution class="active">
     <template v-slot:exercise>
-      Mit welchem HTML- und CSS-Code kann man diesen Wireframe möglichst exakt nachbilden?
+      Mit welchem HTML- und CSS-Code kann man <a href="https://kaul.inf.h-brs.de/wem/assets/img/tribute.png" target="_blank">diesen</a> Wireframe möglichst exakt nachbilden?
       Schreiben Sie Ihren CSS-Code direkt in die HTML-Datei. Für das Bild dürfen Sie die URL
       <a href="https://kaul.inf.h-brs.de/wem/assets/img/tribute-img.png" target="_blank">/wem/assets/img/tribute-img.png</a> verwenden.
     </template>
@@ -49,10 +49,10 @@ p {
 
 img {
   display: block;
-  width: calc(100vw - 418px);
+  max-width: calc(100vw - 40px);
   transition: .5s linear;
 }
 .active img {
-  width: calc(100vw - 40px);
+  max-width: calc(100vw - 418px);
 }
 </style>

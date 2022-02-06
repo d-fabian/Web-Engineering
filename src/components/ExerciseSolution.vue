@@ -19,7 +19,7 @@ export default {
 
 <style scoped>
 #exercise-solution {
-  height: calc(100vh - 40px);
+  height: calc(100vh - 101px);
   margin: 20px 10px;
   display: flex;
   flex-direction: column;
@@ -29,7 +29,7 @@ export default {
   transition: .5s linear;
 }
 #exercise-solution.active {
-  height: calc(100vh - 101px);
+  height: calc(100vh - 40px);
 }
 
 </style>
