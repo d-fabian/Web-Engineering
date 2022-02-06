@@ -21,7 +21,7 @@
 import ExerciseSolution from "@/components/ExerciseSolution";
 
 export default {
-  name: "Woche03Aufgabe3",
+  name: "Woche01Aufgabe3",
   title: 'Web Engineering WS21/22 - Woche 1.3',
   components: {
     ExerciseSolution
