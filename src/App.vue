@@ -7,7 +7,7 @@
         'Woche 5: Asynchron', 'Woche 6: SVG', 'Woche 7: Node & npm & Deno', 'Woche 8: Modular Web',
         'Woche 9: Progressive Web Apps', 'Woche 10: Vue', 'Woche 11: WebAssembly', 'Woche 12: Security'] "
         :week-contents="[
-            ['Aufgabe 1: Fachliche Argumentation über Erfolgsprinzipien des WWW','Aufgabe 2: HTTP','Aufgabe 3: Wireframe with HTML and CSS (Tribute Page)', 'Aufgabe 4: Wireframe with HTML and CSS (Survey Form)', 'Aufgabe 5'],
+            ['Aufgabe 1: Fachliche Argumentation über Erfolgsprinzipien des WWW','Aufgabe 2: HTTP','Aufgabe 3: Wireframe with HTML and CSS (Tribute Page)', 'Aufgabe 4: Wireframe with HTML and CSS (Survey Form)', 'Aufgabe 5: Wireframe with HTML and CSS (Product Landing Page)'],
             ['Aufgabe 1','Aufgabe 2', 'Aufgabe 3','Aufgabe 4'],
             ['Bald verfügbar'],
             ['Bald verfügbar'],
@@ -20,7 +20,7 @@
             ['Bald verfügbar'],
             ['Bald verfügbar']]"
         :week-route-links="[
-            ['/', '/', '/woche1aufgabe3', '/woche1aufgabe4', '/'],
+            ['/', '/', '/woche1aufgabe3', '/woche1aufgabe4', '/woche1aufgabe5'],
             ['/', '/', '/', '/'],
             ['/'],
             ['/'],

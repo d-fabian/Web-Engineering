@@ -31,6 +31,12 @@ const routes = [
     name: 'Woche 1 - Aufgabe 4',
     meta: 'Woche 1 - Aufgabe 4: Wireframe with HTML and CSS (Survey Form)',
     component: () => import('../views/Woche01Aufgabe4')
+  },
+  {
+    path: '/woche1aufgabe5',
+    name: 'Woche 1 - Aufgabe 5',
+    meta: 'Woche 1 - Aufgabe 5: Wireframe with HTML and CSS (Product Landing Page)',
+    component: () => import('../views/Woche01Aufgabe5')
   }
 ]
 
