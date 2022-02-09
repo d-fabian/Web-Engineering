@@ -20,7 +20,7 @@
             ['Bald verfügbar'],
             ['Bald verfügbar']]"
         :week-route-links="[
-            ['/woche1aufgabe1', '/', '/woche1aufgabe3', '/woche1aufgabe4', '/woche1aufgabe5'],
+            ['/woche1aufgabe1', '/woche1aufgabe2', '/woche1aufgabe3', '/woche1aufgabe4', '/woche1aufgabe5'],
             ['/', '/', '/', '/'],
             ['/'],
             ['/'],
