@@ -21,6 +21,12 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/About')
   },
   {
+    path: '/woche1aufgabe1',
+    name: 'Woche 1 - Aufgabe 1',
+    meta: 'Woche 1 - Aufgabe 1: Fachliche Argumentation über Erfolgsprinzipien des WWW',
+    component: () => import('../views/Woche01Aufgabe1')
+  },
+  {
     path: '/woche1aufgabe3',
     name: 'Woche 1 - Aufgabe 3',
     meta: 'Woche 1 - Aufgabe 3: Wireframe with HTML and CSS: Tribute Page',
