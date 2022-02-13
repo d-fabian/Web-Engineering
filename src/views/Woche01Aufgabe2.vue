@@ -11,7 +11,7 @@
           können Sie dagegen tun?
         </li>
         <li class="exerciseBulletPoints">In einer Webanwendung benötigen Sie eine OPTIONS-Anfrage, die die Optionen des
-          Servers vor dem eigentlichen Zugriff erfragen soll. Aus Performanzgründen soll die Abfrage jedoch cacheable
+          Servers vor dem eigentlichen Zugriff erfragen soll.<br>Aus Performanzgründen soll die Abfrage jedoch cacheable
           sein. Wie könnten Sie dafür eine Lösung angehen?
         </li>
       </ol>
@@ -20,7 +20,7 @@
       <ol>
         <li class="solutionTopBulletPoints"></li>
         <ul class="solutionBulletPoints">
-          <li>"alles in Ordnung"</li>
+          <li class="test">"alles in Ordnung"</li>
           <li>Anfrage erfolgreich verlaufen</li>
         </ul>
         <li class="solutionTopBulletPoints"></li>
@@ -40,7 +40,7 @@
         </ul>
         <li class="solutionTopBulletPoints"></li>
         <ul class="solutionBulletPoints lastPoint">
-          <li>über eine zusätzliche GET Anfrage oder auch nur eine HEAD Anfrage und die gewünschten Informationen dort
+          <li>über eine zusätzliche GET Anfrage oder auch nur eine HEAD Anfrage<br>und die gewünschten Informationen dort
             unterbringen
           </li>
         </ul>
@@ -63,7 +63,18 @@ export default {
 
 <style scoped>
 ol {
+  display: flex;
+  flex-direction: column;
   margin-left: 20px;
+}
+
+li {
+  text-align: left;
+  margin: 10px 0;
+}
+
+li::marker {
+  font-weight: bold;
 }
 
 .exerciseBulletPoints {
@@ -72,6 +83,7 @@ ol {
 
 .solutionTopBulletPoints {
   margin-top: 20px;
+  font-weight: bold;
 }
 
 .solutionBulletPoints {

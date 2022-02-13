@@ -13,8 +13,8 @@
       <ol>
         <li class="solutionTopBulletPoints"></li>
         <ul class="solutionBulletPoints">
-          <li>TBL hat die Wagheit des Konzepts nicht verstanden (er verwechselt es mit der Evolvierbarkeit)</li>
-          <li>Die Hypertext-Community hatte den Eindruck, dass sie schon mehr erreicht hatten als TBL (insbesondere
+          <li>TBL hat die Wagheit des Konzepts nicht verstanden<br>(er verwechselt es mit der Evolvierbarkeit)</li>
+          <li>Die Hypertext-Community hatte den Eindruck,<br>dass sie schon mehr erreicht hatten als TBL (insbesondere
             wegen 'broken Links')
           </li>
         </ul>
@@ -51,7 +51,18 @@ export default {
 
 <style scoped>
 ol {
+  display: flex;
+  flex-direction: column;
   margin-left: 20px;
+}
+
+li {
+  text-align: left;
+  margin: 10px 0;
+}
+
+li::marker {
+  font-weight: bold;
 }
 
 .exerciseBulletPoints {
@@ -60,6 +71,7 @@ ol {
 
 .solutionTopBulletPoints {
   margin-top: 20px;
+  font-weight: bold;
 }
 
 .solutionBulletPoints {
