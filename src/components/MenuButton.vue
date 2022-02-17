@@ -14,7 +14,8 @@ export default {
       document.getElementById('navbar-wrapper').classList.toggle('active')
       document.getElementById('menuButton').classList.toggle('active')
       document.getElementById('topBar').classList.toggle('active')
-      document.getElementById('exercise-solution').classList.toggle('active')
+      //document.getElementById('exercise-solution').classList.toggle('active')
+      document.getElementById('solution-with-overlay').classList.toggle('active')
     }
   }
 }

@@ -32,12 +32,14 @@ export default {
 .container {
   display: flex;
   flex-wrap: wrap;
-  width: calc(100vw - 20px);
+  width: 100%;
+  /*width: calc(100vw - 20px);*/
   transition: .5s linear;
 }
 
 .active .container {
-  width: calc(100vw - 378px - 40px);
+  width: 100%;
+  /*width: calc(100vw - 378px - 40px);*/
   height: 100vh;
 }
 

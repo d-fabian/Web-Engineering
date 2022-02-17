@@ -55,6 +55,12 @@ const routes = [
         name: 'Woche 2 - Aufgabe 1',
         meta: 'Woche 2 - Aufgabe 1: Responsiv mit Flexbox Desktop-First',
         component: () => import('../views/Woche02Aufgabe1')
+    },
+    {
+        path: '/woche2aufgabe2',
+        name: 'Woche 2 - Aufgabe 2',
+        meta: 'Woche 2 - Aufgabe 2: Responsiv mit Grid Mobile-First',
+        component: () => import('../views/Woche02Aufgabe2')
     }
 ]
 
