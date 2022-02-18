@@ -3,7 +3,7 @@ module.exports = {
         document.getElementById('solution-with-overlay').classList.toggle('open')
         document.getElementById('openOverlayButton').disabled = true
         const overlay = document.getElementById('overlay')
-        overlay.style.display = 'flex'
+        overlay.style.display = 'inline'
     },
 
     close() {

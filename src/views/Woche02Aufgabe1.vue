@@ -1,5 +1,5 @@
 <template>
-  <exercise-solution class="active">
+  <solution-with-overlay class="active">
     <template v-slot:exercise>
       Implementieren Sie ausschließlich mit HTML und CSS Flexbox <a
         href="https://kaul.inf.h-brs.de/wem/assets/img/holy-grail1.png" target="_blank">folgendes</a> responsive
@@ -13,17 +13,17 @@
         <div class="purple column"></div>
       </div>
     </template>
-  </exercise-solution>
+  </solution-with-overlay>
 </template>
 
 <script>
-import ExerciseSolution from "@/components/ExerciseSolution";
+import SolutionWithOverlay from "@/components/SolutionWithOverlay";
 
 export default {
   name: "Woche02Aufgabe1",
   title: 'Web Engineering WS21/22 - Woche 2.1',
   components: {
-    ExerciseSolution
+    SolutionWithOverlay,
   },
 }
 </script>
@@ -32,15 +32,12 @@ export default {
 .container {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
-  /*width: calc(100vw - 20px);*/
+  height: calc(100vh - 40px - 61px);
   transition: .5s linear;
 }
 
 .active .container {
-  width: 100%;
-  /*width: calc(100vw - 378px - 40px);*/
-  height: 100vh;
+  height: calc(100vh - 40px);
 }
 
 .column {
@@ -53,25 +50,25 @@ export default {
 .red {
   background-color: #ff2500;
   --width: 5;
-  height: calc(1 / 3 * 80vh - 30px);
+  height: calc(30% - 10px);
 }
 
 .green {
   background-color: #2cee27;
   --width: 1;
-  height: calc(2 / 3 * 80vh - 30px);
+  height: calc(70% - 10px);
 }
 
 .blue {
   background-color: #0533ff;
   --width: 3;
-  height: calc(2 / 3 * 80vh - 30px);
+  height: calc(70% - 10px);
 }
 
 .purple {
   background-color: #ea3efe;
   --width: 1;
-  height: calc(2 / 3 * 80vh - 30px);
+  height: calc(70% - 10px);
 }
 
 @media all and (max-width: 768px) {

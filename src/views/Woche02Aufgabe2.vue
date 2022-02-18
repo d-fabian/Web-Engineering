@@ -1,7 +1,7 @@
 <template>
   <solution-with-overlay class="active">
     <template v-slot:exercise>
-      ADs ist die Aufgabe
+      <!-- todo add exercise -->
     </template>
     <template v-slot:solution>
       <div class="container">
