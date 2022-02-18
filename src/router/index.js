@@ -61,6 +61,12 @@ const routes = [
         name: 'Woche 2 - Aufgabe 2',
         meta: 'Woche 2 - Aufgabe 2: Responsiv mit Grid Mobile-First',
         component: () => import('../views/Woche02Aufgabe2')
+    },
+    {
+        path: '/woche2aufgabe3flex',
+        name: 'Woche 2 - Aufgabe 3 Flexbox',
+        meta: 'Woche 2 - Aufgabe 3:', // todo titel hinzufügen
+        component: () => import('../views/Woche02Aufgabe3flex')
     }
 ]
 
