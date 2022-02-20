@@ -67,6 +67,12 @@ const routes = [
         name: 'Woche 2 - Aufgabe 3 Flexbox',
         meta: 'Woche 2 - Aufgabe 3:', // todo titel hinzufügen
         component: () => import('../views/Woche02Aufgabe3flex')
+    },
+    {
+        path: '/woche2aufgabe3grid',
+        name: 'Woche 2 - Aufgabe 3 Grid',
+        meta: 'Woche 2 - Aufgabe 3:', // todo titel hinzufügen
+        component: () => import('../views/Woche02Aufgabe3grid')
     }
 ]
 
