@@ -1,0 +1,481 @@
+<template>
+  <solution-with-overlay class="active">
+    <template v-slot:exercise>
+      <!-- todo add exercise -->
+    </template>
+    <template v-slot:solution>
+      <div class="mainContent">
+        <div>
+          <h1>Hilfsfunktionen</h1>
+        </div>
+        <div class="methode">
+          <div class="firstStep">
+            <span class="keyword">function</span>
+            <span class="function"> add</span>(x, y) {
+          </div>
+          <div class="secondStep">
+            <span class="keyword">return</span> x + y
+          </div>
+          <div class="firstStep">}</div>
+        </div>
+        <div class="methode">
+          <div class="firstStep">
+            <span class="keyword">function</span>
+            <span class="function"> sub</span>(x, y) {
+          </div>
+          <div class="secondStep">
+            <span class="keyword">return</span> x - y
+          </div>
+          <div class="firstStep">}</div>
+        </div>
+        <div class="methode">
+          <div class="firstStep">
+            <span class="keyword">function</span>
+            <span class="function"> mul</span>(x, y) {
+          </div>
+          <div class="secondStep">
+            <span class="keyword">return</span> x * y
+          </div>
+          <div class="firstStep">}</div>
+        </div>
+        <div class="methode">
+          <div class="firstStep">
+            <span class="keyword">function</span>
+            <span class="function"> div</span>(x, y) {
+          </div>
+          <div class="secondStep">
+            <span class="keyword">return</span> x / y
+          </div>
+          <div class="firstStep">}</div>
+        </div>
+
+
+        <div>
+          <h1>Aufgaben</h1>
+        </div>
+        <div class="exercise">
+          Schreiben Sie eine Funktion
+          <code>identity_function()</code>
+          , die ein Argument als Parameter entgegen nimmt und eine Funktion zurück gibt, die dieses Argument zurück
+          gibt.
+        </div>
+        <div class="methode">
+          <div class="firstStep">
+            <span class="keyword">function</span>
+            <span class="function"> identity_function</span>(x) {
+          </div>
+          <div class="secondStep">
+            <span class="keyword">return function</span> () {
+          </div>
+          <div class="thirdStep">
+            <span class="keyword">return</span> x
+          </div>
+          <div class="secondStep">}</div>
+          <div class="firstStep">}</div>
+        </div>
+
+        <div class="exercise">
+          Schreiben Sie eine Addier-Funktion <code>addf()</code>, so dass <code>addf(x)(y)</code> genau <code>x +
+          y</code>
+          zurück gibt. (Es haben also zwei Funktionsaufrufe zu erfolgen. <code>addf(x)</code> liefert eine Funktion, die
+          auf <code>y</code> angewandt wird.)
+        </div>
+        <div class="methode">
+          <div class="firstStep">
+            <span class="keyword">function</span>
+            <span class="function"> addf</span>(x) {
+          </div>
+          <div class="secondStep">
+            <span class="keyword">return function</span> (y) {
+          </div>
+          <div class="thirdStep">
+            <span class="keyword">return</span> x + y
+          </div>
+          <div class="secondStep">
+            }
+          </div>
+          <div class="firstStep">
+            }
+          </div>
+        </div>
+
+        <div class="exercise">
+          Schreiben Sie eine Funktion <code>applyf()</code>, die aus einer binären Funktion wie <code>add(x,y)</code>
+          eine
+          Funktion <code>addf</code> berechnet,
+          die mit zwei Aufrufen das gleiche Ergebnis liefert, z.B. <code>addf = applyf(add); addf(x)(y)</code> soll
+          <code>add(x,y)</code>
+          liefern.
+          Entsprechend <code>applyf(mul)(5)(6)</code> soll <code>30</code> liefern, wenn <code>mul</code> die binäre
+          Multiplikation ist.
+        </div>
+        <div class="methode">
+          <div class="firstStep">
+            <span class="keyword">function</span>
+            <span class="function"> applyf</span>(func) {
+          </div>
+          <div class="secondStep">
+            <span class="keyword">return function</span> (x) {
+          </div>
+          <div class="thirdStep">
+            <span class="keyword">return function</span> (y) {
+          </div>
+          <div class="fourthStep">
+            <span class="keyword">return</span> func(x, y)
+          </div>
+          <div class="thirdStep">}</div>
+          <div class="secondStep">}</div>
+          <div class="firstStep">}</div>
+        </div>
+
+        <div class="exercise">
+          Schreiben Sie eine Funktion <code>curry()</code> (von Currying), die eine binäre Funktion und ein Argument
+          nimmt, um daraus
+          eine Funktion zu erzeugen, die ein zweites Argument entgegen nimmt, z.B. <code>add3 = curry(add,
+          3);add3(4)</code> ergibt <code>7</code>.
+          <code>curry(mul, 5)(6)</code> ergibt <code>30</code>.
+        </div>
+        <div class="methode">
+          <div class="firstStep">
+            <span class="keyword">function</span>
+            <span class="function"> curry</span>(func, x) {
+          </div>
+          <div class="secondStep">
+            <span class="keyword">return function</span> (y) {
+          </div>
+          <div class="thirdStep">
+            <span class="keyword">return</span> func(x, y)
+          </div>
+          <div class="secondStep">}</div>
+          <div class="firstStep">}</div>
+        </div>
+
+        <div class="exercise">
+          Erzeugen Sie die <code>inc</code>-Funktion mit Hilfe einer der Funktionen <code>addf</code>,
+          <code>applyf</code>
+          und <code>curry</code> aus den letzten Aufgaben,
+          ohne die Funktion <code>inc()</code> selbst zu implementieren. (<code>inc(x)</code> soll immer <code>x +
+          1</code> ergeben und lässt sich natürlich auch
+          direkt implementieren. Das ist aber hier nicht die Aufgabe.) Vielleicht schaffen Sie es auch, drei Varianten
+          der
+          <code>inc()</code>-Implementierung zu schreiben?
+        </div>
+        <div class="methode">
+          <div class="firstStep">
+            <span class="keyword">function</span>
+            <span class="function"> inc1</span>(x) {
+          </div>
+          <div class="secondStep">
+            <span class="keyword">return</span> <span class="function"> addf</span>(x)(1)
+          </div>
+          <div class="firstStep">}</div>
+          <br>
+          <div class="firstStep">
+            <span class="keyword">function</span>
+            <span class="function"> inc2</span>(x) {
+          </div>
+          <div class="secondStep">
+            <span class="keyword">return</span> <span class="function"> applyf</span>(<span class="function">add</span>)(x)(1)
+          </div>
+          <div class="firstStep">}</div>
+          <br>
+          <div class="firstStep">
+            <span class="keyword">function</span>
+            <span class="function"> inc3</span>(x) {
+          </div>
+          <div class="secondStep">
+            <span class="keyword">return</span> <span class="function"> curry</span>(<span class="function">add</span>,
+            1)(x)
+          </div>
+          <div class="firstStep">}</div>
+        </div>
+
+        <div class="exercise">
+          Schreiben Sie eine Funktion <code>methodize()</code>, die eine binäre Funktion (z.B. <code>add</code>,
+          <code>mul</code>) in eine unäre Methode
+          verwandelt. Nach <code>Number.prototype.add = methodize(add);</code> soll <code>(3).add(4)</code> genau
+          <code>7</code> ergeben.
+        </div>
+        <div class="methode">
+          <div class="firstStep">
+            <span class="keyword">function</span>
+            <span class="function"> methodize</span>(func) {
+          </div>
+          <div class="secondStep">
+            <span class="keyword">return function</span> (x) {
+          </div>
+          <div class="thirdStep">
+            <span class="keyword">return</span> func(<span class="keyword">this</span>, x)
+          </div>
+          <div class="secondStep">}</div>
+          <div class="firstStep">}</div>
+        </div>
+
+        <div class="exercise">
+          Schreiben Sie eine Funktion <code>demethodize()</code>, die eine unäre Methode (z.B. <code>add</code>,
+          <code>mul</code>) in eine binäre Funktion
+          umwandelt. <code>demethodize(Number.prototype.add)(5, 6)</code> soll <code>11</code> ergeben.
+        </div>
+        <div class="methode">
+          <div class="firstStep">
+            <span class="keyword">function</span>
+            <span class="function"> demethodize</span>(func) {
+          </div>
+          <div class="secondStep">
+            <span class="keyword">return function</span> (x, y) {
+          </div>
+          <div class="thirdStep">
+            <span class="keyword">return</span> func.<span class="function"> apply</span>(x, [y])
+          </div>
+          <div class="secondStep">}</div>
+          <div class="firstStep">}</div>
+        </div>
+
+        <div class="exercise">
+          Schreiben Sie eine Funktion <code>twice()</code>, die eine binäre Funktion in eine unäre Funktion umwandelt,
+          die
+          den einen
+          Parameter zweimal weiter reicht. Z.B. <code>var double = twice(add); double(11)</code> soll <code>22</code>
+          ergeben; <code>var square =
+          twice(mul); square(11)</code> soll <code>mul(11,11) === 121</code> ergeben.
+        </div>
+        <div class="methode">
+          <div class="firstStep">
+            <span class="keyword">function</span>
+            <span class="function"> twice</span>(func) {
+          </div>
+          <div class="secondStep">
+            <span class="keyword">return function</span> (x) {
+          </div>
+          <div class="thirdStep">
+            <span class="keyword">return</span> func(x, x)
+          </div>
+          <div class="secondStep">}</div>
+          <div class="firstStep">}</div>
+        </div>
+
+        <div class="exercise">
+          Schreiben Sie eine Funktion <code>composeu()</code>, die zwei unäre Funktionen in eine einzelne unäre Funktion
+          transformiert,
+          die beide nacheinander aufruft, z.B. soll <code>composeu(double, square)(3)</code> genau <code>36</code>
+          ergeben.
+        </div>
+        <div class="methode">
+          <div class="firstStep">
+            <span class="keyword">function</span>
+            <span class="function"> composeu</span>(funcA, funcB) {
+          </div>
+          <div class="secondStep">
+            <span class="keyword">return function</span> (x) {
+          </div>
+          <div class="thirdStep">
+            <span class="keyword">return</span> funcB(funcA(x))
+          </div>
+          <div class="secondStep">}</div>
+          <div class="firstStep">}</div>
+        </div>
+
+        <div class="exercise">
+          Schreiben Sie eine Funktion <code>composeb()</code>, die zwei binäre Funktionen in eine einzelne Funktion
+          transformiert, die
+          beide nacheinander aufruft, z.B. <code>composeb(add, mul)(2, 3, 5)</code> soll <code>25</code> ergeben.
+        </div>
+        <div class="methode">
+          <div class="firstStep">
+            <span class="keyword">function</span>
+            <span class="function"> composeu</span>(funcA, funcB) {
+          </div>
+          <div class="secondStep">
+            <span class="keyword">return function</span> (x, y, z) {
+          </div>
+          <div class="thirdStep">
+            <span class="keyword">return</span> funcB(funcA(x, y), z)
+          </div>
+          <div class="secondStep">}</div>
+          <div class="firstStep">}</div>
+        </div>
+
+        <div class="exercise">
+          Schreiben Sie eine Funktion <code>once()</code>, die einer anderen Funktion nur einmal erlaubt, aufgerufen zu
+          werden, z.B.
+          <code>add_once = once(add); add_once(3, 4)</code> soll beim ersten Mal <code>7</code> ergeben, beim zweiten
+          Mal
+          soll jedoch <code>add_once(3, 4)</code>
+          einen Fehlerabbruch bewirken.
+        </div>
+        <div class="methode">
+          <div class="firstStep">
+            <span class="keyword">function</span>
+            <span class="function"> once</span>(func) {
+          </div>
+          <div class="secondStep">
+            <span class="keyword">let</span> alreadyCalled = <span class="keyword">false</span>
+            <br>
+            <span class="keyword">return function</span> (x, y) {
+          </div>
+          <div class="thirdStep">
+            <span class="keyword">if</span> (!alreadyCalled) {
+          </div>
+          <div class="fourthStep">
+            alreadyCalled = <span class="keyword">true</span>
+            <br>
+            <span class="keyword">return</span> func(x, y)
+          </div>
+          <div class="thirdStep">
+            }
+            <br>
+            <span class="keyword">throw new</span> <span class="error">Error</span>(<span class="string">'Method was already called'</span>)
+          </div>
+          <div class="secondStep">}</div>
+          <div class="firstStep">}</div>
+        </div>
+
+        <div class="exercise">
+          Schreiben Sie eine Fabrik-Funktion <code>counterf()</code>, die zwei Funktionen <code>inc()</code> und
+          <code>dec()</code> berechnet, die einen Zähler hoch- und herunterzählen. Z.B. <code>counter =
+          counterf(10);</code> Dann soll <code>counter.inc()</code>
+          <code>11</code> und <code>counter.dec()</code> wieder <code>10</code> ergeben.
+        </div>
+        <div class="methode">
+          <div class="firstStep">
+            <span class="keyword">function</span>
+            <span class="function"> counterf</span>(start = 0) {
+          </div>
+          <div class="secondStep">
+            <span class="keyword">let</span> counter = start
+            <br>
+            <span class="keyword">return</span> {
+          </div>
+          <div class="thirdStep">
+            <span class="function"> inc</span>: <span class="keyword">fuction</span> () {
+          </div>
+          <div class="fourthStep">
+            counter++
+            <br>
+            <span class="keyword">return</span> counter
+          </div>
+          <div class="thirdStep">
+            },
+            <br>
+            <span class="function"> dec</span>: <span class="keyword">fuction</span> () {
+          </div>
+          <div class="fourthStep">
+            counter--
+            <br>
+            <span class="keyword">return</span> counter
+          </div>
+          <div class="thirdStep">}</div>
+          <div class="secondStep">}</div>
+          <div class="firstStep">}</div>
+        </div>
+
+        <div class="exercise">
+          Schreiben Sie eine rücknehmbare Funktion <code>revocable()</code>, die als Parameter eine Funktion nimmt und
+          diese bei Aufruf ausführt. Sobald die Funktion aber mit <code>revoke()</code> zurück genommen wurde, führt ein
+          erneuter Aufruf zu einem Fehler. Z. B. <br>
+          <code>temp = revocable(alert);</code><br>
+          <code>temp.invoke(7); // führt zu alert(7);</code><br>
+          <code>temp.revoke();</code><br>
+          <code>temp.invoke(8); // Fehlerabbruch!</code>
+        </div>
+        <div class="methode">
+          <div class="firstStep">
+            <span class="keyword">function</span>
+            <span class="function"> revocable</span>(func) {
+          </div>
+          <div class="secondStep">
+            <span class="keyword">return</span> {
+          </div>
+          <div class="thirdStep">
+            <span class="function"> invoke</span>: <span class="keyword">function</span> (y) {
+          </div>
+          <div class="fourthStep">
+            <span class="keyword">if</span> (func !== <span class="keyword">undefined</span>){
+          </div>
+          <div class="fifthStep">
+            <span class="keyword">return</span> func(y)
+          </div>
+          <div class="fourthStep">
+            }
+            <br>
+            <span class="keyword">throw new</span> <span class="error">Error</span>(<span class="string">'Function not set or revoked!'</span>)
+          </div>
+          <div class="thirdStep">
+            },
+            <br>
+            <span class="function"> revoke</span>: <span class="keyword">function</span> () {
+          </div>
+          <div class="fourthStep">
+            func = <span class="keyword">undefined</span>
+          </div>
+          <div class="thirdStep">}</div>
+          <div class="secondStep">}</div>
+          <div class="firstStep">}</div>
+        </div>
+
+        <div class="exercise">
+          Implementieren Sie ein "Array Wrapper"-Objekt mit den Methoden get, store und append, so dass ein Angreifer
+          keinen Zugriff auf das innere, private Array hat.
+          <br>
+          <code>my_vector = vector();</code><br>
+          <code>my_vector.append(7);</code><br>
+          <code>my_vector.store(1, 8);</code><br>
+          <code>my_vector.get(0) // 7</code><br>
+          <code>my_vector.get(1) // 8</code>
+        </div>
+        <div class="methode">
+          <div class="firstStep">
+            <span class="keyword">function</span>
+            <span class="function"> vector</span>() {
+          </div>
+          <div class="secondStep">
+            <span class="keyword">let</span> array = []
+            <br>
+            <span class="keyword">return</span> {
+          </div>
+          <div class="thirdStep">
+            <span class="function"> append</span>: <span class="keyword">function</span> (x) {
+          </div>
+          <div class="fourthStep">
+            array.<span class="function"> push</span>(x)
+          </div>
+          <div class="thirdStep">
+            },
+            <br>
+            <span class="function"> store</span>: <span class="keyword">function</span> (x, y) {
+          </div>
+          <div class="fourthStep">
+            array[x] = y
+          </div>
+          <div class="thirdStep">
+            },
+            <br>
+            <span class="function"> get</span>: <span class="keyword">function</span> (x) {
+          </div>
+          <div class="fourthStep">
+            <span class="keyword">return</span> array[x]
+          </div>
+          <div class="thirdStep">}</div>
+          <div class="secondStep">}</div>
+          <div class="firstStep">}</div>
+        </div>
+      </div>
+    </template>
+  </solution-with-overlay>
+</template>
+
+<script>
+import SolutionWithOverlay from "@/components/SolutionWithOverlay";
+
+export default {
+  name: "Woche03Aufgabe1",
+  title: 'Web Engineering WS21/22 - Woche 3.1',
+  components: {
+    SolutionWithOverlay
+  }
+}
+</script>
+
+<style scoped>
+@import '../styles/woche3.css';
+</style>
