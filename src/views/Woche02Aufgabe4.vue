@@ -1,0 +1,136 @@
+<template>
+  <solution-with-overlay class="active">
+    <template v-slot:exercise>
+      <!-- todo add exercise -->
+    </template>
+    <template v-slot:solution>
+      <div class="container">
+        <div class="header">
+          <span class="headerSpan">The book series</span>
+          <span class="headerSpan">Testimonials</span>
+          <span class="headerSpan">The Author</span>
+          <span class="headerSpan">Free resources</span>
+        </div>
+        <div class="mainPart">
+          <div class="mainPartHeader"><b>You dont know JavaScript</b></div>
+          <div class="picture">
+            <img src="../assets/landing-img.png" alt="JavaScript Complete Series Book" width="40%" height="auto"/>
+          </div>
+          <div class="text">
+            <div class="explainText" style="padding-top: 20vh">Don't just drift through Javascript.</div>
+            <div class="explainText">Understand how Javascript works</div>
+            <div class="explainText">Start your journey through the bumpy side of Javascript</div>
+            <div class="explainText">
+              <button><b>ORDER YOUR COPY NOW</b></button>
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+          <div class="footerText">The first ebook in the book series is absolutely free.</div>
+          <button style="margin-bottom: 30px"><b>FIND OUT MORE ABOUT THIS OFFER</b></button>
+        </div>
+      </div>
+    </template>
+  </solution-with-overlay>
+</template>
+
+<script>
+import SolutionWithOverlay from "@/components/SolutionWithOverlay";
+
+export default {
+  name: "Woche02Aufgabe4",
+  title: 'Web Engineering WS21/22 - Woche 2.4',
+  components: {
+    SolutionWithOverlay
+  }
+}
+</script>
+
+<style scoped>
+.container {
+  height: calc(100vh - 61px - 40px);
+  width: 100vw;
+  font-family: 'Inter', sans-serif;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+                "header"
+                "mainPart"
+                "footer";
+  transition: .5s linear;
+}
+
+.active .container {
+  height: calc(100vh - 40px);
+  width: calc(100vw - 378px);
+}
+
+.header {
+  grid-area: header;
+  background-color: #363636;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+}
+
+.mainPart {
+  grid-area: mainPart;
+  background-color: #ebeae6;
+  text-align: center;
+  display: grid;
+  grid-template: auto 1fr / 1fr 1fr;
+}
+
+.picture {
+  grid-area: picture;
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+.text {
+  grid-area: text;
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #011926;
+  text-align: center;
+}
+
+.headerSpan {
+  margin: 10px;
+}
+
+.mainPartHeader {
+  font-size: 50px;
+  grid-column: 1/3;
+  grid-row: 1/2;
+  padding: 20px;
+}
+
+.explainText {
+  padding: 20px;
+  font-size: 20px;
+}
+
+button {
+  background-color: #f88e37;
+  border-radius: 5px;
+  border: 0;
+  color: white;
+  width: 70%;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.footerText {
+  color: white;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  font-size: 20px;
+}
+</style>

@@ -21,7 +21,7 @@
             ['Bald verfügbar']]"
         :week-route-links="[
             ['/woche1aufgabe1', '/woche1aufgabe2', '/woche1aufgabe3', '/woche1aufgabe4', '/woche1aufgabe5'],
-            ['/woche2aufgabe1', '/woche2aufgabe2', '/woche2aufgabe3flex', '/woche2aufgabe3grid', '/'],
+            ['/woche2aufgabe1', '/woche2aufgabe2', '/woche2aufgabe3flex', '/woche2aufgabe3grid', '/woche2aufgabe4'],
             ['/'],
             ['/'],
             ['/'],
