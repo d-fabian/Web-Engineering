@@ -11,7 +11,7 @@
             ['Aufgabe 1: Responsiv mit Flexbox Desktop-First','Aufgabe 2: Responsiv mit Grid Mobile-First', 'Aufgabe 3a Flexbox','Aufgabe 3b Grid','Aufgabe 4'], // todo titel hinzufügen
             ['Aufgabe 1:', 'Aufgabe 2:'],
             ['Aufgabe 1:', 'Aufgabe 2:', 'Aufgabe 3:'],
-            ['Bald verfügbar'],
+            ['Aufgabe 1:'],
             ['Bald verfügbar'],
             ['Bald verfügbar'],
             ['Bald verfügbar'],
@@ -24,7 +24,7 @@
             ['/woche2aufgabe1', '/woche2aufgabe2', '/woche2aufgabe3flex', '/woche2aufgabe3grid', '/woche2aufgabe4'],
             ['/woche3aufgabe1', '/woche3aufgabe2'],
             ['/woche4aufgabe1', '/woche4aufgabe2', '/woche4aufgabe3'],
-            ['/'],
+            ['/woche5aufgabe1'],
             ['/'],
             ['/'],
             ['/'],

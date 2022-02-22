@@ -1,6 +1,8 @@
 <template>
   <solution-with-overlay class="active">
-    <template v-slot:exercise></template>
+    <template v-slot:exercise>
+      <!-- todo add exercise -->
+    </template>
     <template v-slot:solution>
       <div class="container">
         <h1>Tabellenkalkulation mit contentEditable</h1>
