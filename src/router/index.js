@@ -115,6 +115,12 @@ const routes = [
         name: 'Woche 5 - Aufgabe 1',
         meta: 'Woche 5 - Aufgabe 1:', // todo titel hinzufügen
         component: () => import('../views/Woche05Aufgabe1')
+    },
+    {
+        path: '/woche5aufgabe2',
+        name: 'Woche 5 - Aufgabe 2',
+        meta: 'Woche 5 - Aufgabe 2:', // todo titel hinzufügen
+        component: () => import('../views/Woche05Aufgabe2')
     }
 ]
 

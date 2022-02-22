@@ -22,8 +22,8 @@
 import SolutionWithOverlay from "@/components/SolutionWithOverlay";
 
 export default {
-  name: "Woche05Aufgabe1",
-  title: 'Web Engineering WS21/22 - Woche 5.1',
+  name: "Woche05Aufgabe2",
+  title: 'Web Engineering WS21/22 - Woche 5.2',
   components: {
     SolutionWithOverlay
   },
@@ -39,35 +39,40 @@ export default {
     this.textField = document.getElementById('textField')
     this.startBtn = document.getElementById('startBtn')
 
-    this.startBtn.addEventListener('click', () => {
-      Promise.all([
-        fetch('A.txt')
-            .then(response => response.text())
-            .then(text => text.split('\r\n'))
-            .then(textArray => this.textA = textArray),
-        fetch('B.txt')
-            .then(response => response.text())
-            .then(text => text.split('\r\n'))
-            .then(textArray => this.textB = textArray),
-      ])
-          .then(() => {
-            for (let index = 0; index < Math.max(this.textA.length, this.textB.length); index++) {
-              const lineA = this.textA[index] || ''
-              const lineB = this.textB[index] || ''
-              const newLineA = document.createElement('span')
-              newLineA.textContent = lineA + ' '
-              newLineA.style.color = 'green'
-              const newLineB = document.createElement('span')
-              newLineB.textContent = lineB
-              newLineB.style.color = 'blue'
-              const wholeLine = document.createElement('div')
-              wholeLine.style.margin = '0 20px'
-              wholeLine.append(newLineA, newLineB)
-              this.textField.appendChild(wholeLine)
-            }
-          })
+    this.startBtn.addEventListener('click', async () => {
+      await this.getTextA()
+      await this.getTextB()
+      await this.showText()
     })
   },
+  methods: {
+    async getTextA() {
+      const response = await fetch('A.txt')
+      const text = await response.text()
+      this.textA = text.split('\r\n')
+    },
+    async getTextB() {
+      const response = await fetch('B.txt')
+      const text = await response.text()
+      this.textB = text.split('\r\n')
+    },
+    async showText() {
+      for (let index = 0; index < Math.max((this.textA ? this.textA.length : 0), (this.textB ? this.textB.length : 0)); index++) {
+        const lineA = this.textA ? this.textA[index] : ''
+        const lineB = this.textB ? this.textB[index] : ''
+        const newLineA = document.createElement('span')
+        newLineA.textContent = lineA + ' '
+        newLineA.style.color = 'green'
+        const newLineB = document.createElement('span')
+        newLineB.textContent = lineB
+        newLineB.style.color = 'blue'
+        const wholeLine = document.createElement('div')
+        wholeLine.style.margin = '0 20px'
+        wholeLine.append(newLineA, newLineB)
+        this.textField.appendChild(wholeLine)
+      }
+    },
+  }
 }
 </script>
 
