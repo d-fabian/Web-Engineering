@@ -1,0 +1,204 @@
+<template>
+  <solution-with-overlay class="active">
+    <template v-slot:exercise>
+      Implementieren Sie ein Balkendiagramm mit Inline SVG. Geben Sie die Daten für das Balkendiagramm im JSON-Format
+      vor. Nehmen Sie als Beispieldaten die <a href="https://www.bundestag.de/parlament/plenum/sitzverteilung_20wp"
+                                               target="_blank">Sitzverteilung im Deutschen Bundestag</a>. Animieren Sie
+      die Grafik ähnlich wie
+      im <a href="https://www.highcharts.com/demo/bar-basic" target="_blank">Highchart Bar Chart</a>.
+    </template>
+    <template v-slot:solution>
+      <div class="container">
+        <h1>Sitzverteilung des 20. Deutschen Bundestages</h1>
+        <h2>Bundestagswahl vom 26.09.2021</h2>
+        <svg id="balkendiagramm" viewBox="0 0 130 100">
+          <!-- Parteinamen Labels -->
+          <text font-size="3px" x="0" y="12.5">SPD</text>
+          <text font-size="3px" x="0" y="25">CDU/CSU</text>
+          <text font-size="3px" x="0" y="37.5">Bündnis 90/Die Grünen</text>
+          <text font-size="3px" x="0" y="50">FDP</text>
+          <text font-size="3px" x="0" y="62.5">ADF</text>
+          <text font-size="3px" x="0" y="75">Die Linke</text>
+          <text font-size="3px" x="0" y="87.5">fraktionslos</text>
+
+          <!-- Vertikale Linien für Orientierung -->
+          <line stroke="black" stroke-width=".1" x1="54" x2="54" y1="0" y2="97"></line>
+          <line stroke="black" stroke-width=".1" x1="79" x2="79" y1="0" y2="97"></line>
+          <line stroke="black" stroke-width=".1" x1="103" x2="103" y1="0" y2="97"></line>
+          <line stroke="black" stroke-width=".1" x1="127" x2="127" y1="0" y2="97"></line>
+
+          <!-- Beschriftung an vertikalen Linien -->
+          <text font-size="3px" x="52" y="100">50</text>
+          <text font-size="3px" x="76" y="100">100</text>
+          <text font-size="3px" x="100" y="100">150</text>
+          <text font-size="3px" x="124" y="100">200</text>
+
+          <!-- Balken für Parteien -->
+          <rect fill="red" height="10" id="spd" v-on:mouseover="showTooltip(206, 12.5)" v-on:mouseout="removeTooltip"
+                width="100"
+                x="30" y="6.5"></rect>
+          <rect fill="black" height="10" id="cdu" v-on:mouseover="showTooltip(197, 25, true)"
+                v-on:mouseout="removeTooltip"
+                width="96"
+                x="30" y="19"></rect>
+          <rect fill="green" height="10" id="bgrün" v-on:mouseover="showTooltip(118, 37.5)"
+                v-on:mouseout="removeTooltip"
+                width="57"
+                x="30" y="31.5"></rect>
+          <rect fill="yellow" height="10" id="fdp" v-on:mouseover="showTooltip(92, 50)" v-on:mouseout="removeTooltip"
+                width="45"
+                x="30" y="44"></rect>
+          <rect fill="blue" height="10" id="afd" v-on:mouseover="showTooltip(80, 62.5)" v-on:mouseout="removeTooltip"
+                width="39"
+                x="30" y="56.5"></rect>
+          <rect fill="magenta" height="10" id="linke" v-on:mouseover="showTooltip(39, 75)" v-on:mouseout="removeTooltip"
+                width="19"
+                x="30" y="69"></rect>
+          <rect fill="grey" height="10" id="fraktionslos" v-on:mouseover="showTooltip(4, 87.5)"
+                v-on:mouseout="removeTooltip"
+                width="2"
+                x="30" y="81.5"></rect>
+
+
+          <!-- Vertikale Linie für Start -->
+          <line stroke="black" stroke-width=".1" x1="30" x2="30" y1="0" y2="97"></line>
+        </svg>
+      </div>
+    </template>
+  </solution-with-overlay>
+</template>
+
+<script>
+import SolutionWithOverlay from "@/components/SolutionWithOverlay";
+
+export default {
+  name: "Woche06Aufgabe1",
+  title: 'Web Engineering WS21/22 - Woche 6.1',
+  components: {
+    SolutionWithOverlay
+  },
+  data() {
+    return {
+      sitzeTooltip: undefined,
+      balkendiagramm: undefined,
+      rectSPD: undefined,
+      rectCDU: undefined,
+      rectB90: undefined,
+      rectFDP: undefined,
+      rectAFD: undefined,
+      rectLINKE: undefined,
+      rectFRK: undefined,
+    }
+  },
+  mounted() {
+    this.balkendiagramm = document.getElementById('balkendiagramm')
+    this.rectSPD = document.getElementById('spd')
+    this.rectCDU = document.getElementById('cdu')
+    this.rectB90 = document.getElementById('bgrün')
+    this.rectFDP = document.getElementById('fdp')
+    this.rectAFD = document.getElementById('afd')
+    this.rectLINKE = document.getElementById('linke')
+    this.rectFRK = document.getElementById('fraktionslos')
+
+    this.rectSPD.animate(
+        [
+          {width: 0},
+          {scaleX: 100}
+        ], {
+          duration: 1000,
+          easing: 'ease-out'
+        }
+    )
+    this.rectCDU.animate(
+        [
+          {width: 0},
+          {scaleX: 100}
+        ], {
+          duration: 1000,
+          easing: 'ease-out'
+        }
+    )
+    this.rectB90.animate(
+        [
+          {width: 0},
+          {scaleX: 100}
+        ], {
+          duration: 1000,
+          easing: 'ease-out'
+        }
+    )
+    this.rectFDP.animate(
+        [
+          {width: 0},
+          {scaleX: 100}
+        ], {
+          duration: 1000,
+          easing: 'ease-out'
+        }
+    )
+    this.rectAFD.animate(
+        [
+          {width: 0},
+          {scaleX: 100}
+        ], {
+          duration: 1000,
+          easing: 'ease-out'
+        }
+    )
+    this.rectLINKE.animate(
+        [
+          {width: 0},
+          {scaleX: 100}
+        ], {
+          duration: 1000,
+          easing: 'ease-out'
+        }
+    )
+    this.rectFRK.animate(
+        [
+          {width: 0},
+          {scaleX: 100}
+        ], {
+          duration: 1000,
+          easing: 'ease-out'
+        }
+    )
+  },
+  methods: {
+    showTooltip(sitze, yPoint, isCDU) {
+      this.sitzeTooltip = document.createElementNS('http://www.w3.org/2000/svg', 'text')
+      this.sitzeTooltip.setAttribute('font-size', '3px')
+      this.sitzeTooltip.setAttribute('font-weight', 'bold')
+      this.sitzeTooltip.setAttribute('x', '30')
+      this.sitzeTooltip.setAttribute('y', yPoint)
+      this.sitzeTooltip.textContent = sitze
+      if (isCDU) {
+        this.sitzeTooltip.setAttribute('fill', 'white')
+      }
+      this.balkendiagramm.appendChild(this.sitzeTooltip)
+    },
+
+    removeTooltip() {
+      this.balkendiagramm.removeChild(this.balkendiagramm.lastChild)
+    }
+  }
+}
+</script>
+
+<style scoped>
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 20px 20px 20px;
+  gap: 20px;
+  height: calc(100vh - 61px - 40px - 20px);
+  width: calc(100vw - 40px);
+  transition: 0.5s linear;
+}
+
+.active .container {
+  height: calc(100vh - 40px - 20px);
+  width: calc(100vw - 378px - 40px);
+}
+</style>

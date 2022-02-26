@@ -139,6 +139,12 @@ const routes = [
         name: 'Woche 5 - Aufgabe 4',
         meta: 'Woche 5 - Aufgabe 4: WWW-Navigator',
         component: () => import('../views/Woche05Aufgabe4')
+    },
+    {
+        path: '/woche6aufgabe1',
+        name: 'Woche 6 - Aufgabe 1',
+        meta: 'Woche 6 - Aufgabe 1: Statistik-Balkendiagramm in SVG',
+        component: () => import('../views/Woche06Aufgabe1')
     }
 ]
 
