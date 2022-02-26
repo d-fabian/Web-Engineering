@@ -33,7 +33,7 @@ import SolutionWithOverlay from "@/components/SolutionWithOverlay";
 
 export default {
   name: "Woche05Aufgabe3",
-  title: 'Web Engineering WS21/22 - Woche 5.2',
+  title: 'Web Engineering WS21/22 - Woche 5.3',
   components: {
     SolutionWithOverlay
   },

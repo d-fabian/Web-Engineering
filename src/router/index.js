@@ -133,6 +133,12 @@ const routes = [
         name: 'Woche 5 - Aufgabe 3',
         meta: 'Woche 5 - Aufgabe 3: Web Worker',
         component: () => import('../views/Woche05Aufgabe3')
+    },
+    {
+        path: '/woche5aufgabe4',
+        name: 'Woche 5 - Aufgabe 4',
+        meta: 'Woche 5 - Aufgabe 4: WWW-Navigator',
+        component: () => import('../views/Woche05Aufgabe4')
     }
 ]
 
