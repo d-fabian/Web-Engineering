@@ -151,6 +151,12 @@ const routes = [
         name: 'Woche 6 - Aufgabe 2',
         meta: 'Woche 6 - Aufgabe 2: SVG Bezier-Animation',
         component: () => import('../views/Woche06Aufgabe2')
+    },
+    {
+        path: '/woche6aufgabe3',
+        name: 'Woche 6 - Aufgabe 3',
+        meta: 'Woche 6 - Aufgabe 3: Kalligraphie-Editor in SVG',
+        component: () => import('../views/Woche06Aufgabe3')
     }
 ]
 
