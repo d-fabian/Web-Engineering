@@ -145,6 +145,12 @@ const routes = [
         name: 'Woche 6 - Aufgabe 1',
         meta: 'Woche 6 - Aufgabe 1: Statistik-Balkendiagramm in SVG',
         component: () => import('../views/Woche06Aufgabe1')
+    },
+    {
+        path: '/woche6aufgabe2',
+        name: 'Woche 6 - Aufgabe 2',
+        meta: 'Woche 6 - Aufgabe 2: SVG Bezier-Animation',
+        component: () => import('../views/Woche06Aufgabe2')
     }
 ]
 
