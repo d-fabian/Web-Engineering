@@ -2,7 +2,7 @@ import {css, html, LitElement} from 'lit'
 
 let timer, currentPerson
 
-export class Rednerliste extends LitElement {
+export class RednerlisteModule extends LitElement {
     static styles = css`
     * {
         padding: 0;
@@ -81,10 +81,11 @@ export class Rednerliste extends LitElement {
         newLine.querySelector('.startStopBtn').addEventListener('click', startStopTime)
         newLine.querySelector('.startStopBtn').personName = person.value
         person.value = ''
+        btn.click()
     }
 }
 
-customElements.define('rednerliste-module', Rednerliste)
+customElements.define('rednerliste-module', RednerlisteModule)
 
 
 function startStopTime(event) {
