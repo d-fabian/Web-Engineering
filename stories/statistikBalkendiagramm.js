@@ -10,9 +10,9 @@ export class StatistikBalkendiagramm extends LitElement {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 20px;
-        gap: 20px;
-        height: calc(100vh - 40px);
+        margin: 0 20px;
+        gap: 10px;
+        height: calc(100vh - 40px - 61px);
     }`
 
     constructor() {
@@ -97,10 +97,10 @@ export class StatistikBalkendiagramm extends LitElement {
         this.rectAFD.id = 'afd'
         this.rectAFD.setAttribute('fill', 'blue')
         this.rectAFD.setAttribute('height', '10')
-        this.rectAFD.setAttribute('width', '40')
+        this.rectAFD.setAttribute('width', '39')
         this.rectAFD.setAttribute('x', '30')
         this.rectAFD.setAttribute('y', '56.5')
-        this.rectAFD.onmouseover = () => this._showTooltip(82, 62.5)
+        this.rectAFD.onmouseover = () => this._showTooltip(80, 62.5)
         this.rectAFD.onmouseout = this._removeTooltip
         this.rectAFD.animate(
             [
@@ -135,10 +135,10 @@ export class StatistikBalkendiagramm extends LitElement {
         this.rectFraklos.id = 'fraktionslos'
         this.rectFraklos.setAttribute('fill', 'grey')
         this.rectFraklos.setAttribute('height', '10')
-        this.rectFraklos.setAttribute('width', '1')
+        this.rectFraklos.setAttribute('width', '2')
         this.rectFraklos.setAttribute('x', '30')
         this.rectFraklos.setAttribute('y', '81.5')
-        this.rectFraklos.onmouseover = () => this._showTooltip(2, 87.5)
+        this.rectFraklos.onmouseover = () => this._showTooltip(4, 87.5)
         this.rectFraklos.onmouseout = this._removeTooltip
         this.rectFraklos.animate(
             [
@@ -221,10 +221,10 @@ export class StatistikBalkendiagramm extends LitElement {
     _removeTooltip() {
         // get shadowRoot in event listener
         // https://stackoverflow.com/questions/34112089/is-it-possible-to-bind-an-event-listener-to-an-element-within-a-shadow-dom-from
-        const shadowRoot = document.querySelector('statistik-balkendiagramm-module').shadowRoot
+        const shadowRoot = document.querySelector('statistik-balkendiagramm').shadowRoot
 
         shadowRoot.querySelector('#balkendiagramm').removeChild(shadowRoot.querySelector('#balkendiagramm').lastChild)
     }
 }
 
-customElements.define('statistik-balkendiagramm-module', StatistikBalkendiagramm)
+customElements.define('statistik-balkendiagramm', StatistikBalkendiagramm)

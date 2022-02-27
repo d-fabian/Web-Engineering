@@ -175,6 +175,12 @@ const routes = [
         name: 'Woche 8 - Aufgabe 1c',
         meta: 'Woche 8 - Aufgabe 1: Web-Komponenten erstellen',
         component: () => import('../views/Woche08Aufgabe1c')
+    },
+    {
+        path: '/woche8aufgabe1d',
+        name: 'Woche 8 - Aufgabe 1d',
+        meta: 'Woche 8 - Aufgabe 1: Web-Komponenten erstellen',
+        component: () => import('../views/Woche08Aufgabe1d')
     }
 ]
 
