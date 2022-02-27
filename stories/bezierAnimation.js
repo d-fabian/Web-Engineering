@@ -13,7 +13,7 @@ export class BezierAnimation extends LitElement {
     }
     svg {
         width: 100%;
-        height: 100%
+        height: calc(100vh - 61px - 40px);
     }`
 
     constructor() {
@@ -21,14 +21,14 @@ export class BezierAnimation extends LitElement {
         this.c1x = 400
         this.c1y = 200
         this.c2x = 800
-        this.c2y = 1000
+        this.c2y = 700
         this.c3x = 900
         this.c3y = 300
 
         this.l1a = 400
         this.l1b = 200
         this.l2a = 800
-        this.l2b = 1000
+        this.l2b = 700
         this.l3a = 900
         this.l3b = 300
 

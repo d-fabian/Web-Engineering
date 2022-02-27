@@ -27,7 +27,7 @@ export class KalligraphieEditor extends LitElement {
     }
     .drawArea {
         width: 100%;
-        height: calc(100vh - 40px - 40px - 20px - 30px - 4px); /* minus margin(top and bottom) minus h1 minus margin between h1 and buttons minus buttons minus border */
+        height: calc(100vh - 61px - 40px - 40px - 40px - 20px - 30px - 4px); /* minus margin(top and bottom) minus h1 minus margin between h1 and buttons minus buttons minus border */
         border: 2px solid black;
     }`
 
@@ -94,7 +94,7 @@ export class KalligraphieEditor extends LitElement {
         if (isMouseDown) {
             // get shadowRoot in event listener
             // https://stackoverflow.com/questions/34112089/is-it-possible-to-bind-an-event-listener-to-an-element-within-a-shadow-dom-from
-            const shadowRoot = document.querySelector('kalligraphie-editor-module').shadowRoot
+            const shadowRoot = document.querySelector('kalligraphie-editor').shadowRoot
 
             const svgPoint = _getCoordinatesForSVG(event.x, event.y)
 
@@ -112,7 +112,7 @@ export class KalligraphieEditor extends LitElement {
     _replayDrawing() {
         // get shadowRoot in event listener
         // https://stackoverflow.com/questions/34112089/is-it-possible-to-bind-an-event-listener-to-an-element-within-a-shadow-dom-from
-        const shadowRoot = document.querySelector('kalligraphie-editor-module').shadowRoot
+        const shadowRoot = document.querySelector('kalligraphie-editor').shadowRoot
 
         let id = 1
         const newLines = []
@@ -139,12 +139,12 @@ export class KalligraphieEditor extends LitElement {
     }
 }
 
-customElements.define('kalligraphie-editor-module', KalligraphieEditor)
+customElements.define('kalligraphie-editor', KalligraphieEditor)
 
 function _getCoordinatesForSVG(domX, domY) {
     // get shadowRoot in event listener
     // https://stackoverflow.com/questions/34112089/is-it-possible-to-bind-an-event-listener-to-an-element-within-a-shadow-dom-from
-    const shadowRoot = document.querySelector('kalligraphie-editor-module').shadowRoot
+    const shadowRoot = document.querySelector('kalligraphie-editor').shadowRoot
 
     let svgPoint = shadowRoot.querySelector('#drawArea').createSVGPoint()
     svgPoint.x = domX
@@ -155,7 +155,7 @@ function _getCoordinatesForSVG(domX, domY) {
 function drawAgain(allPoints) {
     // get shadowRoot in event listener
     // https://stackoverflow.com/questions/34112089/is-it-possible-to-bind-an-event-listener-to-an-element-within-a-shadow-dom-from
-    const shadowRoot = document.querySelector('kalligraphie-editor-module').shadowRoot
+    const shadowRoot = document.querySelector('kalligraphie-editor').shadowRoot
 
     let points = allPoints[counterLines - 1].split(',')
     const newPoint = points[counterPoints * 2 - 2] + ',' + points[counterPoints * 2 - 1]
