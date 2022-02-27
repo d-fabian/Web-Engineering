@@ -2,13 +2,17 @@ import {css, html, LitElement} from 'lit'
 
 let fieldResultTemp
 
-export class Tabellenkalkulation extends LitElement {
+export class TabellenkalkulationModule extends LitElement {
     static styles = css`
     * {
         padding: 0;
         margin: 0;
     }
     .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         margin: 20px 10px;
     }
     h1 {
@@ -119,4 +123,4 @@ export class Tabellenkalkulation extends LitElement {
     }
 }
 
-customElements.define('tabellenkalkulation-module', Tabellenkalkulation)
+customElements.define('tabellenkalkulation-module', TabellenkalkulationModule)

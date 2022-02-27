@@ -6,7 +6,7 @@
     </template>
     <template v-slot:solution>
       <div class="container">
-        <rednerliste-module></rednerliste-module>
+        <tabellenkalkulation-module></tabellenkalkulation-module>
       </div>
     </template>
   </solution-with-overlay>
@@ -14,13 +14,13 @@
 
 <script>
 import SolutionWithOverlay from "@/components/SolutionWithOverlay";
-import RednerlisteModule from "../../stories/rednerliste";
+import TabellenkalkulationModule from "../../stories/tabellenkalkulation";
 
 export default {
-  name: "Woche08Aufgabe1b",
+  name: "Woche08Aufgabe1c",
   title: 'Web Engineering WS21/22 - Woche 8.1',
   components: {
-    RednerlisteModule,
+    TabellenkalkulationModule,
     SolutionWithOverlay
   }
 }
