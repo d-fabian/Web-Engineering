@@ -157,6 +157,12 @@ const routes = [
         name: 'Woche 6 - Aufgabe 3',
         meta: 'Woche 6 - Aufgabe 3: Kalligraphie-Editor in SVG',
         component: () => import('../views/Woche06Aufgabe3')
+    },
+    {
+        path: '/woche8aufgabe1a',
+        name: 'Woche 8 - Aufgabe 1a',
+        meta: 'Woche 8 - Aufgabe 1: Web-Komponenten erstellen',
+        component: () => import('../views/Woche08Aufgabe1a')
     }
 ]
 

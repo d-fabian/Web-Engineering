@@ -1,6 +1,6 @@
-import {css, html, LitElement} from 'lit'
+import {css, html, LitElement} from 'lit';
 
-export class Einkaufsliste extends LitElement {
+export class EinkaufslisteModule extends LitElement {
     static styles = css`
     * {
         margin: 0;
@@ -83,4 +83,4 @@ export class Einkaufsliste extends LitElement {
     }
 }
 
-customElements.define('einkaufsliste-module', Einkaufsliste);
+customElements.define('einkaufsliste-module', EinkaufslisteModule);
