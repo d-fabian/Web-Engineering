@@ -9,11 +9,11 @@ export class BezierAnimation extends LitElement {
         padding: 0;
     }
     .container {
-        margin: 20px;
+        height: 100%;
     }
     svg {
         width: 100%;
-        height: calc(100vh - 40px - 37px - 22px);
+        height: 100%
     }`
 
     constructor() {
@@ -104,7 +104,7 @@ export class BezierAnimation extends LitElement {
     }
 }
 
-customElements.define('bezier-animation-module', BezierAnimation)
+customElements.define('bezier-animation', BezierAnimation)
 
 function getCoordinatesForSVG(domX, domY, element) {
     let svgPoint = element.createSVGPoint();

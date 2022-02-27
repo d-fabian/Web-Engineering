@@ -4,7 +4,7 @@ export default {
     title: 'Komponenten/Bezier Animation',
 }
 
-const Template = (() => `<bezier-animation-module></bezier-animation-module>`)
+const Template = (() => `<bezier-animation></bezier-animation>`)
 
 export const bezierAnimation = Template.bind({})
 bezierAnimation.args = {}
