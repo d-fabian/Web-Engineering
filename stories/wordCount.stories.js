@@ -1,4 +1,4 @@
-import WordCount from "../woche10/word-count/src/components/WordCount";
+import WordCount from "../src/components/WordCount";
 import Vue from "vue";
 
 Vue.config.productionTip = false
