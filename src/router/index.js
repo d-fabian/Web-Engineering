@@ -217,6 +217,12 @@ const routes = [
         name: 'Woche 10 - Aufgabe 1',
         meta: 'Woche 10 - Aufgabe 1: Komponente in Vue.js: Word Count',
         component: () => import('../views/Woche10Aufgabe1')
+    },
+    {
+        path: '/woche10aufgabe2',
+        name: 'Woche 10 - Aufgabe 2',
+        meta: 'Woche 10 - Aufgabe 2: Menü-Komponente',
+        component: () => import('../views/Woche10Aufgabe2')
     }
 ]
 
