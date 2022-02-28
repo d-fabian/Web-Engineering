@@ -223,6 +223,12 @@ const routes = [
         name: 'Woche 10 - Aufgabe 2',
         meta: 'Woche 10 - Aufgabe 2: Menü-Komponente',
         component: () => import('../views/Woche10Aufgabe2')
+    },
+    {
+        path: '/woche10aufgabe3',
+        name: 'Woche 10 - Aufgabe 3',
+        meta: 'Woche 10 - Aufgabe 3: Vue.js WWW-Navigator',
+        component: () => import('../views/Woche10Aufgabe3')
     }
 ]
 

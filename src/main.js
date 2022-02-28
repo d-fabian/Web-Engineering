@@ -5,6 +5,8 @@ import titleMixin from "./mixins/titleMixin";
 
 /* import the fontawesome core */
 import {library} from "@fortawesome/fontawesome-svg-core";
+/* import font awesome icon component */
+import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 /* import specific icons */
 import {
     fa0,
@@ -24,6 +26,7 @@ import {
     faAlignRight,
     faBars,
     faBold,
+    faExternalLinkAlt,
     faFont,
     faImage,
     faIndent,
@@ -42,8 +45,6 @@ import {
     faW,
     faX,
 } from '@fortawesome/free-solid-svg-icons'
-/* import font awesome icon component */
-import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 /* add icons to the library */
 library.add(
     fa0,
@@ -63,6 +64,7 @@ library.add(
     faAlignRight,
     faBars,
     faBold,
+    faExternalLinkAlt,
     faFont,
     faImage,
     faIndent,
