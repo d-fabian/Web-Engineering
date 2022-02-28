@@ -199,6 +199,12 @@ const routes = [
         name: 'Woche 8 - Aufgabe 2',
         meta: 'Woche 8 - Aufgabe 2: LitElement Menü-Komponente',
         component: () => import('../views/Woche08Aufgabe2')
+    },
+    {
+        path: '/woche8aufgabe3',
+        name: 'Woche 8 - Aufgabe 3',
+        meta: 'Woche 8 - Aufgabe 3: LitElement WWW-Navigator',
+        component: () => import('../views/Woche08Aufgabe3')
     }
 ]
 
