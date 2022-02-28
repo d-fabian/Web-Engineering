@@ -15,7 +15,7 @@
             ['Aufgabe 1: Statistik-Balkendiagramm in SVG', 'Aufgabe 2: SVG Bezier-Animation', 'Aufgabe 3: Kalligraphie-Editor in SVG'],
             ['Bald verfügbar'],
             ['Aufgabe 1a: Web-Komponenten erstellen', 'Aufgabe 1b: Web-Komponenten erstellen', 'Aufgabe 1c: Web-Komponenten erstellen', 'Aufgabe 1d: Web-Komponenten erstellen', 'Aufgabe 1e: Web-Komponenten erstellen', 'Aufgabe 1f: Web-Komponenten erstellen', 'Aufgabe 2: LitElement Menü-Komponente', 'Aufgabe 3: LitElement WWW-Navigator'],
-            ['Bald verfügbar'],
+            ['Aufgabe 1: PWA'],
             ['Bald verfügbar'],
             ['Bald verfügbar'],
             ['Bald verfügbar']]"
@@ -28,7 +28,7 @@
             ['/woche6aufgabe1', '/woche6aufgabe2', '/woche6aufgabe3'],
             ['/'],
             ['/woche8aufgabe1a', '/woche8aufgabe1b', '/woche8aufgabe1c', '/woche8aufgabe1d', '/woche8aufgabe1e', '/woche8aufgabe1f', '/woche8aufgabe2', '/woche8aufgabe3'],
-            ['/'],
+            ['/woche9aufgabe1'],
             ['/'],
             ['/'],
             ['/']]"

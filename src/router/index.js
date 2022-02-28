@@ -205,6 +205,12 @@ const routes = [
         name: 'Woche 8 - Aufgabe 3',
         meta: 'Woche 8 - Aufgabe 3: LitElement WWW-Navigator',
         component: () => import('../views/Woche08Aufgabe3')
+    },
+    {
+        path: '/woche9aufgabe1',
+        name: 'Woche 9 - Aufgabe 1',
+        meta: 'Woche 9 - Aufgabe 1: PWA',
+        component: () => import('../views/Woche09Aufgabe1')
     }
 ]
 
