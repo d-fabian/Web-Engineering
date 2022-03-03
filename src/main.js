@@ -3,6 +3,11 @@ import App from './App.vue'
 import router from './router'
 import titleMixin from "./mixins/titleMixin";
 
+import VueHighlightJS from 'vue-highlight.js'
+import javascript from 'highlight.js/lib/languages/javascript'
+// import 'highlight.js/styles/default.css' // todo search for final style https://highlightjs.org/static/demo/
+import 'highlight.js/styles/arta.css'
+// import 'highlight.js/styles/atelier-forest-dark.css'
 /* import the fontawesome core */
 import {library} from "@fortawesome/fontawesome-svg-core";
 /* import font awesome icon component */
@@ -87,6 +92,8 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false
 Vue.mixin(titleMixin)
+
+Vue.use(VueHighlightJS, {languages: {javascript}})
 
 new Vue({
     router,
