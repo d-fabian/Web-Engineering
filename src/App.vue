@@ -17,7 +17,7 @@
             ['Aufgabe 1a: Web-Komponenten erstellen', 'Aufgabe 1b: Web-Komponenten erstellen', 'Aufgabe 1c: Web-Komponenten erstellen', 'Aufgabe 1d: Web-Komponenten erstellen', 'Aufgabe 1e: Web-Komponenten erstellen', 'Aufgabe 1f: Web-Komponenten erstellen', 'Aufgabe 2: LitElement Menü-Komponente', 'Aufgabe 3: LitElement WWW-Navigator'],
             ['Aufgabe 1: PWA'],
             ['Aufgabe 1: Komponente in Vue.js: Word Count', 'Aufgabe 2: Menü-Komponente', 'Aufgabe 3: Vue.js WWW-Navigator'],
-            ['Aufgabe 1: WebAssembly-Modul von Hand erstellen'],
+            ['Aufgabe 1: WebAssembly-Modul von Hand erstellen', 'Aufgabe 2: Performanz-Messungen und -Vergleich'],
             ['Bald verfügbar']]"
         :week-route-links="[
             ['/woche1aufgabe1', '/woche1aufgabe2', '/woche1aufgabe3', '/woche1aufgabe4', '/woche1aufgabe5'],
@@ -30,7 +30,7 @@
             ['/woche8aufgabe1a', '/woche8aufgabe1b', '/woche8aufgabe1c', '/woche8aufgabe1d', '/woche8aufgabe1e', '/woche8aufgabe1f', '/woche8aufgabe2', '/woche8aufgabe3'],
             ['/woche9aufgabe1'],
             ['/woche10aufgabe1', '/woche10aufgabe2', '/woche10aufgabe3'],
-            ['/woche11aufgabe1'],
+            ['/woche11aufgabe1', '/woche11aufgabe2'],
             ['/']]"
     ></navbar>
     <div id="routerViewDiv">

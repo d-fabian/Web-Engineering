@@ -11,7 +11,7 @@
       <div class="container">
         <div>
           <button @click="printGGT">Berechne Primzahlen</button>
-          <button @click="showModuleSourceCode">Zeige WebAssembly Modul</button>
+          <button @click="showModuleSourceCode">{{showModuleCode ? 'Verstecke' : 'Zeige'}} WebAssembly Modul</button>
         </div>
         <div id="primContainer"></div>
         <div id="wasmCode">

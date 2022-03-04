@@ -253,6 +253,12 @@ const routes = [
         name: 'Woche 11 - Aufgabe 1',
         meta: 'Woche 11 - Aufgabe 1: WebAssembly-Modul von Hand erstellen',
         component: () => import('../views/Woche11Aufgabe1')
+    },
+    {
+        path: '/woche11aufgabe2',
+        name: 'Woche 11 - Aufgabe 2',
+        meta: 'Woche 11 - Aufgabe 2: Performanz-Messungen und -Vergleich',
+        component: () => import('../views/Woche11Aufgabe2')
     }
 ]
 
