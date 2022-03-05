@@ -15,8 +15,8 @@
           <ul>
             <li v-for="(content, exerciseIndex1) in weekContents[weekIndex]" v-bind:key="exerciseIndex1">
 <!--              <font-awesome-icon v-if="content !== 'Bald verfügbar'" icon="fa-solid fa-a"/>                             &lt;!&ndash; todo remove v-if when all content ist available &ndash;&gt;-->
-              <font-awesome-icon v-if="content !== 'Bald verfügbar'" :icon="getSubWeekIcons(content)[0]"/>
-              <font-awesome-icon v-if="content !== 'Bald verfügbar' && getSubWeekIcons(content).length === 2" :icon="getSubWeekIcons(content)[1]"/>
+              <font-awesome-icon v-if="content !== 'Bald verfügbar'" :icon="getSubWeekIcons(content)[0]" style="color: black"/>
+              <font-awesome-icon v-if="content !== 'Bald verfügbar' && getSubWeekIcons(content).length === 2" :icon="getSubWeekIcons(content)[1]" style="color: black"/>
 
 <!--              <font-awesome-icon v-if="content !== 'Bald verfügbar'" :icon="test(content)"/>-->
 <!--              <font-awesome-icon v-if="content !== 'Bald verfügbar'" :icon="'fa-solid fa-'+(exerciseIndex1+1)"/>        &lt;!&ndash; todo remove v-if when all content ist available &ndash;&gt;-->
@@ -172,7 +172,7 @@ label:hover {
 .week-content {
   max-height: 0;
   color: rgba(4, 57, 94, 1);
-  background: white;
+  background: #0099cc;
   transition: all .2s ease-out;
   padding: 0 5px;
 }
@@ -204,10 +204,22 @@ li {
   align-items: center;
 
   position: relative;
-  padding: 0;
-  width: 100%;
+  padding: 5px;
+  width: calc(100% - 10px);
   list-style: none;
   margin-bottom: 10px;
+
+  border: 1px solid black;
+  border-radius: 16px;
+  background: deepskyblue;
+}
+
+li:hover {
+  background: lightblue;
+}
+
+a {
+  color: black;
 }
 
 li:last-child {
