@@ -14,8 +14,12 @@
         <div class="week-content">
           <ul>
             <li v-for="(content, exerciseIndex1) in weekContents[weekIndex]" v-bind:key="exerciseIndex1">
-              <font-awesome-icon v-if="content !== 'Bald verfügbar'" icon="fa-solid fa-a"/>                             <!-- todo remove v-if when all content ist available -->
-              <font-awesome-icon v-if="content !== 'Bald verfügbar'" :icon="'fa-solid fa-'+(exerciseIndex1+1)"/>        <!-- todo remove v-if when all content ist available -->
+<!--              <font-awesome-icon v-if="content !== 'Bald verfügbar'" icon="fa-solid fa-a"/>                             &lt;!&ndash; todo remove v-if when all content ist available &ndash;&gt;-->
+              <font-awesome-icon v-if="content !== 'Bald verfügbar'" :icon="getSubWeekIcons(content)[0]"/>
+              <font-awesome-icon v-if="content !== 'Bald verfügbar' && getSubWeekIcons(content).length === 2" :icon="getSubWeekIcons(content)[1]"/>
+
+<!--              <font-awesome-icon v-if="content !== 'Bald verfügbar'" :icon="test(content)"/>-->
+<!--              <font-awesome-icon v-if="content !== 'Bald verfügbar'" :icon="'fa-solid fa-'+(exerciseIndex1+1)"/>        &lt;!&ndash; todo remove v-if when all content ist available &ndash;&gt;-->
               <router-link :to="weekRouteLinks[weekIndex][exerciseIndex1]"> {{ content }}</router-link>
             </li>
           </ul>
@@ -47,6 +51,17 @@ export default {
         }
       }
       return result
+    },
+    getSubWeekIcons(content) {
+      const pattern = /(?<=Aufgabe.)(?<aufgabe>\d+)(?<teilaufgabe>\w+)?/g
+      const result = pattern.exec(content)
+      const aufgabe = result.groups.aufgabe
+      const teilaufgabe = result.groups.teilaufgabe
+      // const icon = `fa-solid fa-${aufgabe} ${teilaufgabe ? 'fa-' + teilaufgabe : ''}`
+      const icon = []
+      icon.push(`fa-solid fa-${aufgabe}`)
+      if (teilaufgabe) icon.push(`fa-solid fa-${teilaufgabe}`)
+      return icon
     }
   }
 }
