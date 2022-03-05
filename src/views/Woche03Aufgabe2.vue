@@ -1,7 +1,7 @@
 <template>
   <solution-with-overlay class="active">
     <template v-slot:exercise>
-      <!-- todo add exercise -->
+      Siehe Aufgabenbeschreibung direkt über den Code-Blöcken.
     </template>
     <template v-slot:solution>
       <div class="mainContent">

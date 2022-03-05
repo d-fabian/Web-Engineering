@@ -1,7 +1,14 @@
 <template>
   <solution-with-overlay class="active">
     <template v-slot:exercise>
-      <!-- todo add exercise -->
+      Schreiben Sie eine Tabellenkalkulation mit den Bordmitteln des Webs. In die Tabelle soll man Zahlen und Formeln
+      eintragen können. Die Formeln sollen berechnet werden, sobald sie fertig eingegeben sind, aber auch immer wieder
+      editiert werden können. Beginnen Sie mit einfachen Summenformeln wie <code>=SUM(A2:D2)</code>.<br><br>
+      Wenn man das Formel-Feld verlässt, soll das berechnete Ergebnis angezeigt werden.<br><br>
+      Wenn man an den Summanden etwas ändert, soll die Summe automatisch neu berechnet und neu angezeigt werden, wie man
+      es von den üblichen Tabellenkalkulationsprogrammen wie Excel gewohnt ist. (Die Tabelle soll natürlich beliebig
+      groß sein können. Die Größe dürfen Sie durch Parameter festgelegen. Die dynamische Vergrößerung kann erst einmal
+      vernachlässigt werden.)
     </template>
     <template v-slot:solution>
       <div class="container">
@@ -49,13 +56,16 @@ export default {
       fieldOne: undefined,
       fieldTwo: undefined,
       fieldResult: undefined,
-      fieldResultTemp: ''
+      fieldResultTemp: '',
+      currentOperation: '',
     }
   },
   mounted: function () {
     this.fieldOne = document.getElementById('fieldOne')
     this.fieldTwo = document.getElementById('fieldTwo')
     this.fieldResult = document.getElementById('resultField')
+    this.fieldOne.addEventListener('focusout', () => this.updateSolution(this.currentOperation))
+    this.fieldTwo.addEventListener('focusout', () => this.updateSolution(this.currentOperation))
     this.fieldResult.addEventListener('focusout', () => this.computeSolution())
     this.fieldResult.addEventListener('focusin', () => this.updateResultField())
   },
@@ -63,6 +73,7 @@ export default {
     computeSolution() {
       const numberOne = parseInt(this.fieldOne.innerText)
       const numberTwo = parseInt(this.fieldTwo.innerText)
+      this.currentOperation = this.fieldResult.innerText
       this.fieldResultTemp = this.fieldResult.innerText
       if (!(numberOne) || !(numberTwo)) {
         this.fieldResultTemp = this.fieldResult.innerText
@@ -78,7 +89,24 @@ export default {
     },
     updateResultField() {
       this.fieldResult.innerText = this.fieldResultTemp
-    }
+    },
+    updateSolution(currentOperation) {
+      if(this.fieldResult.innerText === '') return
+      const numberOne = parseInt(this.fieldOne.innerText)
+      const numberTwo = parseInt(this.fieldTwo.innerText)
+
+      if (!(numberOne) || !(numberTwo)) {
+        this.fieldResultTemp = this.fieldResult.innerText
+        this.fieldResult.innerText = 'Error'
+      }
+      //Operations
+      if (currentOperation.toLowerCase() === '=sum(a2,b2)') {
+        this.fieldResultTemp = this.fieldResult.innerText
+        const result = numberOne + numberTwo
+        this.fieldResult.innerText = result.toString()
+      }
+      this.fieldResultTemp = currentOperation
+    },
   },
 }
 </script>

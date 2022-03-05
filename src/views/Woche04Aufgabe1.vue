@@ -1,7 +1,11 @@
 <template>
   <solution-with-overlay class="active">
     <template v-slot:exercise>
-      <!-- todo add exercise -->
+      Implementieren Sie die interaktive Anwendung "Einkaufsliste" selbstständig in JavaScript durch Nutzung der <a
+        href="https://www.w3schools.com/js/js_htmldom.asp" target="_blank">DOM API</a>. Jeder Punkt auf der
+      Einkaufsliste soll sich individuell löschen lassen. Suchen Sie eine möglichst kurze und elegante Lösung. Denken
+      Sie außerdem über Usability nach: Welche User Interaktionen sollten ebenfalls erlaubt sein? Implementieren Sie
+      dann auch diese.
     </template>
     <template v-slot:solution>
       <div class="container">
@@ -74,6 +78,7 @@ h1 {
   padding: 0 10px;
   margin-left: 10px;
 }
+
 #listArea {
   display: flex;
   flex-direction: column;

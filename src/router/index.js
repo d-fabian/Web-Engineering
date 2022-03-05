@@ -65,49 +65,49 @@ const routes = [
     {
         path: '/woche2aufgabe3flex',
         name: 'Woche 2 - Aufgabe 3 Flexbox',
-        meta: 'Woche 2 - Aufgabe 3:', // todo titel hinzufügen
+        meta: 'Woche 2 - Aufgabe 3: Holy Grail - Flexbox',
         component: () => import('../views/Woche02Aufgabe3flex')
     },
     {
         path: '/woche2aufgabe3grid',
         name: 'Woche 2 - Aufgabe 3 Grid',
-        meta: 'Woche 2 - Aufgabe 3:', // todo titel hinzufügen
+        meta: 'Woche 2 - Aufgabe 3: Holy Grail - Grid',
         component: () => import('../views/Woche02Aufgabe3grid')
     },
     {
         path: '/woche2aufgabe4',
         name: 'Woche 2 - Aufgabe 4',
-        meta: 'Woche 2 - Aufgabe 4:', // todo titel hinzufügen
+        meta: 'Woche 2 - Aufgabe 4: Responsiv mit Grid',
         component: () => import('../views/Woche02Aufgabe4')
     },
     {
         path: '/woche3aufgabe1',
         name: 'Woche 3 - Aufgabe 1',
-        meta: 'Woche 3 - Aufgabe 1:', // todo titel hinzufügen
+        meta: 'Woche 3 - Aufgabe 1: Funktionen in JavaScript',
         component: () => import('../views/Woche03Aufgabe1')
     },
     {
         path: '/woche3aufgabe2',
         name: 'Woche 3 - Aufgabe 2',
-        meta: 'Woche 3 - Aufgabe 2:', // todo titel hinzufügen
+        meta: 'Woche 3 - Aufgabe 2: Advanced Functional JavaScript Programming',
         component: () => import('../views/Woche03Aufgabe2')
     },
     {
         path: '/woche4aufgabe1',
         name: 'Woche 4 - Aufgabe 1',
-        meta: 'Woche 4 - Aufgabe 1:', // todo titel hinzufügen
+        meta: 'Woche 4 - Aufgabe 1: Einkaufsliste',
         component: () => import('../views/Woche04Aufgabe1')
     },
     {
         path: '/woche4aufgabe2',
         name: 'Woche 4 - Aufgabe 2',
-        meta: 'Woche 4 - Aufgabe 2:', // todo titel hinzufügen
+        meta: 'Woche 4 - Aufgabe 2: Rednerliste mit Zeitmessung',
         component: () => import('../views/Woche04Aufgabe2')
     },
     {
         path: '/woche4aufgabe3',
         name: 'Woche 4 - Aufgabe 3',
-        meta: 'Woche 4 - Aufgabe 3:', // todo titel hinzufügen
+        meta: 'Woche 4 - Aufgabe 3: Tabellenkalkulation mit den Bordmitteln des Webs',
         component: () => import('../views/Woche04Aufgabe3')
     },
     {
@@ -119,13 +119,13 @@ const routes = [
     {
         path: '/woche5aufgabe1',
         name: 'Woche 5 - Aufgabe 1',
-        meta: 'Woche 5 - Aufgabe 1:', // todo titel hinzufügen
+        meta: 'Woche 5 - Aufgabe 1: Promises',
         component: () => import('../views/Woche05Aufgabe1')
     },
     {
         path: '/woche5aufgabe2',
         name: 'Woche 5 - Aufgabe 2',
-        meta: 'Woche 5 - Aufgabe 2:', // todo titel hinzufügen
+        meta: 'Woche 5 - Aufgabe 2: async / await',
         component: () => import('../views/Woche05Aufgabe2')
     },
     {

@@ -5,20 +5,19 @@
     <navbar
         :weeks="['Woche 1: Einführung', 'Woche 2: Responsives Web', 'Woche 3: JavaScript', 'Woche 4: DOM',
         'Woche 5: Asynchron', 'Woche 6: SVG', 'Woche 7: Node & npm & Deno', 'Woche 8: Modular Web',
-        'Woche 9: Progressive Web Apps', 'Woche 10: Vue', 'Woche 11: WebAssembly', 'Woche 12: Security'] "
+        'Woche 9: Progressive Web Apps', 'Woche 10: Vue', 'Woche 11: WebAssembly'] "
         :week-contents="[
             ['Aufgabe 1: Fachliche Argumentation über Erfolgsprinzipien des WWW','Aufgabe 2: HTTP','Aufgabe 3: Wireframe with HTML and CSS (Tribute Page)', 'Aufgabe 4: Wireframe with HTML and CSS (Survey Form)', 'Aufgabe 5: Wireframe with HTML and CSS (Product Landing Page)'],
-            ['Aufgabe 1: Responsiv mit Flexbox Desktop-First','Aufgabe 2: Responsiv mit Grid Mobile-First', 'Aufgabe 3a Flexbox','Aufgabe 3b Grid','Aufgabe 4'], // todo titel hinzufügen
-            ['Aufgabe 1:', 'Aufgabe 2:'],
-            ['Aufgabe 1:', 'Aufgabe 2:', 'Aufgabe 3:', 'Aufgabe 4: HTML-Editor'],
-            ['Aufgabe 1:', 'Aufgabe 2:', 'Aufgabe 3: Web Worker', 'Aufgabe 4: WWW-Navigator'],
+            ['Aufgabe 1: Responsiv mit Flexbox Desktop-First','Aufgabe 2: Responsiv mit Grid Mobile-First', 'Aufgabe 3a: Holy Grail - Flexbox','Aufgabe 3b: Holy Grail - Grid','Aufgabe 4: Responsiv mit Grid'],
+            ['Aufgabe 1: Funktionen in JavaScript', 'Aufgabe 2: Advanced Functional JavaScript Programming'],
+            ['Aufgabe 1: Einkaufsliste', 'Aufgabe 2: Rednerliste mit Zeitmessung', 'Aufgabe 3: Tabellenkalkulation mit den Bordmitteln des Webs', 'Aufgabe 4: HTML-Editor'],
+            ['Aufgabe 1: Promises', 'Aufgabe 2: async / await', 'Aufgabe 3: Web Worker', 'Aufgabe 4: WWW-Navigator'],
             ['Aufgabe 1: Statistik-Balkendiagramm in SVG', 'Aufgabe 2: SVG Bezier-Animation', 'Aufgabe 3: Kalligraphie-Editor in SVG'],
             ['Aufgabe 1: File Generatoren', 'Aufgabe 2: Performance Merge', 'Aufgabe 3: Express.js Server'],
             ['Aufgabe 1a: Web-Komponenten erstellen', 'Aufgabe 1b: Web-Komponenten erstellen', 'Aufgabe 1c: Web-Komponenten erstellen', 'Aufgabe 1d: Web-Komponenten erstellen', 'Aufgabe 1e: Web-Komponenten erstellen', 'Aufgabe 1f: Web-Komponenten erstellen', 'Aufgabe 2: LitElement Menü-Komponente', 'Aufgabe 3: LitElement WWW-Navigator'],
             ['Aufgabe 1: PWA'],
             ['Aufgabe 1: Komponente in Vue.js: Word Count', 'Aufgabe 2: Menü-Komponente', 'Aufgabe 3: Vue.js WWW-Navigator'],
-            ['Aufgabe 1: WebAssembly-Modul von Hand erstellen', 'Aufgabe 2: Performanz-Messungen und -Vergleich'],
-            ['Bald verfügbar']]"
+            ['Aufgabe 1: WebAssembly-Modul von Hand erstellen', 'Aufgabe 2: Performanz-Messungen und -Vergleich']]"
         :week-route-links="[
             ['/woche1aufgabe1', '/woche1aufgabe2', '/woche1aufgabe3', '/woche1aufgabe4', '/woche1aufgabe5'],
             ['/woche2aufgabe1', '/woche2aufgabe2', '/woche2aufgabe3flex', '/woche2aufgabe3grid', '/woche2aufgabe4'],
@@ -30,8 +29,7 @@
             ['/woche8aufgabe1a', '/woche8aufgabe1b', '/woche8aufgabe1c', '/woche8aufgabe1d', '/woche8aufgabe1e', '/woche8aufgabe1f', '/woche8aufgabe2', '/woche8aufgabe3'],
             ['/woche9aufgabe1'],
             ['/woche10aufgabe1', '/woche10aufgabe2', '/woche10aufgabe3'],
-            ['/woche11aufgabe1', '/woche11aufgabe2'],
-            ['/']]"
+            ['/woche11aufgabe1', '/woche11aufgabe2']]"
     ></navbar>
     <div id="routerViewDiv">
       <router-view/>

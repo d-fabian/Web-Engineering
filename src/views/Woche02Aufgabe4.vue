@@ -1,7 +1,8 @@
 <template>
   <solution-with-overlay class="active">
     <template v-slot:exercise>
-      <!-- todo add exercise -->
+      Implementieren Sie folgende <a href="https://kaul.inf.h-brs.de/wem/assets/img/landing.png" target="_blank">Landing
+      Page</a> responsiv mit Grid Layout. Vermeiden Sie außerdem das Erscheinen von Scrollbars so weit wie möglich.
     </template>
     <template v-slot:solution>
       <div class="container">

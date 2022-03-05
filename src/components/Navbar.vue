@@ -14,12 +14,12 @@
         <div class="week-content">
           <ul>
             <li v-for="(content, exerciseIndex1) in weekContents[weekIndex]" v-bind:key="exerciseIndex1">
-<!--              <font-awesome-icon v-if="content !== 'Bald verfügbar'" icon="fa-solid fa-a"/>                             &lt;!&ndash; todo remove v-if when all content ist available &ndash;&gt;-->
-              <font-awesome-icon v-if="content !== 'Bald verfügbar'" :icon="getSubWeekIcons(content)[0]" style="color: black"/>
-              <font-awesome-icon v-if="content !== 'Bald verfügbar' && getSubWeekIcons(content).length === 2" :icon="getSubWeekIcons(content)[1]" style="color: black"/>
+<!--              <font-awesome-icon icon="fa-solid fa-a"/>                             -->
+              <font-awesome-icon :icon="getSubWeekIcons(content)[0]" style="color: black"/>
+              <font-awesome-icon v-if="getSubWeekIcons(content).length === 2" :icon="getSubWeekIcons(content)[1]" style="color: black"/>
 
-<!--              <font-awesome-icon v-if="content !== 'Bald verfügbar'" :icon="test(content)"/>-->
-<!--              <font-awesome-icon v-if="content !== 'Bald verfügbar'" :icon="'fa-solid fa-'+(exerciseIndex1+1)"/>        &lt;!&ndash; todo remove v-if when all content ist available &ndash;&gt;-->
+<!--              <font-awesome-icon :icon="test(content)"/>-->
+<!--              <font-awesome-icon :icon="'fa-solid fa-'+(exerciseIndex1+1)"/>        -->
               <router-link :to="weekRouteLinks[weekIndex][exerciseIndex1]"> {{ content }}</router-link>
             </li>
           </ul>

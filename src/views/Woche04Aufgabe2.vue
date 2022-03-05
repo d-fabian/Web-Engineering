@@ -1,7 +1,15 @@
 <template>
   <solution-with-overlay class="active">
     <template v-slot:exercise>
-      <!-- todo add exercise -->
+      Implementieren Sie die interaktive Anwendung "Rednerliste mit Zeitmessung" selbstständig in JavaScript durch
+      Nutzung der <a href="https://www.w3schools.com/js/js_htmldom.asp" target="_blank">DOM API</a> und der <a
+        href="https://www.w3schools.com/js/js_timing.asp" target="_blank">Timer-Funktionen</a>. Neue Redner sollen auf
+      Knopfdruck hinzugefügt werden können. Deren Uhr wird dann sofort automatisch gestartet und alle anderen Uhren
+      angehalten. Bei jedem Redner soll die individuelle, gemessene Redezeit sekundengenau angezeigt werden. Für jeden
+      Redner soll es einen eigenen Start-/Stopp-Button geben. Es soll immer nur eine Uhr laufen. Angezeigt werden sollen
+      die bisherigen Summenzeiten aller Redebeiträge der betreffenden Person. Suchen Sie eine möglichst kurze und
+      elegante Lösung. Achten Sie gleichzeitig auf gute Usability: z.B. wenn die Eingabe mit einem Return beendet wird,
+      soll der Button-Click nicht mehr erforderlich sein, usw.
     </template>
     <template v-slot:solution>
       <div class="container">

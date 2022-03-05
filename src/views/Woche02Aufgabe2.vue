@@ -1,7 +1,8 @@
 <template>
   <solution-with-overlay class="active">
     <template v-slot:exercise>
-      <!-- todo add exercise -->
+      Implementieren Sie das gleiche responsive Webdesign wie in Aufgabe 2.1 allerdings mit Grid und der
+      Mobile-First-Strategie! Vermeiden Sie diesmal außerdem das Erscheinen von Scrollbars.
     </template>
     <template v-slot:solution>
       <div class="container">

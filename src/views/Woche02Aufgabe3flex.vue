@@ -1,7 +1,10 @@
 <template>
   <solution-with-overlay class="active">
     <template v-slot:exercise>
-      <!-- todo add exercise -->
+      Implementieren Sie ausschließlich mit HTML und CSS <a
+        href="https://kaul.inf.h-brs.de/wem/assets/img/holy-grail2.png" target="_blank">folgendes responsive
+      Webdesign</a>. Vermeiden Sie das Erscheinen von Scrollbars so weit wie möglich. Andererseits sollten der Viewport
+      sowohl horizontal als auch vertikal zu 100% genutzt werden, d.h. vermeiden Sie weiße Flächen.
     </template>
     <template v-slot:solution>
       <div id="container">
@@ -264,7 +267,7 @@ export default {
   width: 10%;
 }
 
-a {
+.footer > a {
   color: white;
   padding: 5px;
 }
