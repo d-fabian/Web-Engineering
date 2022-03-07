@@ -328,7 +328,7 @@ code {
   background-color: lightgray;
   font-weight: bold;
   border-radius: 4px;
-  padding: 4px;
+  padding: 2px;
   margin: 4px;
 }
 
