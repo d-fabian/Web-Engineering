@@ -29,7 +29,7 @@ export class StatistikBalkendiagramm extends LitElement {
         this.rectSPD.id = 'spd'
         this.rectSPD.setAttribute('fill', 'red')
         this.rectSPD.setAttribute('height', '10')
-        this.rectSPD.setAttribute('width', this.spdSitze)
+        this.rectSPD.setAttribute('width', '206')
         this.rectSPD.setAttribute('x', '30')
         this.rectSPD.setAttribute('y', '6.5')
         this.rectSPD.onmouseover = () => this._showTooltip(this.spdInput, 12.5)
