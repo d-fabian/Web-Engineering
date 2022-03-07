@@ -4,6 +4,7 @@
       Wandeln Sie Ihren LitElement WWW-Navigator aus Aufgabe 8.3 in eine Progressive Web App um.
     </template>
     <template v-slot:solution>
+      <button id="downloadButton" @click="downloadReport">Download PWA-Report</button>
       <div class="container">
         <div class="header">
           <h1>WWW-Navigator</h1>
@@ -19,6 +20,7 @@
 
 <script>
 import SolutionWithOverlay from "@/components/SolutionWithOverlay";
+import pwaReport from 'raw-loader!../pwaReport/PWA-report.html';
 
 export default {
   name: "Woche09Aufgabe1",
@@ -99,6 +101,18 @@ export default {
       this.content.textContent = this.contentAsJSON[topic][subTopic].content
       this.myWorker.postMessage(['content', topic, this.contentAsJSON[topic][subTopic]])
     },
+    downloadReport() {
+      const element = document.createElement('a');
+      element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(pwaReport));
+      element.setAttribute('download', 'PWA-Report.html');
+
+      element.style.display = 'none';
+      document.body.appendChild(element);
+
+      element.click();
+
+      document.body.removeChild(element);
+    }
   }
 }
 </script>
@@ -117,7 +131,7 @@ export default {
 }
 
 .container {
-  height: calc(100vh - 61px - 40px - 20px);
+  height: calc(100vh - 61px - 40px - 20px - 30px);
   margin: 0 20px 20px 20px;
   display: flex;
   flex-direction: column;
@@ -128,7 +142,7 @@ export default {
 }
 
 .active .container {
-  height: calc(100vh - 40px - 20px);
+  height: calc(100vh - 40px - 20px - 30px);
 }
 
 #headerNavBar, #headerSubNavBar {
@@ -152,5 +166,12 @@ export default {
   margin: 20px;
   text-align: center;
   font-size: 25px;
+}
+
+#downloadButton {
+  height: 20px;
+  color: black;
+  padding: 0 10px;
+  margin: 5px 0
 }
 </style>
