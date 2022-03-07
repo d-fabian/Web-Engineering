@@ -16,7 +16,6 @@ export default {
   name: "ExecuteFunction",
   props: {
     numInputFields: Number,
-    functionName: String,
     solution,
     isActive: Boolean,
   },
