@@ -13,21 +13,32 @@
             return x + y
           }
         </highlight-code></pre>
+        <button v-if="!isActiveArray[0]" @click="openInputFields(0)">Funktion ausführen</button>
+        <execute-function :num-input-fields="2" @executeFunction="add" :solution="solution" :is-active="isActiveArray[0]"></execute-function>
+
         <pre><highlight-code lang="javascript">
           function sub(x, y) {
             return x - y
           }
         </highlight-code></pre>
+        <button v-if="!isActiveArray[1]" @click="openInputFields(1)">Funktion ausführen</button>
+        <execute-function :num-input-fields="2" @executeFunction="sub" :solution="solution" :is-active="isActiveArray[1]"></execute-function>
+
         <pre><highlight-code lang="javascript">
           function mul(x, y) {
             return x * y
           }
         </highlight-code></pre>
+        <button v-if="!isActiveArray[2]" @click="openInputFields(2)">Funktion ausführen</button>
+        <execute-function :num-input-fields="2" @executeFunction="mul" :solution="solution" :is-active="isActiveArray[2]"></execute-function>
+
         <pre><highlight-code lang="javascript">
           function div(x, y) {
             return x / y
           }
         </highlight-code></pre>
+        <button v-if="!isActiveArray[3]" @click="openInputFields(3)">Funktion ausführen</button>
+        <execute-function :num-input-fields="2" @executeFunction="div" :solution="solution" :is-active="isActiveArray[3]"></execute-function>
 
         <div>
           <h1>Aufgaben</h1>
@@ -290,12 +301,43 @@
 
 <script>
 import SolutionWithOverlay from "@/components/SolutionWithOverlay";
+import ExecuteFunction from "@/components/ExecuteFunction";
+import myMethods from '../../woche03/a03.01'
 
 export default {
   name: "Woche03Aufgabe1",
   title: 'Web Engineering WS21/22 - Woche 3.1',
   components: {
+    ExecuteFunction,
     SolutionWithOverlay
+  },
+  data() {
+    return {
+      solution: undefined,
+      isActiveArray: [],
+    }
+  },
+  mounted() {
+    this.isActiveArray = new Array(2).fill(false)
+  },
+  methods: {
+    openInputFields(number) {
+      this.isActiveArray = new Array(2).fill(false)
+      this.isActiveArray[number] = true
+      this.solution = undefined
+    },
+    add(array) {
+      this.solution = myMethods.add(parseFloat(array[0]), parseFloat(array[1]))
+    },
+    sub(array) {
+      this.solution = myMethods.sub(parseFloat(array[0]), parseFloat(array[1]))
+    },
+    mul(array) {
+      this.solution = myMethods.mul(parseFloat(array[0]), parseFloat(array[1]))
+    },
+    div(array) {
+      this.solution = myMethods.div(parseFloat(array[0]), parseFloat(array[1]))
+    },
   }
 }
 </script>
@@ -336,5 +378,12 @@ pre {
   text-align: left;
   margin: 5px 10px;
   font-size: 14px;
+}
+
+button {
+  align-self: center;
+  padding: 0 10px;
+  max-width: 200px;
+  margin-bottom: 10px;
 }
 </style>

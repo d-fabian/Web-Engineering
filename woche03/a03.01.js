@@ -150,3 +150,27 @@ function mul(x, y) {
 function div(x, y) {
     return x / y;
 }
+
+export default {
+    add,
+    sub,
+    mul,
+    div,
+    identity_function,
+    addf,
+    applyf,
+    curry,
+    inc1,
+    inc2,
+    inc3,
+    methodize,
+    demethodize,
+    twice,
+    composeu,
+    composeb,
+    once,
+    counterf,
+    revocable,
+    vector
+}
+
