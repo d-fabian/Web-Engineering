@@ -1,4 +1,4 @@
-import './tabellenkalkulation'
+import './../src/litElementComponents/tabellenkalkulation'
 
 export default {
     title: 'Komponenten/Tabellenkalkulation',

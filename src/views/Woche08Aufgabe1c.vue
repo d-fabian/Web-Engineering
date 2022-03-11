@@ -14,7 +14,7 @@
 
 <script>
 import SolutionWithOverlay from "@/components/SolutionWithOverlay";
-import TabellenkalkulationModule from "../../stories/tabellenkalkulation";
+import TabellenkalkulationModule from "../litElementComponents/tabellenkalkulation";
 
 export default {
   name: "Woche08Aufgabe1c",
