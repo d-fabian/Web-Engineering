@@ -1,6 +1,5 @@
 import {css, html, LitElement} from 'lit';
-
-let contentAsJSON
+import contentAsJSON from '../../public/wwwNavigatorContent.json';
 
 export class MenuKomponente extends LitElement {
     static styles = css`
@@ -40,10 +39,7 @@ export class MenuKomponente extends LitElement {
             this.headerSubNavBar = document.createElement('div')
             this.headerSubNavBar.id = 'headerSubNavBar'
 
-            const content = await fetch('wwwNavigatorContent.json') // todo fix for storybook component
-            contentAsJSON = await content.json()
             const topics = Object.keys(contentAsJSON)
-
             topics.forEach(topic => {
                 const btn = document.createElement('button')
                 btn.className = 'topicBtn'

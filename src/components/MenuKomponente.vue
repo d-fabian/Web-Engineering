@@ -34,6 +34,7 @@ input {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-content: center;
   justify-content: space-around;
 }
 

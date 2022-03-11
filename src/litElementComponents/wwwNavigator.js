@@ -1,5 +1,4 @@
 import {css, html, LitElement} from 'lit';
-import '../../stories/menuKomponente.js'
 
 let contentAsJSON
 

@@ -16,7 +16,7 @@
 
 <script>
 import SolutionWithOverlay from "@/components/SolutionWithOverlay";
-import MenuKomponente from "../../stories/menuKomponente";
+import MenuKomponente from "../litElementComponents/menuKomponente";
 
 export default {
   name: "Woche08Aufgabe2",
