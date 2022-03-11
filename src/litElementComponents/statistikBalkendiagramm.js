@@ -17,14 +17,6 @@ export class StatistikBalkendiagramm extends LitElement {
 
     constructor() {
         super();
-        this.spdSitze = 206
-        this.cduSitze = 197
-        this.bGruenSitze = 118
-        this.fdpSitze = 92
-        this.afdSitze = 80
-        this.linkeSitze = 39
-        this.fraklosSitze = 4
-
         this.rectSPD = document.createElementNS('http://www.w3.org/2000/svg', 'rect')
         this.rectSPD.id = 'spd'
         this.rectSPD.setAttribute('fill', 'red')
@@ -161,65 +153,65 @@ export class StatistikBalkendiagramm extends LitElement {
         this.spdInput = document.createElement('input')
         this.spdInput.id = 'spdPercentInput'
         this.spdInput.type = 'number'
-        this.spdInput.value = this.spdSitze
-        this.spdInput.style.width = '40px'
+        this.spdInput.value = 206
+        this.spdInput.style.width = '50px'
         this.spdInput.style.marginRight = '20px'
         this.spdInput.style.marginLeft = '10px'
-        this.spdInput.oninput = () => this._test(this.rectSPD, this.spdInput.value)
+        this.spdInput.oninput = () => this._updateDiagramm()
 
         this.cduInput = document.createElement('input')
         this.cduInput.id = 'cduPercentInput'
         this.cduInput.type = 'number'
-        this.cduInput.value = this.cduSitze
-        this.cduInput.style.width = '40px'
+        this.cduInput.value = 197
+        this.cduInput.style.width = '50px'
         this.cduInput.style.marginRight = '20px'
         this.cduInput.style.marginLeft = '10px'
-        this.cduInput.oninput = () => this._test(this.rectCDU, this.cduInput.value)
+        this.cduInput.oninput = () => this._updateDiagramm()
 
         this.bGruenInput = document.createElement('input')
         this.bGruenInput.id = 'bGruenPercentInput'
         this.bGruenInput.type = 'number'
-        this.bGruenInput.value = this.bGruenSitze
-        this.bGruenInput.style.width = '40px'
+        this.bGruenInput.value = 118
+        this.bGruenInput.style.width = '50px'
         this.bGruenInput.style.marginRight = '20px'
         this.bGruenInput.style.marginLeft = '10px'
-        this.bGruenInput.oninput = () => this._test(this.rectBgruen, this.bGruenInput.value)
+        this.bGruenInput.oninput = () => this._updateDiagramm()
 
         this.fdpInput = document.createElement('input')
         this.fdpInput.id = 'fdpPercentInput'
         this.fdpInput.type = 'number'
-        this.fdpInput.value = this.fdpSitze
-        this.fdpInput.style.width = '40px'
+        this.fdpInput.value = 92
+        this.fdpInput.style.width = '50px'
         this.fdpInput.style.marginRight = '20px'
         this.fdpInput.style.marginLeft = '10px'
-        this.fdpInput.oninput = () => this._test(this.rectFDP, this.fdpInput.value)
+        this.fdpInput.oninput = () => this._updateDiagramm()
 
         this.afdInput = document.createElement('input')
         this.afdInput.id = 'afdPercentInput'
         this.afdInput.type = 'number'
-        this.afdInput.value = this.afdSitze
-        this.afdInput.style.width = '40px'
+        this.afdInput.value = 80
+        this.afdInput.style.width = '50px'
         this.afdInput.style.marginRight = '20px'
         this.afdInput.style.marginLeft = '10px'
-        this.afdInput.oninput = () => this._test(this.rectAFD, this.afdInput.value)
+        this.afdInput.oninput = () => this._updateDiagramm()
 
         this.linkeInput = document.createElement('input')
         this.linkeInput.id = 'linkePercentInput'
         this.linkeInput.type = 'number'
-        this.linkeInput.value = this.linkeSitze
-        this.linkeInput.style.width = '40px'
+        this.linkeInput.value = 39
+        this.linkeInput.style.width = '50px'
         this.linkeInput.style.marginRight = '20px'
         this.linkeInput.style.marginLeft = '10px'
-        this.linkeInput.oninput = () => this._test(this.rectLinke, this.linkeInput.value)
+        this.linkeInput.oninput = () => this._updateDiagramm()
 
         this.fraklosInput = document.createElement('input')
         this.fraklosInput.id = 'fraklosPercentInput'
         this.fraklosInput.type = 'number'
-        this.fraklosInput.value = this.fraklosSitze
-        this.fraklosInput.style.width = '40px'
+        this.fraklosInput.value = 4
+        this.fraklosInput.style.width = '50px'
         this.fraklosInput.style.marginRight = '20px'
         this.fraklosInput.style.marginLeft = '10px'
-        this.fraklosInput.oninput = () => this._test(this.rectFraklos, this.fraklosInput.value)
+        this.fraklosInput.oninput = () => this._updateDiagramm()
     }
 
     static get properties() {
@@ -232,19 +224,12 @@ export class StatistikBalkendiagramm extends LitElement {
             rectLinke: {type: String},
             rectFraklos: {type: String},
             spdInput: {type: Number},
-            spdSitze: {type: Number},
             cduInput: {type: Number},
-            cduSitze: {type: Number},
             bGruenInput: {type: Number},
-            bGruenSitze: {type: Number},
             fdpInput: {type: Number},
-            fdpSitze: {type: Number},
             afdInput: {type: Number},
-            afdSitze: {type: Number},
             linkeInput: {type: Number},
-            linkeSitze: {type: Number},
             fraklosInput: {type: Number},
-            fraklosSitze: {type: Number},
         }
     }
 
@@ -262,7 +247,7 @@ export class StatistikBalkendiagramm extends LitElement {
                 </div>
                 <h1>Sitzverteilung des 20. Deutschen Bundestages</h1>
                 <h2>Bundestagswahl vom 26.09.2021</h2>
-                <svg id="balkendiagramm" viewBox="0 0 130 100">
+                <svg id="balkendiagramm" viewBox="0 0 135 100">
                     <!-- Parteinamen Labels -->
                     <text font-size="2.5px" x="0" y="12.5">SPD</text>
                     <text font-size="2.5px" x="0" y="25">CDU/CSU</text>
@@ -273,16 +258,24 @@ export class StatistikBalkendiagramm extends LitElement {
                     <text font-size="2.5px" x="0" y="87.5">Fraktionslos</text>
 
                     <!-- Vertikale Linien für Orientierung -->
-                    <line stroke="black" stroke-width=".1" x1="54" x2="54" y1="0" y2="97"></line>
-                    <line stroke="black" stroke-width=".1" x1="79" x2="79" y1="0" y2="97"></line>
-                    <line stroke="black" stroke-width=".1" x1="103" x2="103" y1="0" y2="97"></line>
-                    <line stroke="black" stroke-width=".1" x1="127" x2="127" y1="0" y2="97"></line>
+<!--                    <line stroke="black" stroke-width=".1" x1="54" x2="54" y1="0" y2="97"></line>-->
+<!--                    <line stroke="black" stroke-width=".1" x1="79" x2="79" y1="0" y2="97"></line>-->
+<!--                    <line stroke="black" stroke-width=".1" x1="103" x2="103" y1="0" y2="97"></line>-->
+<!--                    <line stroke="black" stroke-width=".1" x1="127" x2="127" y1="0" y2="97"></line>-->
+                    <line id="line50Sitze" stroke="black" stroke-width=".1" x1="54" x2="54" y1="0" y2="97"></line>
+                    <line id="line100Sitze" stroke="black" stroke-width=".1" x1="79" x2="79" y1="0" y2="97"></line>
+                    <line id="line150Sitze" stroke="black" stroke-width=".1" x1="103" x2="103" y1="0" y2="97"></line>
+                    <line id="line200Sitze" stroke="black" stroke-width=".1" x1="127" x2="127" y1="0" y2="97"></line>
+                    <line id="line250Sitze" stroke="black" stroke-width=".1" x1="500" x2="500" y1="0" y2="97"></line>
+                    <line id="line300Sitze" stroke="black" stroke-width=".1" x1="500" x2="500" y1="0" y2="97"></line>
 
                     <!-- Beschriftung an vertikalen Linien -->
-                    <text font-size="3px" x="52" y="100">50</text>
-                    <text font-size="3px" x="76" y="100">100</text>
-                    <text font-size="3px" x="100" y="100">150</text>
-                    <text font-size="3px" x="124" y="100">200</text>
+                    <text id="text50Sitze" font-size="3px" x="52" y="100">50</text>
+                    <text id="text100Sitze" font-size="3px" x="76" y="100">100</text>
+                    <text id="text150Sitze" font-size="3px" x="100" y="100">150</text>
+                    <text id="text200Sitze" font-size="3px" x="124" y="100">200</text>
+                    <text id="text250Sitze" font-size="3px" x="500" y="100">250</text>
+                    <text id="text300Sitze" font-size="3px" x="500" y="100">300</text>
 
                     <!-- Balken für Parteien -->
                     ${this.rectSPD}
@@ -320,10 +313,84 @@ export class StatistikBalkendiagramm extends LitElement {
         shadowRoot.querySelector('#balkendiagramm').removeChild(shadowRoot.querySelector('#balkendiagramm').lastChild)
     }
 
-    _test(rect, sitze) {
-        const maxSitze = Math.max(this.spdSitze, this.cduSitze, this.bGruenSitze, this.fdpSitze, this.afdSitze, this.linkeSitze, this.fraklosSitze)
-        const percent = (sitze/maxSitze) * 100
-        rect.setAttribute('width', percent)
+    _updateDiagramm() {
+        const sitzeSPD = Number.parseInt(this.spdInput.value) || 0
+        const sitzeCDU = Number.parseInt(this.cduInput.value) || 0
+        const sitzeBGruen = Number.parseInt(this.bGruenInput.value) || 0
+        const sitzeFDP = Number.parseInt(this.fdpInput.value) || 0
+        const sitzeADF = Number.parseInt(this.afdInput.value) || 0
+        const sitzeLinke = Number.parseInt(this.linkeInput.value) || 0
+        const sitzeFraktionslos = Number.parseInt(this.fraklosInput.value) || 0
+        const maxSitze = Math.max(sitzeSPD, sitzeCDU, sitzeBGruen, sitzeFDP, sitzeADF, sitzeLinke, sitzeFraktionslos)
+
+        // update SPD
+        let percent = (sitzeSPD/maxSitze) * 100
+        this.rectSPD.setAttribute('width', percent.toString())
+        // update CDU
+        percent = (sitzeCDU/maxSitze) * 100
+        this.rectCDU.setAttribute('width', percent.toString())
+        // update Bündnis90
+        percent = (sitzeBGruen/maxSitze) * 100
+        this.rectBgruen.setAttribute('width', percent.toString())
+        // update FDP
+        percent = (sitzeFDP/maxSitze) * 100
+        this.rectFDP.setAttribute('width', percent.toString())
+        // update ADF
+        percent = (sitzeADF/maxSitze) * 100
+        this.rectAFD.setAttribute('width', percent.toString())
+        // update Linke
+        percent = (sitzeLinke/maxSitze) * 100
+        this.rectLinke.setAttribute('width', percent.toString())
+        // update Fraktionslos
+        percent = (sitzeFraktionslos/maxSitze) * 100
+        this.rectFraklos.setAttribute('width', percent.toString())
+
+        const shadowRoot = document.querySelector('statistik-balkendiagramm').shadowRoot
+        const line50Sitze = shadowRoot.querySelector('#line50Sitze')
+        const line100Sitze = shadowRoot.querySelector('#line100Sitze')
+        const line150Sitze = shadowRoot.querySelector('#line150Sitze')
+        const line200Sitze = shadowRoot.querySelector('#line200Sitze')
+        const line250Sitze = shadowRoot.querySelector('#line250Sitze')
+        const line300Sitze = shadowRoot.querySelector('#line300Sitze')
+        const xPoint50Sitze = ((100/maxSitze) * 50) + 30
+        const xPoint100Sitze = ((100/maxSitze) * 100) + 30
+        const xPoint150Sitze = ((100/maxSitze) * 150) + 30
+        const xPoint200Sitze = ((100/maxSitze) * 200) + 30
+        const xPoint250Sitze = ((100/maxSitze) * 250) + 30
+        const xPoint300Sitze = ((100/maxSitze) * 300) + 30
+        line50Sitze.setAttribute('x1', xPoint50Sitze)
+        line50Sitze.setAttribute('x2', xPoint50Sitze)
+        line100Sitze.setAttribute('x1', xPoint100Sitze)
+        line100Sitze.setAttribute('x2', xPoint100Sitze)
+        line150Sitze.setAttribute('x1', xPoint150Sitze)
+        line150Sitze.setAttribute('x2', xPoint150Sitze)
+        line200Sitze.setAttribute('x1', xPoint200Sitze)
+        line200Sitze.setAttribute('x2', xPoint200Sitze)
+        line250Sitze.setAttribute('x1', xPoint250Sitze)
+        line250Sitze.setAttribute('x2', xPoint250Sitze)
+        line300Sitze.setAttribute('x1', xPoint300Sitze)
+        line300Sitze.setAttribute('x2', xPoint300Sitze)
+
+        const text50Sitze = shadowRoot.querySelector('#text50Sitze')
+        const text100Sitze = shadowRoot.querySelector('#text100Sitze')
+        const text150Sitze = shadowRoot.querySelector('#text150Sitze')
+        const text200Sitze = shadowRoot.querySelector('#text200Sitze')
+        const text250Sitze = shadowRoot.querySelector('#text250Sitze')
+        const text300Sitze = shadowRoot.querySelector('#text300Sitze')
+        text50Sitze.setAttribute('x', xPoint50Sitze - 2)
+        text100Sitze.setAttribute('x', xPoint100Sitze - 3)
+        text150Sitze.setAttribute('x', xPoint150Sitze - 3)
+        text200Sitze.setAttribute('x', xPoint200Sitze - 3)
+        text250Sitze.setAttribute('x', xPoint250Sitze - 3)
+        text300Sitze.setAttribute('x', xPoint300Sitze - 3)
+
+        // if(maxSitze < 195) {
+        //     line200Sitze.setAttribute('visibility', 'hidden')
+        //     text200Sitze.setAttribute('visibility', 'hidden')
+        // } else {
+        //     line200Sitze.setAttribute('visibility', 'visible')
+        //     text200Sitze.setAttribute('visibility', 'visible')
+        // }
     }
 }
 
