@@ -1,4 +1,4 @@
-import './kalligraphieEditor'
+import './../src/litElementComponents/kalligraphieEditor'
 
 export default {
     title: 'Komponenten/Kalligraphie Editor',

@@ -14,7 +14,7 @@
 
 <script>
 import SolutionWithOverlay from "@/components/SolutionWithOverlay";
-import KalligraphieEditor from "../../stories/kalligraphieEditor";
+import KalligraphieEditor from "../litElementComponents/kalligraphieEditor";
 
 export default {
   name: "Woche08Aufgabe1f",
