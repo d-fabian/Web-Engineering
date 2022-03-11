@@ -1,4 +1,4 @@
-import './bezierAnimation'
+import './../src/litElementComponents/bezierAnimation'
 
 export default {
     title: 'Komponenten/Bezier Animation',

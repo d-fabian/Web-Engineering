@@ -14,7 +14,7 @@
 
 <script>
 import SolutionWithOverlay from "@/components/SolutionWithOverlay";
-import BezierAnimation from "../../stories/bezierAnimation";
+import BezierAnimation from "../litElementComponents/bezierAnimation";
 
 export default {
   name: "Woche08Aufgabe1e",
