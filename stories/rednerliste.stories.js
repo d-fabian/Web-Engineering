@@ -1,4 +1,4 @@
-import './rednerliste'
+import './../src/litElementComponents/rednerliste'
 
 export default {
     title: 'Komponenten/Rednerliste',

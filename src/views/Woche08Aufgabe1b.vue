@@ -14,7 +14,7 @@
 
 <script>
 import SolutionWithOverlay from "@/components/SolutionWithOverlay";
-import RednerlisteModule from "../../stories/rednerliste";
+import RednerlisteModule from "../litElementComponents/rednerliste";
 
 export default {
   name: "Woche08Aufgabe1b",
