@@ -14,7 +14,7 @@
 
 <script>
 import SolutionWithOverlay from "@/components/SolutionWithOverlay";
-import StatistikBalkendiagramm from "../../stories/statistikBalkendiagramm";
+import StatistikBalkendiagramm from "../litElementComponents/statistikBalkendiagramm";
 
 export default {
   name: "Woche08Aufgabe1d",

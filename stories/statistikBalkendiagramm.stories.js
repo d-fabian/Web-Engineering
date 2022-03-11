@@ -1,4 +1,4 @@
-import './statistikBalkendiagramm'
+import './../src/litElementComponents/statistikBalkendiagramm'
 
 export default {
     title: 'Komponenten/Statistik Balkendiagramm',
