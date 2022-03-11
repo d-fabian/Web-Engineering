@@ -1,4 +1,4 @@
-import './einkaufsliste'
+import './../src/litElementComponents/einkaufsliste'
 
 export default {
     title: 'Komponenten/Einkaufsliste',

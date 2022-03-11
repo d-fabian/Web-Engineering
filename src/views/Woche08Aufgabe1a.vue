@@ -14,7 +14,7 @@
 
 <script>
 import SolutionWithOverlay from "@/components/SolutionWithOverlay";
-import EinkaufslisteModule from "../../stories/einkaufsliste"
+import EinkaufslisteModule from "../litElementComponents/einkaufsliste"
 
 export default {
   name: "Woche08Aufgabe1a",
