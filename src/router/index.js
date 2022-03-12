@@ -1,15 +1,15 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import LandingPage from "@/views/LandingPage";
 
 Vue.use(VueRouter)
 
 const routes = [
     {
         path: '/',
-        name: 'Home',
+        name: 'Startseite',
         meta: 'Web Engineering Masterkurs WS21/22',
-        component: Home
+        component: LandingPage
     },
     {
         path: '/woche1aufgabe1',
