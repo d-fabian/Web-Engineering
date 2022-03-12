@@ -1,12 +1,12 @@
 <template>
-  <exercise-solution class="active">
+  <solution-with-overlay class="active">
     <template v-slot:exercise>
       Gegeben ist <a href="https://kaul.inf.h-brs.de/wem/assets/img/landing.png" target="_blank">folgendes</a>
       HTML-Wireframe (Product Landing Page). Mit welchem HTML- und CSS-Code kann man diesen Wireframe
       möglichst exakt nachbilden?
     </template>
     <template v-slot:solution>
-      <div id="container">
+      <div class="container">
         <div id="header">
           <span>The book series</span>
           <span>Testimonials</span>
@@ -41,28 +41,28 @@
         </div>
       </div>
     </template>
-  </exercise-solution>
+  </solution-with-overlay>
 </template>
 
 <script>
-import ExerciseSolution from "@/components/ExerciseSolution";
+import SolutionWithOverlay from "@/components/SolutionWithOverlay";
 
 export default {
   name: "Woche01Aufgabe5",
   title: 'Web Engineering WS21/22 - Woche 1.5',
   components: {
-    ExerciseSolution
+    SolutionWithOverlay,
   }
 }
 </script>
 
 <style scoped>
-#container {
+.container {
   width: 100%;
   transition: .5s linear;
 }
 
-.active #container {
+.active .container {
   width: 100%;
 }
 
@@ -88,7 +88,6 @@ span {
 .table {
   display: table;
   margin: auto;
-  #width: max-content;
   border-spacing: 20px;
   padding: 15px;
 }
@@ -105,7 +104,7 @@ span {
 
 img {
   float: left;
-  height: calc(100vh / 3);
+  max-height: calc(100vh - 500px);
 }
 
 #orderButton {
