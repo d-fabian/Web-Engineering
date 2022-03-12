@@ -14,7 +14,6 @@ export default {
       document.getElementById('navbar-wrapper').classList.toggle('active')
       document.getElementById('menuButton').classList.toggle('active')
       document.getElementById('topBar').classList.toggle('active')
-      //document.getElementById('exercise-solution').classList.toggle('active')
       if (document.getElementById('solution-with-overlay')) document.getElementById('solution-with-overlay').classList.toggle('active')
       if (document.getElementById('landingPageDiv')) document.getElementById('landingPageDiv').classList.toggle('active')
     }
