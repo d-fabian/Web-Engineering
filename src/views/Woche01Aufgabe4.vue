@@ -1,5 +1,5 @@
 <template>
-  <exercise-solution class="active">
+  <solution-with-overlay class="active">
     <template v-slot:exercise>
       Gegeben ist <a href="https://kaul.inf.h-brs.de/wem/assets/img/survey.png" target="_blank">folgendes</a>
       HTML-Wireframe (Survey Form). Mit welchem HTML- und CSS-Code kann man diesen Wireframe
@@ -63,17 +63,17 @@
         <div style="height: 20px"></div>
       </div>
     </template>
-  </exercise-solution>
+  </solution-with-overlay>
 </template>
 
 <script>
-import ExerciseSolution from "@/components/ExerciseSolution";
+import SolutionWithOverlay from "@/components/SolutionWithOverlay";
 
 export default {
   name: "Woche01Aufgabe4",
   title: 'Web Engineering WS21/22 - Woche 1.4',
   components: {
-    ExerciseSolution
+    SolutionWithOverlay,
   }
 }
 </script>
