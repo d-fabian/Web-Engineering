@@ -13,10 +13,27 @@ export class StatistikBalkendiagramm extends LitElement {
         margin: 0 20px;
         gap: 10px;
         height: calc(100vh - 40px - 61px);
+    }
+    span {
+        margin: 10px;
+    }
+    input[type="range"] {
+        width: 200px;
+        margin: 0 10px;
+        min: '0';
+        max: '300';
     }`
 
     constructor() {
         super();
+        this.sitzeSPD = 206
+        this.sitzeCDU = 197
+        this.sitzeBgruen = 118
+        this.sitzeFDP = 92
+        this.sitzeADF = 80
+        this.sitzeLinke = 39
+        this.sitzeFraklos = 4
+
         this.rectSPD = document.createElementNS('http://www.w3.org/2000/svg', 'rect')
         this.rectSPD.id = 'spd'
         this.rectSPD.setAttribute('fill', 'red')
@@ -32,7 +49,7 @@ export class StatistikBalkendiagramm extends LitElement {
                 {scaleX: 100}
             ], {
                 duration: 1000,
-                easing: 'ease-out'
+                easing: 'linear'
             }
         )
 
@@ -51,7 +68,7 @@ export class StatistikBalkendiagramm extends LitElement {
                 {scaleX: 100}
             ], {
                 duration: 1000,
-                easing: 'ease-out'
+                easing: 'linear'
             }
         )
 
@@ -70,7 +87,7 @@ export class StatistikBalkendiagramm extends LitElement {
                 {scaleX: 100}
             ], {
                 duration: 1000,
-                easing: 'ease-out'
+                easing: 'linear'
             }
         )
 
@@ -89,7 +106,7 @@ export class StatistikBalkendiagramm extends LitElement {
                 {scaleX: 100}
             ], {
                 duration: 1000,
-                easing: 'ease-out'
+                easing: 'linear'
             }
         )
 
@@ -108,7 +125,7 @@ export class StatistikBalkendiagramm extends LitElement {
                 {scaleX: 100}
             ], {
                 duration: 1000,
-                easing: 'ease-out'
+                easing: 'linear'
             }
         )
 
@@ -127,7 +144,7 @@ export class StatistikBalkendiagramm extends LitElement {
                 {scaleX: 100}
             ], {
                 duration: 1000,
-                easing: 'ease-out'
+                easing: 'linear'
             }
         )
 
@@ -146,71 +163,64 @@ export class StatistikBalkendiagramm extends LitElement {
                 {scaleX: 100}
             ], {
                 duration: 1000,
-                easing: 'ease-out'
+                easing: 'linear'
             }
         )
 
         this.spdInput = document.createElement('input')
         this.spdInput.id = 'spdPercentInput'
-        this.spdInput.type = 'number'
-        this.spdInput.value = 206
-        this.spdInput.style.width = '50px'
-        this.spdInput.style.marginRight = '20px'
-        this.spdInput.style.marginLeft = '10px'
+        this.spdInput.type = 'range'
+        this.spdInput.min = '0'
+        this.spdInput.max = '300'
+        this.spdInput.value = this.sitzeSPD
         this.spdInput.oninput = () => this._updateDiagramm()
 
         this.cduInput = document.createElement('input')
         this.cduInput.id = 'cduPercentInput'
-        this.cduInput.type = 'number'
-        this.cduInput.value = 197
-        this.cduInput.style.width = '50px'
-        this.cduInput.style.marginRight = '20px'
-        this.cduInput.style.marginLeft = '10px'
+        this.cduInput.type = 'range'
+        this.cduInput.min = '0'
+        this.cduInput.max = '300'
+        this.cduInput.value = this.sitzeCDU
         this.cduInput.oninput = () => this._updateDiagramm()
 
         this.bGruenInput = document.createElement('input')
         this.bGruenInput.id = 'bGruenPercentInput'
-        this.bGruenInput.type = 'number'
-        this.bGruenInput.value = 118
-        this.bGruenInput.style.width = '50px'
-        this.bGruenInput.style.marginRight = '20px'
-        this.bGruenInput.style.marginLeft = '10px'
+        this.bGruenInput.type = 'range'
+        this.bGruenInput.min = '0'
+        this.bGruenInput.max = '300'
+        this.bGruenInput.value = this.sitzeBgruen
         this.bGruenInput.oninput = () => this._updateDiagramm()
 
         this.fdpInput = document.createElement('input')
         this.fdpInput.id = 'fdpPercentInput'
-        this.fdpInput.type = 'number'
-        this.fdpInput.value = 92
-        this.fdpInput.style.width = '50px'
-        this.fdpInput.style.marginRight = '20px'
-        this.fdpInput.style.marginLeft = '10px'
+        this.fdpInput.type = 'range'
+        this.fdpInput.min = '0'
+        this.fdpInput.max = '300'
+        this.fdpInput.value = this.sitzeFDP
         this.fdpInput.oninput = () => this._updateDiagramm()
 
         this.afdInput = document.createElement('input')
         this.afdInput.id = 'afdPercentInput'
-        this.afdInput.type = 'number'
-        this.afdInput.value = 80
-        this.afdInput.style.width = '50px'
-        this.afdInput.style.marginRight = '20px'
-        this.afdInput.style.marginLeft = '10px'
+        this.afdInput.type = 'range'
+        this.afdInput.min = '0'
+        this.afdInput.max = '300'
+        this.afdInput.value = this.sitzeADF
         this.afdInput.oninput = () => this._updateDiagramm()
 
         this.linkeInput = document.createElement('input')
         this.linkeInput.id = 'linkePercentInput'
-        this.linkeInput.type = 'number'
-        this.linkeInput.value = 39
-        this.linkeInput.style.width = '50px'
-        this.linkeInput.style.marginRight = '20px'
-        this.linkeInput.style.marginLeft = '10px'
+        this.linkeInput.type = 'range'
+        this.linkeInput.min = '0'
+        this.linkeInput.max = '300'
+        this.linkeInput.value = this.sitzeLinke
         this.linkeInput.oninput = () => this._updateDiagramm()
 
         this.fraklosInput = document.createElement('input')
         this.fraklosInput.id = 'fraklosPercentInput'
-        this.fraklosInput.type = 'number'
-        this.fraklosInput.value = 4
-        this.fraklosInput.style.width = '50px'
-        this.fraklosInput.style.marginRight = '20px'
-        this.fraklosInput.style.marginLeft = '10px'
+        this.fraklosInput.type = 'range'
+        this.fraklosInput.min = '0'
+        this.fraklosInput.max = '300'
+        this.fraklosInput.value = this.sitzeFraklos
         this.fraklosInput.oninput = () => this._updateDiagramm()
     }
 
@@ -230,20 +240,27 @@ export class StatistikBalkendiagramm extends LitElement {
             afdInput: {type: Number},
             linkeInput: {type: Number},
             fraklosInput: {type: Number},
+            sitzeSPD: {type: Number},
+            sitzeCDU: {type: Number},
+            sitzeBgruen: {type: Number},
+            sitzeFDP: {type: Number},
+            sitzeADF: {type: Number},
+            sitzeLinke: {type: Number},
+            sitzeFraklos: {type: Number},
         }
     }
 
     render() {
         return html`
             <div class="container">
-                <div style="display: flex; justify-content: center; align-items: center">
-                    Sitze SPD:${this.spdInput}
-                    Sitze CDU:${this.cduInput}
-                    Sitze Bündnis 90:${this.bGruenInput}
-                    Sitze FDP:${this.fdpInput}
-                    Sitze AFD:${this.afdInput}
-                    Sitze Die Linke:${this.linkeInput}
-                    Sitze Fraktionslos:${this.fraklosInput}
+                <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap">
+                    <span>Sitze SPD: ${this.sitzeSPD}${this.spdInput}</span>
+                    <span>Sitze CDU: ${this.sitzeCDU}${this.cduInput}</span>
+                    <span>Sitze Bündnis 90: ${this.sitzeBgruen}${this.bGruenInput}</span>
+                    <span>Sitze FDP: ${this.sitzeFDP}${this.fdpInput}</span>
+                    <span>Sitze AFD: ${this.sitzeADF}${this.afdInput}</span>
+                    <span>Sitze Die Linke: ${this.sitzeLinke}${this.linkeInput}</span>
+                    <span>Sitze Fraktionslos: ${this.sitzeFraklos}${this.fraklosInput}</span>
                 </div>
                 <h1>Sitzverteilung des 20. Deutschen Bundestages</h1>
                 <h2>Bundestagswahl vom 26.09.2021</h2>
@@ -258,10 +275,6 @@ export class StatistikBalkendiagramm extends LitElement {
                     <text font-size="2.5px" x="0" y="87.5">Fraktionslos</text>
 
                     <!-- Vertikale Linien für Orientierung -->
-<!--                    <line stroke="black" stroke-width=".1" x1="54" x2="54" y1="0" y2="97"></line>-->
-<!--                    <line stroke="black" stroke-width=".1" x1="79" x2="79" y1="0" y2="97"></line>-->
-<!--                    <line stroke="black" stroke-width=".1" x1="103" x2="103" y1="0" y2="97"></line>-->
-<!--                    <line stroke="black" stroke-width=".1" x1="127" x2="127" y1="0" y2="97"></line>-->
                     <line id="line50Sitze" stroke="black" stroke-width=".1" x1="54" x2="54" y1="0" y2="97"></line>
                     <line id="line100Sitze" stroke="black" stroke-width=".1" x1="79" x2="79" y1="0" y2="97"></line>
                     <line id="line150Sitze" stroke="black" stroke-width=".1" x1="103" x2="103" y1="0" y2="97"></line>
@@ -289,6 +302,7 @@ export class StatistikBalkendiagramm extends LitElement {
                     <!-- Vertikale Linie für Start -->
                     <line stroke="black" stroke-width=".1" x1="30" x2="30" y1="0" y2="97"></line>
                 </svg>
+                <div></div>
             </div>`
     }
 
@@ -324,27 +338,36 @@ export class StatistikBalkendiagramm extends LitElement {
         const maxSitze = Math.max(sitzeSPD, sitzeCDU, sitzeBGruen, sitzeFDP, sitzeADF, sitzeLinke, sitzeFraktionslos)
 
         // update SPD
+        this.sitzeSPD = sitzeSPD
         let percent = (sitzeSPD/maxSitze) * 100
         this.rectSPD.setAttribute('width', percent.toString())
         // update CDU
+        this.sitzeCDU = sitzeCDU
         percent = (sitzeCDU/maxSitze) * 100
         this.rectCDU.setAttribute('width', percent.toString())
         // update Bündnis90
+        this.sitzeBgruen = sitzeBGruen
         percent = (sitzeBGruen/maxSitze) * 100
         this.rectBgruen.setAttribute('width', percent.toString())
         // update FDP
+        this.sitzeFDP = sitzeFDP
         percent = (sitzeFDP/maxSitze) * 100
         this.rectFDP.setAttribute('width', percent.toString())
         // update ADF
+        this.sitzeADF = sitzeADF
         percent = (sitzeADF/maxSitze) * 100
         this.rectAFD.setAttribute('width', percent.toString())
         // update Linke
+        this.sitzeLinke = sitzeLinke
         percent = (sitzeLinke/maxSitze) * 100
         this.rectLinke.setAttribute('width', percent.toString())
         // update Fraktionslos
+        this.sitzeFraklos = sitzeFraktionslos
         percent = (sitzeFraktionslos/maxSitze) * 100
         this.rectFraklos.setAttribute('width', percent.toString())
 
+        // get shadowRoot in event listener
+        // https://stackoverflow.com/questions/34112089/is-it-possible-to-bind-an-event-listener-to-an-element-within-a-shadow-dom-from
         const shadowRoot = document.querySelector('statistik-balkendiagramm').shadowRoot
         const line50Sitze = shadowRoot.querySelector('#line50Sitze')
         const line100Sitze = shadowRoot.querySelector('#line100Sitze')
@@ -383,14 +406,6 @@ export class StatistikBalkendiagramm extends LitElement {
         text200Sitze.setAttribute('x', xPoint200Sitze - 3)
         text250Sitze.setAttribute('x', xPoint250Sitze - 3)
         text300Sitze.setAttribute('x', xPoint300Sitze - 3)
-
-        // if(maxSitze < 195) {
-        //     line200Sitze.setAttribute('visibility', 'hidden')
-        //     text200Sitze.setAttribute('visibility', 'hidden')
-        // } else {
-        //     line200Sitze.setAttribute('visibility', 'visible')
-        //     text200Sitze.setAttribute('visibility', 'visible')
-        // }
     }
 }
 
