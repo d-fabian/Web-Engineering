@@ -1,25 +1,19 @@
 <template>
   <div id="navbar-wrapper" class="active">
-
+    <font-awesome-icon id="homeButton" icon="fa-solid fa-house" class="fa-lg"></font-awesome-icon>
     <div class="accordion-wrapper">
       <div class="week-wrapper" v-for="(week, weekIndex) in weeks" v-bind:key="weekIndex">
         <input type="radio" :id="'check'+week" name="radionButtons">
         <label :for="'check'+week">
           <font-awesome-icon icon="fa-solid fa-w"/>
-          <!--          <font-awesome-icon :icon="'fa-solid fa-'+(weekIndex+1)"/>-->
           <font-awesome-icon v-for="(number, index) in getIcons(weekIndex+1)" v-bind:key="weekIndex+''+index+''+number"
-                             :icon="number"/>
-          &nbsp;&nbsp;{{ week }}&nbsp;&nbsp;</label>
-
+                             :icon="number"/>&nbsp;&nbsp;{{ week }}&nbsp;&nbsp;</label>
         <div class="week-content">
           <ul>
             <li v-for="(content, exerciseIndex1) in weekContents[weekIndex]" v-bind:key="exerciseIndex1">
-<!--              <font-awesome-icon icon="fa-solid fa-a"/>                             -->
               <font-awesome-icon :icon="getSubWeekIcons(content)[0]" style="color: black"/>
-              <font-awesome-icon v-if="getSubWeekIcons(content).length === 2" :icon="getSubWeekIcons(content)[1]" style="color: black"/>
-
-<!--              <font-awesome-icon :icon="test(content)"/>-->
-<!--              <font-awesome-icon :icon="'fa-solid fa-'+(exerciseIndex1+1)"/>        -->
+              <font-awesome-icon v-if="getSubWeekIcons(content).length === 2" :icon="getSubWeekIcons(content)[1]"
+                                 style="color: black"/>
               <router-link :to="weekRouteLinks[weekIndex][exerciseIndex1]"> {{ content }}</router-link>
             </li>
           </ul>
@@ -31,6 +25,8 @@
 
 <script>
 
+import router from "@/router";
+
 export default {
   // eslint-disable-next-line
   name: "Navbar",
@@ -38,6 +34,14 @@ export default {
     weeks: Array,
     weekContents: Array,
     weekRouteLinks: Array
+  },
+  mounted() {
+    document.getElementById('homeButton').addEventListener('click', () => {
+      router
+          .push({path: '/'})
+          .catch(() => {
+          } /* do nothing if already on landing page and avoid throwing "NavigationDuplicated error" */)
+    })
   },
   methods: {
     getIcons(index) {
@@ -119,6 +123,24 @@ export default {
   opacity: 1;
   padding: 6px 14px;
   width: 350px;
+}
+
+#homeButton {
+  position: absolute;
+  color: white;
+  top: 20px;
+  left: -50px;
+  opacity: 0;
+  transition: 0.5s linear;
+}
+
+#homeButton:hover {
+  cursor: pointer;
+}
+
+.active #homeButton {
+  opacity: 1;
+  left: 20px;
 }
 
 .accordion-wrapper {
