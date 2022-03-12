@@ -68,7 +68,7 @@ export default {
 ol {
   display: flex;
   flex-direction: column;
-  margin-left: 20px;
+  margin-left: 40px;
 }
 
 li {
@@ -82,6 +82,7 @@ li::marker {
 
 .exerciseBulletPoints {
   margin: 20px 0;
+  font-weight: bold;
 }
 
 
