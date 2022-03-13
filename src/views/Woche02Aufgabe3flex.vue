@@ -202,7 +202,6 @@ export default {
   display: flex;
   flex-direction: column;
   margin: 10px;
-  /*height: calc(100vh - 20px);*/
   box-sizing: border-box;
   font-family: 'Nanum Myeongjo', serif;
   color: white;
@@ -233,7 +232,6 @@ export default {
 }
 
 .mainPartText {
-  /*flex-direction: row;*/
   background-color: #6a9ebd;
   font-size: 20px;
 }

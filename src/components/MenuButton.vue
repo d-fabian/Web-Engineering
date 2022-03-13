@@ -37,7 +37,6 @@ export default {
 
 #menuButton.active {
   color: white;
-  /*left: 180px;*/
   left: calc(350px - 10px);
 }
 

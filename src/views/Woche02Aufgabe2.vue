@@ -44,13 +44,11 @@ export default {
                 "greenPart"
                 "bluePart"
                 "purplePart";
-  /*transition: .5s linear;*/
 }
 
 .active .container {
   height: calc(100vh - 40px);
   width: calc(100vw - 378px);
-  /*transition: .5s linear;*/
 }
 
 .red {
@@ -75,8 +73,6 @@ export default {
 
 @media all and (min-width: 400px) {
   .container {
-    /*margin: 5px;*/
-    /*height: calc(100vh - 10px);*/
     grid-template: 1fr 6fr 1fr / 1fr 2fr;
     grid-template-areas:
                 "redPart redPart redPart"
@@ -103,8 +99,6 @@ export default {
 
 @media all and (min-width: 768px) {
   .container {
-    /*margin: 20px;*/
-    /*height: calc(100vh - 40px);*/
     grid-template: 1fr 2fr / 1fr 3fr 1fr;
     grid-template-areas:
                 "redPart redPart redPart"

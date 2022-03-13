@@ -61,7 +61,6 @@ export default {
       const result = pattern.exec(content)
       const aufgabe = result.groups.aufgabe
       const teilaufgabe = result.groups.teilaufgabe
-      // const icon = `fa-solid fa-${aufgabe} ${teilaufgabe ? 'fa-' + teilaufgabe : ''}`
       const icon = []
       icon.push(`fa-solid fa-${aufgabe}`)
       if (teilaufgabe) icon.push(`fa-solid fa-${teilaufgabe}`)
@@ -72,35 +71,6 @@ export default {
 </script>
 
 <style scoped>
-/*
-#navbar-wrapper {
-  padding: 30px;
-}
-
-#navbar-wrapper a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#navbar-wrapper a.router-link-exact-active {
-  color: #42b983;
-}
-
-#aboutButton1 {
-  display: none;
-}
-
-#aboutButton:hover ~ #aboutButton1 {
-  display: inline;
-}
-
-#test:hover ~ #dropdown {
-  display: block;
-}
-*/
-/**********************************************/
-
-
 /*** Styling and animation navbar ***/
 #navbar-wrapper {
   position: fixed;
