@@ -1,6 +1,6 @@
 <template>
   <div id="solution-with-overlay">
-    <button id="openOverlayButton" v-on:click="open">Show Exercise</button>
+    <button id="openOverlayButton" v-on:click="open"><b>Aufgabe anzeigen</b></button>
     <div id="overlay">
       <button id="closeOverlayButton" v-on:click="close">
         <font-awesome-icon icon="fa-solid fa-x"/>
@@ -38,9 +38,9 @@ export default {
 }
 
 #openOverlayButton {
-  margin: 10px 0;
+  margin: 10px 0 5px 0;
   padding: 0 10px;
-  height: 20px;
+  height: 25px;
 }
 
 #overlay {
