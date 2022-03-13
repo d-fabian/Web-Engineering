@@ -12,7 +12,7 @@ self.onmessage = function (event) {
         })
         postMessage(['subTopics', topic, result])
     } else if (type === 'content') {
-        const references = `<a href="${data.references}" target="_blank">${data.references}</a>`
+        const references = `<a href="${data.references}" target="_blank" style="color: white">${data.references}</a>`
         postMessage(['references', topic, references])
     }
 }
