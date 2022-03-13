@@ -14,7 +14,7 @@
               <font-awesome-icon :icon="getSubWeekIcons(content)[0]" style="color: black"/>
               <font-awesome-icon v-if="getSubWeekIcons(content).length === 2" :icon="getSubWeekIcons(content)[1]"
                                  style="color: black"/>
-              <router-link :to="weekRouteLinks[weekIndex][exerciseIndex1]"> {{ content }}</router-link>
+              <router-link :to="weekRouteLinks[weekIndex][exerciseIndex1]"> {{ getSubWeekIcons(content).length === 2 ? content.substring(12) : content.substring(11)}}</router-link>
             </li>
           </ul>
         </div>
