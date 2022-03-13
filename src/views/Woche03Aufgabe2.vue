@@ -345,7 +345,7 @@
 <script>
 import SolutionWithOverlay from "@/components/SolutionWithOverlay";
 import ExecuteFunction from "@/components/ExecuteFunction";
-import myMethods from '../../javascriptMethods/a03.01'
+import myMethods from '../javascriptMethods/a03.01'
 
 export default {
   name: "Woche03Aufgabe2",
