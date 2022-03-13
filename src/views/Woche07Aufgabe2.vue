@@ -119,13 +119,7 @@ export default {
 
 <style scoped>
 .container {
-  margin: 0 20px 20px 20px;
-  height: calc(100vh - 61px - 40px - 20px);
   transition: 0.5s linear;
-}
-
-.active .container {
-  height: calc(100vh - 40px - 20px);
 }
 
 .exerciseList {
@@ -137,8 +131,7 @@ export default {
 
 pre {
   text-align: left;
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin: 10px;
 }
 
 p {
