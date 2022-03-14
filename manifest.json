@@ -1,0 +1,20 @@
+{
+  "short_name": "WWW-Navigator",
+  "name": "WWW-Navigator with PWA",
+  "icons": [
+    {
+      "src": "wwwNavigator192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "wwwNavigator512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/pwa.html",
+  "display": "standalone",
+  "background_color": "#00698b",
+  "theme_color": "#00698b"
+}
