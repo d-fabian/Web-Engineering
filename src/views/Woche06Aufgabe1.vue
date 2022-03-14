@@ -47,27 +47,27 @@
           <text id="text300Sitze" font-size="3px" x="500" y="100">300</text>
 
           <!-- Balken für Parteien -->
-          <rect fill="red" height="10" id="spd" v-on:mouseover="showTooltip(206, 12.5)" v-on:mouseout="removeTooltip"
+          <rect fill="red" height="10" id="spd" v-on:mouseover="showTooltip(sitzeSPD, 12.5)" v-on:mouseout="removeTooltip"
                 width="100"
                 x="30" y="6.5"></rect>
-          <rect fill="black" height="10" id="cdu" v-on:mouseover="showTooltip(197, 25, true)"
+          <rect fill="black" height="10" id="cdu" v-on:mouseover="showTooltip(sitzeCDU, 25, true)"
                 v-on:mouseout="removeTooltip"
                 width="96"
                 x="30" y="19"></rect>
-          <rect fill="green" height="10" id="bgrün" v-on:mouseover="showTooltip(118, 37.5)"
+          <rect fill="green" height="10" id="bgrün" v-on:mouseover="showTooltip(sitzeBgruen, 37.5)"
                 v-on:mouseout="removeTooltip"
                 width="57"
                 x="30" y="31.5"></rect>
-          <rect fill="yellow" height="10" id="fdp" v-on:mouseover="showTooltip(92, 50)" v-on:mouseout="removeTooltip"
+          <rect fill="yellow" height="10" id="fdp" v-on:mouseover="showTooltip(sitzeFDP, 50)" v-on:mouseout="removeTooltip"
                 width="45"
                 x="30" y="44"></rect>
-          <rect fill="blue" height="10" id="afd" v-on:mouseover="showTooltip(80, 62.5)" v-on:mouseout="removeTooltip"
+          <rect fill="blue" height="10" id="afd" v-on:mouseover="showTooltip(sitzeADF, 62.5)" v-on:mouseout="removeTooltip"
                 width="39"
                 x="30" y="56.5"></rect>
-          <rect fill="magenta" height="10" id="linke" v-on:mouseover="showTooltip(39, 75)" v-on:mouseout="removeTooltip"
+          <rect fill="magenta" height="10" id="linke" v-on:mouseover="showTooltip(sitzeLinke, 75)" v-on:mouseout="removeTooltip"
                 width="19"
                 x="30" y="69"></rect>
-          <rect fill="grey" height="10" id="fraktionslos" v-on:mouseover="showTooltip(4, 87.5)"
+          <rect fill="grey" height="10" id="fraktionslos" v-on:mouseover="showTooltip(sitzeFraklos, 87.5)"
                 v-on:mouseout="removeTooltip"
                 width="2"
                 x="30" y="81.5"></rect>
