@@ -20,7 +20,7 @@ export class StatistikBalkendiagramm extends LitElement {
     }
     input[type="range"] {
         width: 200px;
-        margin: 0 10px;
+        margin-left: 10px;
     }`
 
     constructor() {

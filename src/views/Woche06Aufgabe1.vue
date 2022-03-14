@@ -300,6 +300,6 @@ span {
 }
 input[type="range"] {
   width: 200px;
-  margin: 0 10px;
+  margin-left: 10px;
 }
 </style>
