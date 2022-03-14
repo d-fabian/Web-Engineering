@@ -295,6 +295,7 @@ export default {
 }
 
 span {
+  width: 380px;
   margin: 10px;
 }
 input[type="range"] {

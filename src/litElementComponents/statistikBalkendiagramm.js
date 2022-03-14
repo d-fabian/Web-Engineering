@@ -15,6 +15,7 @@ export class StatistikBalkendiagramm extends LitElement {
         height: calc(100vh - 40px - 61px);
     }
     span {
+        width: 380px;
         margin: 10px;
     }
     input[type="range"] {
